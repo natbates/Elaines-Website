@@ -1,0 +1,50 @@
+:root
+{
+    --primary-colour: #ff619b;
+}
+
+button
+{
+    font-family: "main";
+}
+
+body{
+    font-family: "main";
+    margin: 0 !important;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+#info-page-container
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#page-content
+{
+    display: flex;
+    flex-direction: row;
+    margin: 10% 5%;
+    height: 100%;
+}
+
+@keyframes flyUpAppear 
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    100%
+    {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: main;
+    src: url("../../public/fonts/BebasNeue-Regular.ttf");
+}
+

@@ -1,0 +1,20 @@
+
+#infoBar
+{
+    min-width: 70px;
+    min-height: 100vh;
+    background-color: var(--primary-colour);
+    transition: min-width 0.3s ease;
+    z-index: 1000;
+}
+
+#infoBar:hover
+{
+    min-width: 35%;
+}
+
+#infoBar:hover #page-content
+{
+
+    margin-right: 15%;
+}

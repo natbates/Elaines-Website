@@ -1,0 +1,23 @@
+#nav-bar
+{
+    position: absolute;
+    display: flex;
+    top:0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.167);
+}
+
+.nav-bar-item{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 10px 20px;
+    font-size: 1rem;
+}
+
+.nav-bar-item:hover
+{
+    color: var(--primary-colour);
+}
