@@ -1,0 +1,91 @@
+#clients
+{
+    padding: 50px 0px;
+    margin-top: 5%;
+}
+
+.client-reviews {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    margin-top: 80px;
+    transition: transform 0.5s ease-in-out;
+    overflow-y: scroll;
+    padding-left: 0;
+    height: 700px;
+}
+
+/* Add sliding effect when clicking to the left or right */
+.client-reviews.left {
+    animation: slide-left 0.5s ease-in-out;
+}
+
+.client-reviews.right {
+    animation: slide-right 0.5s ease-in-out;
+}
+
+.client-description
+{
+    color: black;
+}
+
+.client {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    margin-bottom: 20px;
+}
+
+
+.client img
+{
+    height: 100%;
+    padding: 20px;
+    width: auto;
+}
+
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@media (max-width: 1008px) {
+
+    .client img
+    {
+        display: none;
+    }
+
+    .client-info h2
+    {
+        font-size: 3rem;
+    }
+
+    .client-info p
+    {
+        font-size: 2rem;
+    }
+}

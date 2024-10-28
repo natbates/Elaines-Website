@@ -1,0 +1,52 @@
+#dash-board
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#dash-board h1
+{
+    font-size: 3rem;
+}
+
+
+.container-row {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below each container */
+}
+
+.flex-row {
+    display: flex; /* Another flex container for Add and Remove */
+    justify-content: space-between; /* Space between Add and Remove */
+    width: 100%; /* Take full width */
+}
+
+.flex-row > * {
+    flex: 1; /* Allow the children to grow and fill the space */
+    margin: 0 10px; /* Add space between the components */
+}
+
+
+#about-container
+{
+    flex-direction: column;
+}
+
+.edit-about-text
+{
+    width: 95%;
+}
+
+#profile-container
+{
+    align-items: center;
+    text-align: center;
+}
+
+#profile-details p
+{
+    color: black !important;
+}

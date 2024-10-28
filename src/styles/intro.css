@@ -1,0 +1,48 @@
+#intro {
+    height: 100vh;
+    display: flex; /* Centering the image */
+    position: relative;
+    flex-direction: column;
+    margin-top: 10%;
+    border-bottom: 10px var(--primary-colour) dashed;
+}
+
+#intro h1 {
+  font-size: 5rem;
+  color: var(--primary-colour);
+}
+
+
+#intro p
+{
+  font-size: 3rem;
+}
+
+#intro-cover
+{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-colour);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; /* Ensure it stays on top */
+  animation: intro-anim .5s ease-in forwards;
+}
+
+
+
+@keyframes intro-anim {
+  0% {
+    transform: translateY(0); /* Start at the top */
+    opacity: 1; /* Fully visible */
+  }
+  80% {
+    transform: translateY(80vh); /* Accelerate downwards */
+    opacity: 1; /* Still visible */
+  }
+  100% {
+    transform: translateY(100vh); /* Fully off the screen */
+    opacity: 0; /* Fade out */
+  }
+}

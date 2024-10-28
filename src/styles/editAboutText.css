@@ -1,0 +1,84 @@
+/* src/styles/editAboutText.css */
+
+.edit-about-text {
+    background-color: #f8f9fa; /* Match the light background for visibility */
+    padding: 20px; /* Keep consistent padding */
+    border-radius: 8px; /* Rounded corners for uniformity */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Margin for spacing below */
+}
+
+.edit-about-text h2 {
+    font-size: 24px; /* Adjust font size to match addItem */
+    color: #333; /* Dark text for contrast */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+.edit-about-text form {
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.edit-about-text label {
+    font-size: 14px; /* Font size to match other labels */
+    color: #555; /* Darker text for contrast */
+    margin-bottom: 5px; /* Space below label */
+}
+
+.edit-about-text input[type="text"], 
+.edit-about-text input[type="file"],
+.edit-about-text textarea {
+    width: 100%; /* Full width for input */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Lighter border for input */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 14px; /* Set font size */
+    margin-bottom: 15px; /* Space below input */
+    align-items: center; /* Align items inside input */
+    text-align: center; /* Center text inside input */
+}
+.edit-about-text textarea {
+    height: 200px;
+}
+
+.edit-about-text button {
+    width: 30%;
+    background-color: #007bff; /* Bootstrap-like blue */
+    color: #fff; /* White text */
+    padding: 10px; /* Padding for button */
+    border: none; /* No border for button */
+    border-radius: 4px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    font-size: 14px; /* Match font size */
+    align-self: center;
+    margin: auto 0;
+}
+
+.edit-about-text button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.edit-about-text button:disabled {
+    background-color: #999; /* Disabled button color */
+    cursor: not-allowed; /* Cursor style when disabled */
+}
+
+.edit-about-text p {
+    font-size: 1.5rem; /* Match font size for error messages */
+    color: var(--text-colour); /* Red color for error messages */
+    margin-top: 10px; /* Space above error message */
+}
+
+/* Additional styles to ensure text shows fully */
+.edit-about-text input[type="text"] {
+    min-height: 40px; /* Minimum height for the input */
+    max-height: 200px; /* Maximum height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.edit-about-text img 
+{
+    height: 400px;
+    padding-bottom: 20px;
+}

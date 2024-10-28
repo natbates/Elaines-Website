@@ -1,0 +1,33 @@
+/* src/styles/sample.css */
+.service {
+    width: 300px; /* Fixed width for each sample */
+    text-align: center; /* Center the content within each sample */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service:hover
+{
+    transform: scale(1.05);
+}
+
+.service-image {
+    width: 100%; /* Full width for responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-bottom: 1px solid #ddd; /* Divider between image and text */
+}
+
+.service-info {
+    padding: 10px; /* Padding for the text container */
+}
+
+.service-title {
+    font-size: 1.5rem; /* Title size */
+    margin: 0; /* Remove default margin */
+    color: var(--text-colour)
+}
+
+.service-description {
+    font-size: 1rem; /* Description size */
+    color: #666; /* Lighter text color for description */
+}

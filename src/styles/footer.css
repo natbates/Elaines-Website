@@ -1,0 +1,70 @@
+
+#footer {
+    background-color: var(--primary-colour);
+    color: #fff; /* Light text color */
+    text-align: center; /* Center-align the text */
+    padding: 20px 0; /* Vertical padding */
+    font-size: 14px; /* Font size */
+    position: relative; /* Ensures positioning */
+    bottom: 0; /* Sticks to the bottom */
+    min-width: 100vw !important;
+    margin-top: 100px;
+}
+
+#footer p {
+    color: #fff; 
+}
+
+.no-underline {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Keep text color consistent */
+    cursor: pointer; /* Add a pointer cursor for better UX */
+}
+
+#further-info {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-details {
+    display: flex;
+    gap: 20px; /* Spacing between each detail */
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Spacing between label and link */
+    font-size: 1rem;
+}
+
+.detail label {
+    font-weight: bold;
+}
+
+.contact-details a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #0073e6; /* Change color on hover for a nice effect */
+}
+
+@media (max-width: 1008px) {
+
+    .detail
+    {
+        font-size: 2rem;
+    }
+    .contact-details 
+    {
+        flex-direction: column;
+    }
+
+    .detail {
+        justify-content: center;
+    }
+}

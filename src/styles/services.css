@@ -1,0 +1,30 @@
+/* src/styles/samples.css */
+#servies
+{
+    padding: 50px 0px;
+    margin-top: 5%;
+}
+.main-text {
+    font-size: 2rem; /* Larger font for the main title */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center align the title */
+    color: #333; /* Darker text color */
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap; /* Allow samples to wrap to the next line */
+    justify-content: center; /* Center the samples in the container */
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow samples to wrap to the next line */
+    margin-top: 80px;
+    margin-right: 10px;
+    gap: 50px;
+}
+
+.services .service:hover {
+    transform: scale(1.05); /* Scale up on hover for effect */
+}

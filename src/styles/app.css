@@ -1,0 +1,57 @@
+:root
+{
+    --primary-colour: #ff82b6;
+    --secondary-colour: #ffffff;
+    --background-colour: #1e1e1f;
+}
+
+
+
+button
+{
+    font-family: "main";
+}
+
+body{
+    font-family: "main";
+    margin: 0 !important;
+    top: 0;
+    background-color: var(--background-colour);
+}
+
+h1, h2, h3
+{
+    color: var(--primary-colour) !important;
+}
+
+p 
+{
+    color: var(--secondary-colour) !important;
+    padding-left: 0 !important;
+}
+
+#content-wrap
+{
+    margin-left: 20%;
+    margin-right: 10%;
+}
+
+@keyframes flyUpAppear 
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    100%
+    {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: main;
+    src: url("../../public/fonts/SulphurPoint-Regular.ttf");
+}
+

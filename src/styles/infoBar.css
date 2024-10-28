@@ -1,0 +1,33 @@
+
+#infoBar
+{
+    min-width: 300px;
+    min-height: 100vh;
+    background-color: var(--primary-colour);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    right: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transform: translateX(90%);
+}
+
+
+#infoBar a
+{
+    margin-top: 20px;
+    font-size: 3.5rem;
+}
+
+#infoBar:hover
+{
+    transform: translateX(0%);
+}
+
+#infoBar:hover #page-content
+{
+
+    margin-right: 15%;
+}

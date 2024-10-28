@@ -1,0 +1,28 @@
+
+
+.main-text {
+    font-size: 2rem; /* Larger font for the main title */
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center align the title */
+    color: #333; /* Darker text color */
+}
+
+.samples {
+    display: flex;
+    flex-wrap: wrap; /* Allow samples to wrap to the next line */
+    justify-content: center; /* Center the samples in the container */
+    margin-top: 80px;
+}
+
+.samples .sample {
+    margin-bottom: 40px; /* Space between each sample */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Clip overflow */
+    transition: transform 0.2s; /* Smooth scaling effect */
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.samples .sample:hover {
+    transform: scale(1.05); /* Scale up on hover for effect */
+}

@@ -1,0 +1,84 @@
+/* src/styles/sample.css */
+#samples {
+    padding: 50px 0px;
+    margin-top: 5%;
+}
+
+.sample-content {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Vertically center items */
+}
+
+.sample
+{
+    background-color: transparent;
+}
+
+/* Flex styles for anchor to take full width */
+.sample a {
+    text-decoration: none !important;
+    display: flex; /* Flex container for the anchor */
+    width: 100%; /* Full width for the anchor */
+}
+
+/* Sample image styling */
+.sample-image {
+    width: 210px; /* Fixed width for image */
+    height: auto; /* Maintain aspect ratio */
+    border-right: 1px solid #ddd; /* Divider between image and text */
+    margin-right: 10px; /* Space between image and text */
+}
+
+/* Sample info styling */
+.sample-info {
+    padding: 10px; /* Padding for the text container */
+    flex-grow: 1; /* Allow text to take the remaining space */
+    background-color: transparent;
+}
+
+.sample-info p {
+    color: var(--secondary-colour) !important;
+}
+
+/* Sample title styling */
+.sample-title {
+    font-size: 1.5rem; /* Title size */
+    margin: 0; /* Remove default margin */
+    color: var(--text-colour); /* Use variable for color */
+    background-color: transparent;
+}
+
+/* Sample description styling */
+.sample-description {
+    font-size: 1rem; /* Description size */
+    color: #666 !important; /* Lighter text color for description */
+}
+
+@media (max-width: 1008px) {
+    .sample a{
+        flex-direction: column; /* Stack items vertically on mobile */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .sample-image {
+        margin-right: 0; /* Remove margin-right for images */
+        margin-bottom: 10px; /* Add space below image */
+        border-right: none; /* Remove border on mobile */
+        width: 100%;
+    }
+
+    .sample-info h3
+    {
+        font-size: 3rem;
+    }
+
+    .sample-info h3
+    {
+        font-size: 3rem;
+    }
+
+    .sample-info p
+    {
+        font-size: 2rem;
+    }
+}

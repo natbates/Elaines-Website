@@ -1,0 +1,11 @@
+#profile-container form button
+{
+    padding: 15px;
+    margin: 20px;
+}
+
+#profile-container form input
+{
+    text-align: center;
+    width: 50%;
+}
