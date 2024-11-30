@@ -1,0 +1,309 @@
+
+
+#intro
+{
+    width: 100%;
+    height: fit-content !important;
+}
+
+#intro-text
+{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    z-index: 200;
+    position: absolute;
+    top: 900;
+}
+
+#intro h1
+{
+    color: var(--black);
+    font-size: 3.5rem;
+    font-weight: bolder;
+    margin-top: 0;
+    text-wrap:pretty;
+}
+
+#intro p
+{
+    color: var(--black);
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+#intro-cover
+{
+    background-size: cover; /* Makes the image cover the entire container */ 
+    background-position: center;
+    width: 100%;
+    position: relative;
+    z-index: -100;
+    height: 900px;
+    top: 0
+}
+
+#intro-bottom
+{
+  height: 150px;
+}
+
+#intro-curve {
+    background-image: url("../../public/svgs/curve.svg");
+    background-size: cover; /* Makes the image cover the entire container */ 
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: 710px;
+    z-index: -100;
+}
+
+#polka-dot {
+    position: absolute;
+    width: 100%;
+    height: 800px; /* Set the initial height */
+    z-index: -10;
+    top: 800px;
+    opacity: 0.1;
+    background-image: url('../../public/images/processed/polka.png'); /* Add your image URL */
+    background-repeat: repeat-y; /* Repeat the image vertically */
+    background-size: auto;
+    background-position: top;
+}
+
+#social-intro-holder
+{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  top: 600px;
+  left: 50%;
+  width: 0;
+}
+
+#social-intro-holder p
+{
+  position: relative;
+  top: -110px;
+  color: var(--white);
+  font-size: 2rem;
+  text-wrap: nowrap;
+  margin-top: 0;
+  animation: flyDownFadeInText 0.6s ease forwards;
+}
+
+.semi-circle-container {
+  position: absolute;
+  padding: 10px;
+  z-index: 152;
+  overflow: hidden;
+  padding-bottom: 0;
+  cursor: pointer;
+}
+
+#mouse
+{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 40px;
+    transition: transform 0.3s ease;
+}
+
+#down {
+  width: 30px;
+  height: 30px;
+  margin: 5px auto;
+  position: relative; /* Make top property effective */
+  animation: bob 2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 10px; /* Move down */
+  }
+  100% {
+    top: 0; /* Return to original position */
+  }
+}
+
+
+#intro-logo {
+    position: absolute;
+    left: 50%;
+    width: 900px;
+    height: auto;
+    transform: translate(-50%, -20px);
+    z-index: -10;
+    animation: flyDownFadeIn 0.6s ease forwards;
+}
+
+.highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust the position as needed */
+    width: 100%;
+    height: 3px; /* Adjust the height of the line */
+    background-color: var(--highlight-color); /* Change to your desired color */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.highlight:hover::after {
+    transform: scaleX(1);
+}
+
+/* The semi-circle line */
+.semi-circle-container svg path {
+    fill: none;
+    stroke: var(--hot-pink, hotpink);
+    stroke-width: 3px;
+}
+
+#intro-circle
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 220px;
+  background-color: var(--white);
+  border-radius: 50%;
+  margin: auto;
+  top: -200px;
+  z-index: 151;
+}
+
+.loader {
+  position: absolute;
+  margin: 0 !important;
+  width: 177px;
+  height: 177px;
+  left: 11.3px;
+  top: 11px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  border-top: 10px solid var(--hot-pink);
+  animation: spin 1.5s infinite linear;
+  transform-origin: center;
+  margin: 0 !important;
+}
+
+#intro-items
+{
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+@keyframes spin {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes flyDownFadeIn {
+    0% {
+        opacity: 0;
+        top: 100px;
+    }
+    100% {
+        opacity: 1;
+        top: 170px;
+    }
+}
+
+@keyframes flyDownFadeInText {
+  0% {
+      opacity: 0;
+      top: -150px;
+  }
+  100% {
+      opacity: 1;
+      top: -110px;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  #intro-items
+  {
+    transform: scale(0.8);
+  }
+  #intro-cover
+  {
+    height: 650px;
+  }
+  #intro-curve
+  {
+    top: 555px;
+  }
+  #intro-circle
+  {
+    transform: scale(0.8);
+    top: -100px;
+  }
+  #social-intro-holder #social-links
+  {
+    top: -40px;
+  }
+  #intro-text
+  {
+    top: 700;
+  }
+}
+
+@media (max-width: 700px) {
+
+  #intro-items
+  {
+    transform: scale(0.6);
+  }
+  #intro-cover
+  {
+    height: 450px;
+  }
+  #intro-curve
+  {
+    top: 355px;
+  }
+  #intro-circle
+  {
+    transform: scale(0.6);
+    top: -100px;
+  }
+  #social-intro-holder #social-links
+  {
+    top: -40px;
+  }
+  #intro-text
+  {
+    top: 500;
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 544.44px) {
+  #about
+  {
+    padding-top: 140px !important;
+  }
+}

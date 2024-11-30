@@ -1,0 +1,212 @@
+
+#nav-bar {
+    height: 60px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    z-index: 200;
+}
+
+#nav-bar.hot-pink {
+    background-color: var(--white);
+}
+
+#burger {
+    height: 20px;
+    margin-top: 20px;
+    right: 40px;
+    position: absolute;
+    cursor: pointer;
+    animation: fly-down 0.5s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+#logo-icon img {
+    height: 80%;
+    width: auto;
+    margin-top: 1px;
+    animation: logo-enter 0.8s ease-in-out;
+    transform-origin: center;
+}
+
+#logo-icon h1 {
+    text-overflow: none;
+    margin: 0;
+    margin-left: 10px;
+    padding-top: 3px;
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+
+#logo-icon {
+    padding: 5px;
+    display: flex;
+    margin-left: 10px;
+}
+
+#logo-icon img
+{
+    transform-origin: center;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+#logo-icon img:hover
+{
+    transform: scale(1.05);
+}
+
+
+.span-line {
+    width: 27px !important;
+    margin-bottom: 5px;
+    height: 3px;
+    background-color: var(--white);
+    transition: margin-bottom 0.3s ease, background-color 0.3s ease;
+}
+
+#burger:hover .span-line {
+    margin-bottom: 6px;
+}
+
+#nav-bar.hot-pink .span-line {
+    background-color: var(--hot-pink);
+}
+
+#nav-bar.hot-pink #logo-icon h1
+{
+    color: var(--hot-pink);
+}
+
+#social-nav-holder
+{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top: 800px;
+    left: 50%;
+    width: 0;
+}
+
+#nav-overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--hot-pink);
+    z-index: 1000;
+    animation: fadeIn 0.8s ease; /* Add animation here */
+}
+
+
+
+#nav-overlay button
+{
+    position: fixed;
+    background: transparent;
+    border: none;
+    padding: 20px;
+    right: 0;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#nav-overlay button:hover
+{
+    transform: scale(1.05);
+}
+
+#nav-overlay button img
+{
+    width: 40px;
+    height: auto;
+}
+
+#nav-items {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 200px;
+    height: 50vh;    
+    transform: scale(calc(100vw * 1.15));         
+}
+
+#nav-items a {
+    color: var(--white);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: flex;              
+    justify-content: center;    
+    align-items: center;        
+    flex-grow: 1;        
+    font-size: 4.2rem;       
+    transform: scale(100vw * 1.05);
+}
+
+#nav-items a:hover{
+    transform: scale(1.05);
+}
+
+#nav-items #social-links
+{
+    display: flex;
+    position: relative;
+    margin-top: 20px;
+}
+
+@keyframes flyRightFadeIn {
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    20%
+    {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes logo-enter {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) rotate(0deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%) rotate(720deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fly-down {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
