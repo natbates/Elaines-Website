@@ -1,0 +1,135 @@
+#contact-top-img
+{
+    background-image: url("../../public/images//elaine/image00037.jpg");
+    background-size: cover; /* Makes the image cover the entire container */ 
+    background-position: center;
+    width: 100%;
+    height: calc(200px + 15vw);
+    z-index: -100;
+    position: relative;
+    top: 0px;
+}
+
+#contact .main-text
+{
+    position: absolute;
+    color: var(--white);
+    z-index: 100;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-wrap: nowrap;
+    font-size: 8vw;
+    top: 25%;
+    margin-top: 0;
+}
+
+#contact .sub-text
+{
+    position: relative !important;
+    font-size: 2rem;
+    z-index: 100;
+    margin: 5%;
+    top: -50px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#contact{
+    text-align: center;
+}
+
+#contact-holder{
+    text-align: start;
+    padding: 5%;
+    padding-top: 0;
+    position: relative;
+}
+
+#contact-holder h1
+{
+    font-size: 2.7rem;
+    text-wrap: nowrap;
+}
+
+#contact-curve
+{
+    position: relative;
+    width: 100%;
+    background-image: url("../../public/svgs/contact-curve.svg");
+    height: 60px;
+    background-position: center;
+    background-size: cover;
+    transform-origin: bottom;
+    top: -60px;
+}
+
+.contact-form
+{
+    border-top: 1px rgba(0, 0, 0, 0.153) solid;
+    margin-top: 8px;
+    padding-top: 20px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 550;
+}
+
+.form-group input
+{
+    height: 70px;
+    border-radius: 35px;
+    border-color: #00000056;
+    padding-left: 25px;
+    font-size: 1rem;
+    font-family: main;
+}
+
+.form-group textarea
+{
+    height: 190px;
+    border-radius: 35px;
+    border-color: #00000056;
+    padding-left: 25px;
+    padding-top: 25px;
+    font-size: 1rem;
+    color: var(--black);
+}
+
+textarea::placeholder
+{
+    color: var(--black);
+}
+
+input::placeholder
+{
+    color: var(--black);
+}
+
+.submit-button
+{
+    background-color: var(--hot-pink);
+    height: 55px;
+    font-weight: bold;
+    border: none;
+    color: var(--white);
+    margin-top: 20px;
+    border-radius: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.submit-button:hover
+{
+    transform: scale(1.05);
+}

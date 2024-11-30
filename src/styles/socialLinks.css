@@ -1,0 +1,47 @@
+
+#social-links {
+    position: absolute;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+#social-links a {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border: 2px var(--hot-pink) solid;
+    background-color: #ffffffe1;
+    border-radius: 50%;
+    position: relative;
+    margin: 10px;
+    justify-content: center;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    animation: fade-in 1.8s ease;
+}
+
+#social-links a img {
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    align-self: center;
+    transform-origin: center;
+}
+
+#social-links a:hover
+{
+    transform: scale(1.05);
+    background-color: #ffffff;
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
