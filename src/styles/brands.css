@@ -1,0 +1,32 @@
+#brands {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+#brands .main-text {
+    font-size: 20vw;
+    margin-bottom: 20px;
+    color: var(--hot-pink);
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    margin: 0;
+}
+
+.brand-images {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.brand-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    opacity: 0.3;
+}

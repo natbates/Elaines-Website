@@ -6,8 +6,12 @@ const Contact = () => {
 
     return (
         <div id="contact">
+
+            <div className = "contact-texture-1"></div>
+            <div className = "contact-texture-2"></div>
+
             <div id = "contact-top-img" style={{ backgroundImage: `url(images/elaine/backgrounds/image1.jpg)` }}>
-                <h1 className="main-text">Lets Have A Coffee</h1>
+                <h1 className="main-text">Let's Have A Coffee</h1>
             </div>
             <div id="contact-curve"></div>
             <p className="sub-text">Over to you to message me <span className = "pink-underline">Today</span>. Either use the contact form below or feel free to drop me a message using my details.</p>

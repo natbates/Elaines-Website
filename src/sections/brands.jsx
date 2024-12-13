@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage';
-
-import "../styles/brand.css";
+import "../styles/brands.css";
 
 const Brands = () => {
     const [brandImages, setBrandImages] = useState([]);
@@ -29,30 +28,38 @@ const Brands = () => {
         fetchBrandImages();
     }, []);
 
-
+    // Dynamic styles for responsive grids
+    const generateGridStyle = (imageCount) => {
+        if (!imageCount) return {};
+        const rows = Math.ceil(Math.sqrt(imageCount)); // Calculate rows based on square root
+        const cols = rows; // Make the grid square
+        return {
+            display: 'grid',
+            gridTemplateColumns: `repeat(${cols}, 1fr)`,
+            gridTemplateRows: `repeat(${rows}, auto)`,
+            gap: '20px', // Adjust space between items
+        };
+    };
 
     return (
         <div id="brands">
             <h1 className="main-text">Brands</h1>
-            <p className="sub-text">Here are the brands I have worked for.</p>
             {loading ? (
                 <div>Loading...</div>
             ) : error ? (
                 <div>{error.message}</div>
+            ) : brandImages.length === 0 ? (
+                <div>No brand images available</div>
             ) : (
-                <div className="brand-images-rows">
-                    <div className="brand-row">
-                        <div className="brand-image-container scroll-forward">
-                            {brandImages.map((url, index) => (
-                                <img
-                                    key={index}
-                                    src={url}
-                                    alt={`Brand ${index + 1}`}
-                                    className="brand-image"
-                                />
-                            ))}
-                        </div>
-                    </div>
+                <div className="brand-images" style={generateGridStyle(brandImages.length)}>
+                    {brandImages.map((url, index) => (
+                        <img
+                            key={index}
+                            src={url}
+                            alt={`Brand ${index + 1}`}
+                            className="brand-image"
+                        />
+                    ))}
                 </div>
             )}
         </div>

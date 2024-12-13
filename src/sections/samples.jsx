@@ -61,41 +61,45 @@ const Samples = () => {
   
 
   return (
-    <div id="samples">
-      {loading ? (
-        <div>Loading...</div>
-      ) : error ? (
-        <div>{error.message}</div>
-      ) : (
-        <div className="slider">
-          <div className="list" ref={sliderRef}>
-            {samples.map((sample, index) => (
-            <>
-                <div className="item" key={sample.id}>
-                    <Sample
-                    name={sample.title}
-                    description={sample.description}
-                    imageUrl={sample.imageUrl}
-                    websiteUrl={sample.websiteUrl}
-                    nextSlide={nextSlide}
-                    prevSlide={prevSlide}
-                    />
-                </div>
-            </>
-            ))}
+    <>
+      <div id="samples">
+        {loading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>{error.message}</div>
+        ) : (
+          <div className="slider">
+            <div className="list" ref={sliderRef}>
+              {samples.map((sample, index) => (
+              <>
+                  <div className="item" key={sample.id}>
+                      <Sample
+                      name={sample.title}
+                      description={sample.description}
+                      imageUrl={sample.imageUrl}
+                      websiteUrl={sample.websiteUrl}
+                      nextSlide={nextSlide}
+                      prevSlide={prevSlide}
+                      />
+                  </div>
+              </>
+              ))}
+            </div>
+            <ul className="dots">
+              {samples.map((_, index) => (
+                <li
+                  key={index}
+                  className={active === index ? 'active' : ''}
+                  onClick={() => selectDot(index)}
+                ></li>
+              ))}
+            </ul>
           </div>
-          <ul className="dots">
-            {samples.map((_, index) => (
-              <li
-                key={index}
-                className={active === index ? 'active' : ''}
-                onClick={() => selectDot(index)}
-              ></li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+        )}
+         <div id="client-top-curve"></div>
+      </div>
+    </>
+
   );
 };
 

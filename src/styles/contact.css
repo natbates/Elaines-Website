@@ -8,6 +8,7 @@
     z-index: -100;
     position: relative;
     top: 0px;
+    z-index: 3;
 }
 
 #contact .main-text
@@ -23,6 +24,33 @@
     margin-top: 0;
 }
 
+.contact-texture-1
+{
+    background-image: url("../../public/images/shapes/graph\ \(5\).png");
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    left: 1500px;
+    top: 30%;
+    z-index: -50;
+    transform: scale(2);
+}
+
+
+.contact-texture-2
+{
+    background-image: url("../../public/images/shapes/graph\ \(2\).png");
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    background-size: cover;
+    left: 50%;
+    bottom: 120px;
+    transform-origin: bottom center;
+    z-index: -50;
+    transform: scaleY(1) translateX(-50%) scaleX(1.2);
+}
+
 #contact .sub-text
 {
     position: relative !important;
@@ -36,6 +64,7 @@
 
 #contact{
     text-align: center;
+    overflow: hidden;
 }
 
 #contact-holder{
@@ -61,6 +90,8 @@
     background-size: cover;
     transform-origin: bottom;
     top: -60px;
+    z-index: 4;
+    transform: scaleX(1.2);
 }
 
 .contact-form
@@ -90,6 +121,7 @@
     padding-left: 25px;
     font-size: 1rem;
     font-family: main;
+    background-color: transparent;
 }
 
 .form-group textarea
@@ -101,6 +133,7 @@
     padding-top: 25px;
     font-size: 1rem;
     color: var(--black);
+    background-color: transparent;
 }
 
 textarea::placeholder

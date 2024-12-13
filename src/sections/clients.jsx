@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import Client from '../components/client';
+import SeeStudies from '../components/seeCaseStudies';
 import "../styles/clients.css";
 
 const Clients = () => {
@@ -54,7 +55,6 @@ const Clients = () => {
 
     return (
         <>
-            <div id="client-top-curve"></div>
             <div id="clients" style={{ height: clientHeight * 176 + 134 }}>
                 <div id="clients-text">
                     <h1 className="main-text">What My <span className='yellow-underline'>Clients</span> Think Of Me</h1>
@@ -82,24 +82,30 @@ const Clients = () => {
                 )}
             </div>
 
-            <div id="control-buttons">
-                <button
-                    className={`show-more-button flip ${clientHeight >= MAX_CLIENTS ? 'disabled' : ''}`}
-                    onClick={handleShowMore}
-                    disabled={clientHeight >= MAX_CLIENTS}
-                >
-                    <img src="svgs/arrow.svg" alt="Show more" />
-                </button>
-                <button
-                    className={`show-more-button ${clientHeight <= MIN_CLIENTS ? 'disabled' : ''}`}
-                    onClick={handleShowLess}
-                    disabled={clientHeight <= MIN_CLIENTS}
-                >
-                    <img src="svgs/arrow.svg" alt="Show less" />
-                </button>
-            </div>
+            <div id = "client-bottom-container">
+                
+                <SeeStudies />
 
-            <div id="client-bottom-curve"></div>
+                <div id="control-buttons">
+                    <button
+                        className={`show-more-button flip ${clientHeight >= MAX_CLIENTS ? 'disabled' : ''}`}
+                        onClick={handleShowMore}
+                        disabled={clientHeight >= MAX_CLIENTS}
+                    >
+                        <img src="svgs/arrow.svg" alt="Show more" />
+                    </button>
+                    <button
+                        className={`show-more-button ${clientHeight <= MIN_CLIENTS ? 'disabled' : ''}`}
+                        onClick={handleShowLess}
+                        disabled={clientHeight <= MIN_CLIENTS}
+                    >
+                        <img src="svgs/arrow.svg" alt="Show less" />
+                    </button>
+                </div>
+
+                <div id="client-bottom-curve">
+                </div>
+            </div>
         </>
     );
 };

@@ -18,7 +18,7 @@ const Intro = () => {
 
     return (
         <div id = "intro">
-            <div id = "intro-cover" style={{ backgroundImage: `url(images/elaine/backgrounds/image2.jpg)` }}></div>
+            <div id = "intro-cover" style={{ backgroundImage: `url(images/elaine/backgrounds/image3.jpg)` }}></div>
             <div id = "intro-items">
                 <img id = "intro-logo" src = "images/processed/EK white intro.png"></img>
                 <div id = "social-intro-holder">
