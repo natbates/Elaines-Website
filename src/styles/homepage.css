@@ -27,9 +27,15 @@ body
 
 #content-wrap
 {
-  height: fit-content;
+  height: auto;
   position: relative;
-  overflow-x: hidden;
+}
+
+#content-wrap:after
+{
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .pink-underline {

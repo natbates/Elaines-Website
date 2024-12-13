@@ -4,11 +4,17 @@
     height: 60vw;
     background-color: #f9deee;
     text-align: center;
-    position: relative;
-    top: -300px;
+    position: absolute;
     z-index: -10;
-    min-height: 470px;
-    max-height: 530px;
+    min-height: 540px;
+    max-height: 580px;
+}
+
+.see-my::after
+{
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .see-my p{

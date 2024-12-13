@@ -18,7 +18,6 @@ const Home = () =>
             <Brands />
             <Samples />
             <Clients />
-            <SeeStudies />
         </>
     );
 };

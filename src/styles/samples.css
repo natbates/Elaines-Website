@@ -2,7 +2,13 @@
 #samples
 {
     position: relative;
-    top: 200px;
+}
+
+#samples::after
+{
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .samples
@@ -41,9 +47,9 @@
     bottom: 0; /* Align at the bottom */
     width: 100%; /* Take full width of .sample */
     box-sizing: border-box; /* Include padding and border in width */
-    height: 290px;
+    height: 220px;
     justify-content: space-around;
-    padding-top: 40px;
+    padding-top: 30px;
 }
 
 .sample-title {
@@ -182,12 +188,13 @@
         flex-direction: column;
         text-align: center;
         justify-content: start;
-        height: 300px;
+        height: 270px;
         padding-top: 10px;
     }
     .sample-title
     {
         text-align: center;
+        text-wrap: nowrap;
     }
     #sample-button-container
     {

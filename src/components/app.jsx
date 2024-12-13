@@ -28,8 +28,8 @@ const App = () => {
                             <Route exact path="/contact" element={<Contact />} />
                             <Route exact path = "/dashboard" element={<DashBoard />} />
                         </Routes>
+                        <Footer />
                     </div>
-                    <Footer />
                 </BrowserRouter>
             </div>
         </AuthProvider>
