@@ -29,10 +29,32 @@ const Services = () => {
         fetchServices();
     }, []);
 
+    const nextSlide = () =>
+    {
+
+    }
+
+    const prevSlide = () =>
+    {
+
+    }
+
     return (
         <div id="services">
             <div id="services-text">
-                <h1 className="main-text">What I can do for <span className="pink-underline">You</span></h1>
+                <div className='top-line-service'>
+                    <h1 className="main-text">What I can do for <span className="pink-underline">You</span></h1>
+
+                    <div id="service-button-container">
+                        <button className="service-button" onClick={prevSlide}>
+                            <img src="svgs/triangle-left.svg" alt="Previous" />
+                        </button>
+                        <button className="service-button" onClick={nextSlide}>
+                            <img src="svgs/triangle-right.svg" alt="Next" />
+                        </button>
+                    </div>
+                </div>
+
                 <p className="sub-text">I turn my hand to brochures, white papers, blogs, articles, script writing, internal comms, and beyond. However, here are my key strengths.</p>
             </div>
 
@@ -53,6 +75,7 @@ const Services = () => {
                     ))}
                 </div>
             )}
+            <div id = "service-bottom-curve"></div>
         </div>
     );
 };
