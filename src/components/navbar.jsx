@@ -43,7 +43,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const navBar = document.getElementById("nav-bar");
+            const navBar = document.getElementById("nav-bar-background");
             if (navBar) {
                 if (window.scrollY > 50) {
                     navBar.classList.add("hot-pink");
@@ -75,6 +75,8 @@ const Navbar = () => {
                     <div className="span-line"></div>
                 </div>
             </div>
+
+            <div id = "nav-bar-background"></div>
 
             {/* Only render overlay when isNavbarVisible is true */}
             {isNavbarVisible && (

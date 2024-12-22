@@ -13,11 +13,20 @@
     width: 100%;
     transform: translateX(-50%);
     max-width: 1560px;
-    z-index: 200;
+    z-index: 2000;
     box-sizing: border-box;
 }
 
-#nav-bar.hot-pink {
+#nav-bar-background
+{
+    width: 100vw;
+    background-color: transparent;
+    height: 60px;
+    z-index: 1900;
+    position: fixed;
+}
+
+#nav-bar-background.hot-pink{
     background-color: var(--white);
 }
 
@@ -29,6 +38,7 @@
     animation: fly-down 0.5s ease forwards;
     animation-delay: 0.3s;
     opacity: 0;
+    z-index: 2001;
 }
 
 #logo-icon img {
@@ -72,7 +82,7 @@
     width: 27px !important;
     margin-bottom: 5px;
     height: 3px;
-    background-color: var(--white);
+    background-color: var(--hot-pink);
     transition: margin-bottom 0.3s ease, background-color 0.3s ease;
 }
 
@@ -80,11 +90,7 @@
     margin-bottom: 6px;
 }
 
-#nav-bar.hot-pink .span-line {
-    background-color: var(--hot-pink);
-}
-
-#nav-bar.hot-pink #logo-icon h1
+#nav-bar-background.hot-pink #logo-icon h1
 {
     color: var(--hot-pink);
 }
