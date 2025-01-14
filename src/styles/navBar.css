@@ -264,13 +264,25 @@
         animation: link-appear calc(var(--duration) * 1.5) var(--ease) forwards !important;
       }
       
-      @for $i from 1 through 4 {
-        li:nth-child(#{$i}) {
-          &:after, a {
-            animation-delay: calc((var(--duration) / 2) * #{$i} * 0.125);
-          }
-        }
+      li:nth-child(1):after, li:nth-child(1) a {
+        animation-delay: calc((var(--duration) / 2) * 1 * 0.125);
       }
+      
+      li:nth-child(2):after, li:nth-child(2) a {
+        animation-delay: calc((var(--duration) / 2) * 2 * 0.125);
+      }
+      
+      li:nth-child(3):after, li:nth-child(3) a {
+        animation-delay: calc((var(--duration) / 2) * 3 * 0.125);
+      }
+      
+      li:nth-child(4):after, li:nth-child(4) a {
+        animation-delay: calc((var(--duration) / 2) * 4 * 0.125);
+      }   
+
+      li:nth-child(5):after, li:nth-child(5) a {
+        animation-delay: calc((var(--duration) / 2) * 5 * 0.125);
+      }  
     }
   }
   
