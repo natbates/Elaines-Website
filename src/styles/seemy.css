@@ -29,6 +29,15 @@
     margin-bottom: 50px;
 }
 
+#polkadots
+{
+    position: relative;
+    top: -450px;
+    height: 100%;
+    z-index: -2331;
+    opacity: 0.2;
+    background-image: url("/public/images/processed/polka.png");
+}
 
 .findout-more-button
 {

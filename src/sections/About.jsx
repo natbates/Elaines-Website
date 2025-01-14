@@ -2,23 +2,26 @@ import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore'; 
 import { db, storage } from '../services/firebaseConfig'; 
 import { ref, getDownloadURL, listAll } from 'firebase/storage'; 
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 import "../styles/about.css";
 
 const About = () => {
 
+    const navigate = useNavigate();
+
     return ( 
         <div id="about">
-            <div className = "texture-2"></div>
-            <div className = "texture-3"></div>
-            <div class="image-container">
-                <div id = "about-img" alt = "about-img"><div class = "image-cover"></div></div>
+
+            <div class="about-container">
+                <img src="/images/processed/elainee.png" id="about-img" alt="about-img" />
+                <img src="/images/processed/me-text.png" id="this-is-me" alt="this-is-me" />
             </div>
+
             <div id = "about-text">
-                <h1>Attract new leads, re-engage customers or reach a new <span className = "yellow-underline">target</span> market with email marketing, SEO blogs or new site content, whitepapers or guides</h1>
-                <p>After leaving university, where I studied journalism and media, I started writing funny pieces for local magazines. I became a professional content writer in 2008 working for the UK's largest outdoor brand. I then moved into marketing management with a range of PLCs and tech companies. In 2016 I became the editor of Incentive & Motivation magazine, and after the birth of my one and only child, I became a full-time freelance B2B content writer.</p>
-                <button>Find out more</button>
-                <div className = "texture-1"></div>
+                <h1>Attract new leads, re-engage customers or reach a new target market with email marketing, SEO blogs or new site content, whitepapers or guides</h1>
+                <p>Hi, I'm Elaine! I’m a B2B content writer with a passion for turning complex SaaS and tech topics into clear, engaging, and persuasive copy. After years of leading marketing teams for various PLCs and SMEs, <span className = "highlight">I know what works</span> and, more importantly, what doesn’t—so when I write, you can be sure it’s all killer, no filler.</p>
+                <button onClick={() => {navigate("/about")}}>Get to know me</button>
             </div>
         </div>
     );

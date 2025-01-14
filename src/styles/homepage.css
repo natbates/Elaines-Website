@@ -4,7 +4,7 @@
     --hot-pink: #e82f8c;
     --white: #ffffff;
     --black: #000000;
-    --yellow: #fffb00;
+    --highlighted: #e82f8c77;
 }
 
 html
@@ -22,7 +22,7 @@ body
 
 .highlight
 {
-    background-color: var(--yellow);
+    background-color: var(--highlighted);
 }
 
 #content-wrap

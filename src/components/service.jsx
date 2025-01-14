@@ -7,7 +7,8 @@ const Service = ({ name, description, imageUrl, websiteUrl}) => {
             <div className="service-info">
                 <h3 className="service-title">{name}</h3>
                 <p className="service-description">{description}</p>
-            </div>
+                <button>Enquire</button>
+           </div>
         </div>
     );
 };
