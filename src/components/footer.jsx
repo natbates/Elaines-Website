@@ -10,11 +10,9 @@ const Footer = () =>
         <div id = "footer">
             <div id = "quick-links">
                 <h1>Quick Links</h1>
-                <a>Blog</a>
-                <a>Podcasts</a>
-                <a>Careers</a>
-                <a>Portfolio</a>
-                <a>Downloads</a>
+                <a href = "#intro">Home</a>
+                <a href = "/contact">Contact</a>
+                <a href = "" target="_blank">Portfolio</a>
             </div>
             <div id = "address">
                 <h1>Business Address</h1>
@@ -30,7 +28,7 @@ const Footer = () =>
                     <SocialLinks/>
                 </div>
                 <p>hello@elainekeep.com</p>
-                <p>012340 124098</p>
+                <p>0781353561</p>
             </div>
 
         </div>

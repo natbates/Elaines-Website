@@ -6,13 +6,23 @@
     justify-self: center;
 }
 
+.profile-img
+{
+    border-radius: 50%;
+    height: 80% !important;
+    width: auto !important;
+    margin-left: 8px;
+    margin-right: 8px;
+    border: 3px var(--white) solid;
+    align-self: center !important;
+}
+
 #social-links a {
     display: flex;
-    width: 60px;
+    width: fit-content;
     height: 60px;
-    border: 2px var(--hot-pink) solid;
-    background-color: #ffffffe1;
-    border-radius: 50%;
+    background-color: var(--hot-pink);
+    border-radius: 36px;
     position: relative;
     margin: 10px;
     justify-content: center;
@@ -20,20 +30,46 @@
     transition: transform 0.3s ease;
     cursor: pointer;
     animation: fade-in 1.8s ease;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 28px;
+    opacity: 0.8;
 }
 
-#social-links a img {
-    position: absolute;
-    width: 23px;
-    height: 23px;
+#social-links a p {
+    top: 0 !important;
+    text-wrap: nowrap;
+    margin: 0;
     align-self: center;
+    color: var(--white);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 1;
+    font-size: 0.8rem;
+    align-self: baseline;
+    margin-left: 3px;
+    margin-top: 5px;
+}
+
+.stack
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+
+#social-links a img {
+    width: 140px;
+    height: auto;
+    align-self: flex-start;
     transform-origin: center;
 }
 
 #social-links a:hover
 {
     transform: scale(1.05);
-    background-color: #ffffff;
+    opacity: 1;
 }
 
 @keyframes fade-in {

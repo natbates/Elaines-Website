@@ -18,11 +18,16 @@ const Intro = () => {
 
     return (
         <div id = "intro">
-            <div id = "intro-cover" style={{ backgroundImage: `url(images/elaine/backgrounds/image3.jpg)` }}></div>
+            <div id="intro-cover">
+                <video autoPlay muted loop playsInline className="background-video">
+                    <source src="images/processed/bubbles.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div id = "intro-items">
                 <img id = "intro-logo" src = "images/processed/EK white intro.png"></img>
                 <div id = "social-intro-holder">
-                    <p>14 + years in marketing in SaaS, HR and tech</p>
+                    <p id="social-intro-text">14 + years in marketing in SaaS, HR and tech</p>
                     <SocialLinks />
                 </div>
             </div>
@@ -39,7 +44,6 @@ const Intro = () => {
                     </div>
                 </div>
                 <div id="intro-text">
-                    <p>I Create UK's <span class="highlight">Leading</span></p>
                     <h1>B2B Content <span class="pink-underline">Marketing</span></h1>            
                 </div>
             </div>

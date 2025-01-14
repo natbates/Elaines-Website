@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "../pages/home";
 import Footer from "./footer";
-
+import AboutMe from "../pages/about-me";
 
 // Public
 import Contact from "../pages/contact";
@@ -25,6 +25,7 @@ const App = () => {
                         <Routes>
                             <Route exact path="/" element={<Home />} />
                             <Route exact path="/login" element={<LogIn />} />
+                            <Route exact path="/about" element={<AboutMe />} />
                             <Route exact path="/contact" element={<Contact />} />
                             <Route exact path = "/dashboard" element={<DashBoard />} />
                         </Routes>

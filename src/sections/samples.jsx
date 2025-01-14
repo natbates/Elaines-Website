@@ -10,6 +10,7 @@ const Samples = () => {
   const [active, setActive] = useState(0);
   const sliderRef = useRef(null);
   const lengthItems = samples.length - 1;
+  const [showReadMore, setShowReadMore] = useState(false);
 
   useEffect(() => {
     const fetchSamples = async () => {
@@ -32,19 +33,13 @@ const Samples = () => {
     fetchSamples();
   }, []);
 
-  useEffect(() => {
-    const refreshInterval = setInterval(() => {
-      nextSlide();
-    }, 3000);
-
-    return () => clearInterval(refreshInterval);
-  }, [active]);
-
   const nextSlide = () => {
+    setShowReadMore(false);
     setActive((prev) => (prev + 1 <= lengthItems ? prev + 1 : 0));
   };
 
   const prevSlide = () => {
+    setShowReadMore(false);
     setActive((prev) => (prev - 1 >= 0 ? prev - 1 : lengthItems));
   };
 
@@ -52,13 +47,26 @@ const Samples = () => {
     setActive(index);
   };
 
-  useEffect(() => {
+  const updateSliderPosition = () => {
     if (sliderRef.current && samples.length) {
       const sliderWidth = sliderRef.current.offsetWidth;
-      sliderRef.current.style.left = `-${active * sliderWidth/samples.length}px`;
+      const slideWidth = sliderWidth / samples.length; // Width of each slide
+      sliderRef.current.style.left = `-${active * slideWidth}px`;
     }
+  };
+
+  useEffect(() => {
+    updateSliderPosition();
   }, [active, samples]);
-  
+
+  useEffect(() => {
+    const handleResize = () => {
+      updateSliderPosition(); // Recalculate slider position on resize
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [active, samples]);
 
   return (
     <>
@@ -71,18 +79,18 @@ const Samples = () => {
           <div className="slider">
             <div className="list" ref={sliderRef}>
               {samples.map((sample, index) => (
-              <>
-                  <div className="item" key={sample.id}>
-                      <Sample
-                      name={sample.title}
-                      description={sample.description}
-                      imageUrl={sample.imageUrl}
-                      websiteUrl={sample.websiteUrl}
-                      nextSlide={nextSlide}
-                      prevSlide={prevSlide}
-                      />
-                  </div>
-              </>
+                <div className="item" key={sample.id}>
+                  <Sample
+                    name={sample.title}
+                    description={sample.description}
+                    imageUrl={sample.imageUrl}
+                    websiteUrl={sample.websiteUrl}
+                    nextSlide={nextSlide}
+                    prevSlide={prevSlide}
+                    showMore={showReadMore}
+                    setShowReadMore={setShowReadMore}
+                  />
+                </div>
               ))}
             </div>
             <ul className="dots">
@@ -96,10 +104,9 @@ const Samples = () => {
             </ul>
           </div>
         )}
-         <div id="client-top-curve"></div>
+        <div id="client-top-curve"></div>
       </div>
     </>
-
   );
 };
 

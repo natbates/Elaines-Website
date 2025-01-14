@@ -28,22 +28,25 @@ const Brands = () => {
         fetchBrandImages();
     }, []);
 
-    // Dynamic styles for responsive grids
-    const generateGridStyle = (imageCount) => {
-        if (!imageCount) return {};
-        const rows = Math.ceil(Math.sqrt(imageCount)); // Calculate rows based on square root
-        const cols = rows; // Make the grid square
-        return {
-            display: 'grid',
-            gridTemplateColumns: `repeat(${cols}, 1fr)`,
-            gridTemplateRows: `repeat(${rows}, auto)`,
-            gap: '20px', // Adjust space between items
-        };
+    const generateRows = () => {
+        if (brandImages.length === 0) return null;
+
+        // Split the images into 5 rows
+        const rows = [];
+        const imagesPerRow = Math.ceil(brandImages.length / 5); // Divide images into 5 rows
+        for (let i = 0; i < 5; i++) {
+            rows.push(
+                brandImages.slice(i * imagesPerRow, (i + 1) * imagesPerRow)
+            );
+        }
+
+        return rows;
     };
+
+    const rows = generateRows();
 
     return (
         <div id="brands">
-            <h1 className="main-text">Brands</h1>
             {loading ? (
                 <div>Loading...</div>
             ) : error ? (
@@ -51,14 +54,22 @@ const Brands = () => {
             ) : brandImages.length === 0 ? (
                 <div>No brand images available</div>
             ) : (
-                <div className="brand-images" style={generateGridStyle(brandImages.length)}>
-                    {brandImages.map((url, index) => (
-                        <img
-                            key={index}
-                            src={url}
-                            alt={`Brand ${index + 1}`}
-                            className="brand-image"
-                        />
+                <div className="brand-images-container">
+                    {rows.map((row, rowIndex) => (
+                        <div
+                            key={rowIndex}
+                            className={`brand-row ${rowIndex % 2 === 0 ? 'scroll-left' : 'scroll-right'}`}
+                        >
+                            {/* Duplicate images for infinite scroll effect */}
+                            {[...row, ...row].map((url, index) => (
+                                <img
+                                    key={`${rowIndex}-${index}`}
+                                    src={url}
+                                    alt={`Brand ${index + 1}`}
+                                    className="brand-image"
+                                />
+                            ))}
+                        </div>
                     ))}
                 </div>
             )}

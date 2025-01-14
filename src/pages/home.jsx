@@ -4,8 +4,6 @@ import Clients from "../sections/clients";
 import Samples from "../sections/samples";
 import About from "../sections/About";
 import Services from "../sections/services";
-import SeeStudies from "../components/seeCaseStudies";
-
 import "../styles/homepage.css";
 
 const Home = () =>
@@ -17,7 +15,7 @@ const Home = () =>
             <Services />
             <Brands />
             <Samples />
-            <Clients />
+            <Clients />        
         </>
     );
 };

@@ -8,6 +8,7 @@ import SocialLinks from "./socialLinks";
 const Navbar = () => {
     const [isNavbarVisible, setIsNavbarVisible] = useState(false);
     const { currentUser, logout } = useContext(AuthContext);
+    const [atTop, setAtTop] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -25,6 +26,7 @@ const Navbar = () => {
     };
 
     const handleScrollToSection = (sectionId) => {
+        setIsNavbarVisible(false)
         // If we're not on the homepage, navigate to it first
         if (location.pathname !== "/") {
             navigate("/"); // Navigate to the home page
@@ -46,9 +48,9 @@ const Navbar = () => {
             const navBar = document.getElementById("nav-bar-background");
             if (navBar) {
                 if (window.scrollY > 50) {
-                    navBar.classList.add("hot-pink");
+                    setAtTop(true);
                 } else {
-                    navBar.classList.remove("hot-pink");
+                    setAtTop(false);
                 }
             }
         };
@@ -63,37 +65,49 @@ const Navbar = () => {
         <>
             <div id="nav-bar">
                 <div id="logo-icon" className={isNavbarVisible ? "hot-pink" : ""}>
+                    {atTop ?
                     <img
                         src="/images/processed/EK Logo.png"
                         alt="logo"
                         onClick={() => navigate('/')} // Navigate to homepage
                     />
-                </div>
-                <div id="burger" onClick={() => setIsNavbarVisible(true)}>
-                    <div className="span-line"></div>
-                    <div className="span-line"></div>
-                    <div className="span-line"></div>
+                    :
+                    <img
+                        src="/images/processed/logo-white.png"
+                        alt="logo"
+                        onClick={() => navigate('/')} // Navigate to homepage
+                    />
+                    }
                 </div>
             </div>
+            <div className={`${atTop ? "hot-pink" : ""}`} id = "nav-bar-background"></div>
 
-            <div id = "nav-bar-background"></div>
+            <input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+                <label for="page-nav-toggle">
+                <svg class="icon--menu-toggle" viewBox="0 0 60 30">
+                    <g class="icon-group">
+                    <g style={{ stroke: !atTop ? "var(--white)" : "var(--hot-pink)" }}>
+                    <path d="M 6 0 L 54 0" />
+                        <path d="M 6 15 L 54 15" />
+                        <path d="M 6 30 L 54 30" />
+                    </g>
+                    <g class="icon--close">
+                        <path d="M 15 0 L 45 30" />
+                        <path d="M 15 30 L 45 0" />
+                    </g>
+                    </g>
+                </svg>
+                </label>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="/" onClick={() => navigate('/')}>Home</a></li>
+                        <li><a href="/about" onClick={() => setIsNavbarVisible(false)}>About Me</a></li>
+                        <li><a href= "https://authory.com/ElaineKeep" target = "_blank" onClick={() => setIsNavbarVisible()}>Porfolio</a></li>
+                        <li><a href="#case-studies" onClick={() => handleScrollToSection("case-studies")}>Case Studies</a></li>
+                        <li><a href="/contact" onClick={() => setIsNavbarVisible(false)}>Contact</a></li>
+                    </ul>
+                </nav>
 
-            {/* Only render overlay when isNavbarVisible is true */}
-            {isNavbarVisible && (
-                <div id="nav-overlay" className="active">
-                    <button onClick={() => setIsNavbarVisible(false)}>
-                        <img src="svgs/exit.svg" alt="Exit" />
-                    </button>
-                    <div id="nav-items">
-                        <a href="/" onClick={() => navigate('/')}>Home</a>
-                        <a href="#about" onClick={() => handleScrollToSection("about")}>Who I Am</a>
-                        <a href="#services" onClick={() => handleScrollToSection("services")}>My Services</a>
-                        <a href="#case-studies" onClick={() => handleScrollToSection("case-studies")}>Case Studies</a>
-                        <a href="/contact" onClick={() => setIsNavbarVisible(false)}>Contact</a>
-                        <SocialLinks />
-                    </div>
-                </div>
-            )}
         </>
     );
 };
