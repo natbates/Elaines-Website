@@ -29,16 +29,6 @@ const Services = () => {
         fetchServices();
     }, []);
 
-    const nextSlide = () =>
-    {
-
-    }
-
-    const prevSlide = () =>
-    {
-
-    }
-
     return (
         <div id="services">
             <div id="services-text">
@@ -55,22 +45,20 @@ const Services = () => {
                 <div>{error.message}</div>
             ) : (
                 <div id="service-container">
-                    {services.map((entry) => (
+                    {services.map((entry, index) => (
                         <div className="service-item" key={entry.id}>
                             <Service
                                 name={entry.title}
                                 description={entry.description}
                                 imageUrl={entry.imageUrl}
+                                direction={index % 2 === 0 ? "left" : "right"} // Alternate between left and right
                             />
                         </div>
                     ))}
                 </div>
             )}
+
             <div id = "service-bottom-curve"></div>
-            <p>Fintech Client: Led content and marketing initiatives that resulted in 14,000 monthly visits to blog posts, driving a 2963% increase in traffic compared to other marketing channels. Email campaigns directly generated over £35,000 in sales in a single quarter.</p>
-            <p>SaaS Business: Crafted blog posts that ranked on the first page of Google, attracting 9,000+ visits per month and driving a 6% increase in monthly subscription revenue. My work also contributed to a £155K annual return through content and email strategies.</p>
-            <p>Global E-commerce Client: Developed high-performing blogs and reports, contributing to 2 of their top 5 traffic sources and supporting sales efforts that generated an estimated £50,000 in new leads in just 6 months.</p>
-            <p>B2B Brand: Created targeted email sequences and direct mail campaigns that booked 7 meetings in the first month, leading to £600,000 in business within the first quarter, with £37,000 in sales closed by year-end.</p>
         </div>
     );
 };

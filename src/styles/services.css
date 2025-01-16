@@ -10,7 +10,7 @@
 
 #services-text {
     text-align: start;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     margin-top: 20px;
 }
 
@@ -28,28 +28,54 @@
 
 #service-container {
     padding: 20px;
-    display: grid;
-    gap: 20px; /* Adds spacing between grid items */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible layout for responsive design */
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Adds spacing between grid items */
     width: 100%;
     padding-top: 10px;
     padding-left: 0;
 }
 
 .service-item {
-    overflow: hidden;
     width: 100%; /* Take up full width of the grid column */
 }
 
 .service {
     position: relative;
-    height: 700px;
-    width: 300px;
+    height: 100%;
+    max-height: 300px;
+    width: 100%;
     background-color: var(--white);
     border-radius: 5px;
     max-width: 100%; /* Ensure it fits within the parent container */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: box-shadow 0.3s ease; /* Smooth shadow transition on hover */
+    display: flex;
+    outline: 3px black solid;
+}
+
+.service-background
+{
+    opacity: 0.1;
+    z-index: -100;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("/public/images/processed/polka.png");
+    top: 0;
+    background-size:auto;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.service.image-right
+{
+    transform: rotate(1deg);
+}
+
+.service.image-left
+{
+    transform: rotate(-1deg);
 }
 
 .service:hover {
@@ -59,14 +85,13 @@
 
 .service-title {
     color: var(--hot-pink);
-    display: inline-block;
     font-size: 2rem;
     padding: 5px;
     z-index: 101;
-    max-width: 80%;
+    width: 100%;
     margin-bottom: 5px;
-    height: 90px;
-    text-align: center;
+    text-align: start;
+    margin-top: 0;
 }
 
 .service-info
@@ -74,37 +99,48 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-}
-
-.service-info button
-{
-    background-color: var(--hot-pink);
-    border: none;
-    height: 40px;
+    align-items: start;
+    padding: 40px;
 }
 
 .service-image {
-    width: 100%;
-    height: auto;
-    padding: 50px;
-    object-fit: cover;
-    object-position: center;
+    width: auto;
+    height: 200px;
+    max-height: 300px;
     background-color: var(--white);
-    box-sizing: border-box;
+    opacity: 1;
+    margin: auto 40px;
 }
 
 .service-description {
     position: relative;
     z-index: 99;
-    height: 100px;
+    height: 100%;
     transition: top 0.3s ease;
     color: var(--black);
-    margin-left: 20px;
     padding: 5px;
-    margin-right: 5px;
-    overflow: hidden;
-    text-align: center;
+    width: 100%;
+    text-align: start;
+    overflow-y: hidden;
+    text-align: start;
+    min-height: 10px;
+    margin-bottom: 5px;
+}
+
+.service button
+{
+    width: 180px;
+    max-height: 50px;
+    min-height: 50px;
+    background-color: var(--hot-pink);
+    border: none;
+    color: var(--white);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    justify-self: flex-start;
+    box-sizing: border-box;
+    margin-top: 20px;
 }
 
 .service:hover .service-description {
@@ -116,12 +152,13 @@
     z-index: 100;
     bottom: 0;
     height: 300px;
-    width: 100vw;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-image: url("../../public/svgs/service-curve.svg");
     transform-origin: bottom center;
-    transform: rotate(0deg) scaleY(1);
+    transform: rotate(180deg) scaleY(0.4);
+    left: 0;
 }
 
 .top-line-service
@@ -157,4 +194,23 @@
     height: 100% !important;
     transform-origin: center;
     transform: scale(0.5);
+}
+
+
+@media (max-width: 953px) {
+    .service-image
+    {
+        display: none;
+    }
+
+    .service
+    {
+        height: 100%;
+        max-height: 400px;
+    }
+
+    .service-info
+    {
+        align-items: center;
+    }
 }

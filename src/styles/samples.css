@@ -2,6 +2,7 @@
 #samples
 {
     position: relative;
+    overflow: hidden;
 }
 
 #samples::after
