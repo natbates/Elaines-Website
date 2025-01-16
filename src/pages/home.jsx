@@ -4,6 +4,7 @@ import Clients from "../sections/clients";
 import Samples from "../sections/samples";
 import About from "../sections/About";
 import Services from "../sections/services";
+import Results from "../sections/Results";
 import "../styles/homepage.css";
 
 const Home = () =>
@@ -13,6 +14,7 @@ const Home = () =>
             <Intro />
             <About />
             <Services />
+            <Results />
             <Brands />
             <Samples />
             <Clients />        

@@ -6,6 +6,7 @@
     width: 100%;
     height: auto;
     background-color: #ffffff;
+    box-sizing: border-box;
 }
 
 #brands .brand-images-container {
