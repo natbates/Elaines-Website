@@ -1,0 +1,54 @@
+#results
+{
+    position: relative;
+    padding: 50px;
+    padding-top: 80px;
+    background-color: var(--hot-pink);
+}
+
+#results h1
+{
+    color: var(--white);
+    font-size: 3.5rem;
+}
+
+.custom-bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-bullet-list li {
+    margin: 40px 0;
+    padding-left: 3rem;
+    position: relative;
+    color: var(--white);
+    font-size: 2rem;
+    line-height: 1.6;
+}
+
+.custom-bullet-list li::before {
+    content: "";
+    background-image: url("/public/images/processed/star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: -10px;
+    top: 35px;
+    transform: translateY(-50%);
+}
+
+#results-bottom-curve {
+    background-image: url("/public/svgs/client-top-curve.svg");
+    width: 100vw;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    z-index: 10;
+    position: absolute;
+    transform: rotate(180deg);
+    left: 0;
+    bottom: -150;
+}

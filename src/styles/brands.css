@@ -1,59 +1,141 @@
 #brands {
-    padding: 40px 20px;
+    padding: 40px;
     text-align: center;
-    position: relative;
-    overflow: hidden; /* Prevent content from spilling out */
-    width: 100%;
-    height: auto;
     background-color: #ffffff;
     box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-top: 300px;
 }
 
-#brands .brand-images-container {
+.brand-background {
+    background-image: url("/public/images/processed/polka.png");
+    opacity: 0.3;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-repeat: repeat;
+    background-size: 200px 100px; /* Adjusts the image to 30% of its original size */
+    background-position: center; /* Keeps the background centered */
+}
+
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+.carousel-slide-container {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.carousel-slide {
+    display: flex;
+    gap: 20px; /* Space between cards */
+    transition: transform 0.5s ease-in-out; /* Smooth slide animation */
+    padding: 0 10px; /* Add padding to avoid clipping */
+}
+
+.carousel-card {
+    flex: 0 0 calc((100% - (20px * 2)) / 3);
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 500px;
+    background-color: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
 }
-
-.brand-row {
-    display: flex;
-    gap: 20px;
-    white-space: nowrap; /* Prevent wrapping of images */
-    align-items: center;
-    padding: 10px 0;
-}
-
-.brand-row img {
-    height: 80px; /* Adjust height to fit your design */
-    width: auto;
+.carousel-image {
+    height: 150px;
+    width: 100%;
     object-fit: contain;
-    transition: transform 0.3s ease;
-    padding: 5px;
+    padding: 10px;
 }
 
-.brand-row.scroll-left {
-    animation: scroll-left 30s linear infinite; /* Row scrolls to the left */
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
 }
 
-.brand-row.scroll-right {
-    animation: scroll-right 30s linear infinite; /* Row scrolls to the right */
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Animations */
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%); /* Move left by half the content */
-    }
+.carousel-button.prev {
+    left: 10px;
 }
 
-@keyframes scroll-right {
-    0% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(0); /* Move right by half the content */
-    }
+.carousel-button.next {
+    right: 10px;
+}
+
+.brand-name
+{
+    text-align: center;
+    margin: 10px auto;
+    color: var(--hot-pink);
+}
+
+.top-quote-img
+{
+    position: absolute;
+    top: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--hot-pink);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.brand-review
+{
+    color: #00000071;
+}
+
+.star-rating
+{
+    margin: 10px auto;
+}
+
+.star-rating img
+{
+    width: 20px;
+    height: auto;
+}
+
+#car-img
+{
+    position: absolute;
+    z-index: 10;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: auto;
+    max-width: 700px;
 }
