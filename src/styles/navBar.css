@@ -34,6 +34,7 @@
     height: 60px;
     z-index: 200;
     position: fixed;
+    transition: background-color 0.3s ease;
 }
 
 #nav-bar-background.hot-pink{
@@ -138,13 +139,13 @@
   }
   
   .icon--menu-toggle {
-    --size: 40px;
+    --size: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: var(--size);
     height: var(--size);
-    stroke-width: 3;
+    stroke-width: 5;
   }
   
   .icon-group {

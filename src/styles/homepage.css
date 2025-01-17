@@ -22,7 +22,9 @@ body
 
 .highlight
 {
-    background-color: var(--highlighted);
+  padding-left: 2px;
+  padding-right: 2px;
+  background-color: var(--highlighted);
 }
 
 #content-wrap
@@ -50,6 +52,20 @@ body
             background-clip: text, padding-box;
     animation: underline-animation 0.9s ease forwards;
     animation-delay: 0.4s;
+}
+
+.white-underline {
+  --s: 0.1em; /* Thickness of the line */
+  --c: var(--white);
+  padding-right: 1px;
+  padding-bottom: var(--s);
+  background: 
+    linear-gradient(90deg, var(--c) 50%, #000 0) 100%/200% 100%, /* Line gradient */
+    linear-gradient(var(--c) 0 0) 0% 100%/0% var(--s) no-repeat; /* Underline gradient */
+  -webkit-background-clip: text, padding-box;
+          background-clip: text, padding-box;
+  animation: underline-animation 0.9s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .yellow-underline

@@ -21,6 +21,7 @@
     display: flex;
     width: fit-content;
     height: 60px;
+    outline: 3px var(--white) solid;
     background-color: var(--hot-pink);
     border-radius: 36px;
     position: relative;
