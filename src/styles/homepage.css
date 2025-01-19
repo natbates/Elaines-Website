@@ -41,6 +41,7 @@ body
 }
 
 .pink-underline {
+    font-family: main !important;
     --s: 0.1em; /* Thickness of the line */
     --c: var(--hot-pink);
     padding-right: 1px;

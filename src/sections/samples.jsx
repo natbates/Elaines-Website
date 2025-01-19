@@ -71,6 +71,7 @@ const Samples = () => {
   return (
     <>
       <div id="samples">
+        <div id = "brand-bottom-curve"></div>
         {loading ? (
           <div>Loading...</div>
         ) : error ? (

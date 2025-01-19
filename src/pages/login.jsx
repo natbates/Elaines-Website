@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/authContext";
 import { sendPasswordResetEmail } from "firebase/auth"; // Import the sendPasswordResetEmail function
 import { auth } from "../services/firebaseConfig.js";
+import "../styles/login.css";
 
 const LogIn = () => {
 
@@ -50,8 +51,10 @@ const LogIn = () => {
 
     return (
         <div id="login-page">
-            <h1>Log In</h1>
+
             <form onSubmit={handleLogin} className="login-form">
+                <h1 className="main-text">Log In</h1>
+                <p className="sub-text">Log in to access site analytics and change displayed information.</p>
                 <div className="form-group">
                     <input
                         id="email"
@@ -71,7 +74,7 @@ const LogIn = () => {
                         placeholder="Enter your password"
                     />
                 </div>
-                <button type="submit" className="login-button">Log In</button>
+                <button type="submit" className="submit-button">Log In</button>
             </form>
             <p className="forgot-password" onClick={() => {
                 const emailInput = prompt("Please enter your email address to reset your password:");

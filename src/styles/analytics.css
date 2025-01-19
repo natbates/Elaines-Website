@@ -1,0 +1,47 @@
+#analytics-section {
+    margin: 20px; /* Add margin for spacing */
+    padding: 20px; /* Add padding for inner spacing */
+    border-radius: 8px; /* Rounded corners for the container */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#analytics-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center align items vertically */
+}
+
+#analytics-section table {
+    border-collapse: collapse; /* Merge border */
+    width: 100%; /* Full width */
+    max-width: 800px; /* Set a max width for better readability */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+#analytics-section table th,
+#analytics-section table td {
+    border: 1px solid #ddd; /* Add border */
+    text-align: left; /* Align text to the left */
+    padding: 12px; /* Add padding for better spacing */
+}
+
+#analytics-section table th {
+    background-color: #4CAF50; /* Header background color */
+    color: white; /* Header text color */
+}
+
+#analytics-section  table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Stripe effect for even rows */
+}
+
+#analytics-section table tr:hover {
+    background-color: #ddd; /* Highlight row on hover */
+}
+
+/* Optional: Responsive design */
+@media (max-width: 600px) {
+    #analytics-section table {
+        font-size: 14px; /* Smaller text on smaller screens */
+    }
+}

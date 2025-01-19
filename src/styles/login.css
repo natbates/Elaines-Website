@@ -1,0 +1,47 @@
+
+
+#login-page 
+{
+    background-color: #ffffff;
+    text-align: center;
+    height: 100%;
+}
+
+#login-page .main-text
+{
+    position: relative;
+    color: var(--hot-pink);
+    z-index: 100;
+    text-wrap: nowrap;
+    font-size: 8vw;
+    margin-bottom: 5px;
+}
+
+#login-page .sub-text
+{
+    position: relative !important;
+    font-size: 1rem;
+    z-index: 100;
+    margin: 20px;
+    margin-bottom: 30px;
+}
+
+.login-form
+{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form input
+{
+    width: 500px;
+    background-color: transparent !important;
+}
+
+.login-form button
+{
+    width: 200px;
+}

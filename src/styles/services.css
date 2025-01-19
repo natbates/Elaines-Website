@@ -18,7 +18,6 @@
     font-size: 4rem;
     margin: 0;
     margin-bottom: 15px;
-    text-wrap: nowrap;
 }
 
 #services p {
@@ -71,18 +70,9 @@
     background-position: center;
 }
 
-.service.image-right
-{
-    transform: rotate(1deg);
-}
-
-.service.image-left
-{
-    transform: rotate(-1deg);
-}
 
 .service:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(0deg) !important; 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
 }
 
@@ -223,5 +213,25 @@
     .service-info
     {
         align-items: center;
+    }
+}
+
+
+@media (min-width: 4000px) {
+    .service.image-right {
+        transform: rotate(0.1deg);
+    }
+    .service.image-left {
+        transform: rotate(0.1deg);
+    }
+}
+
+/* Slightly zoomed out */
+@media (max-width: 3999px) and (min-width: 700px) {
+    .service.image-right {
+        transform: rotate(0.5deg);
+    }
+    .service.image-left {
+        transform: rotate(-0.5deg);
     }
 }

@@ -103,8 +103,8 @@ const Navbar = () => {
                         <li><a href="/" onClick={() => navigate('/')}>Home</a></li>
                         <li><a href="/about" onClick={() => setIsNavbarVisible(false)}>About Me</a></li>
                         <li><a href= "https://authory.com/ElaineKeep" target = "_blank" onClick={() => setIsNavbarVisible()}>Porfolio</a></li>
-                        <li><a href="#case-studies" onClick={() => handleScrollToSection("case-studies")}>Case Studies</a></li>
                         <li><a href="/contact" onClick={() => setIsNavbarVisible(false)}>Contact</a></li>
+                        <li><a href="/login" onClick={() => setIsNavbarVisible(false)}>Login</a></li>
                     </ul>
                 </nav>
 
