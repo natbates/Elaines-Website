@@ -7,9 +7,6 @@ const Contact = () => {
     return (
         <div id="contact">
 
-            <div className = "contact-texture-1"></div>
-            <div className = "contact-texture-2"></div>
-
             <div id = "contact-top-img" style={{ backgroundImage: `url(images/elaine/backgrounds/image1.jpg)` }}>
                 <h1 className="main-text">Let's Have A Coffee</h1>
             </div>

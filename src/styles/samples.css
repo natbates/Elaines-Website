@@ -3,7 +3,7 @@
 {
     position: relative;
     overflow: hidden;
-    border-top: 2px var(--hot-pink) dashed;
+    max-height: 1200px !important;
 }
 
 #samples::after
@@ -56,6 +56,12 @@
     transition: transform 0.3s ease;
     padding-bottom: 90px;
     padding-top: 5px;
+}
+
+.item
+{
+    height: 100%;
+    max-height: 1200px !important;
 }
 
 .description-container p

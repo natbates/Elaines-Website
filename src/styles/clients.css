@@ -101,6 +101,7 @@
     display: flex;
     justify-content: center;
     top: calc(60px - 4vw);
+    z-index: 5;
 }
 
 .flip img
@@ -143,9 +144,14 @@
 
 #client-bottom-container
 {
+    pointer-events: none;
     height: calc(60vw);
     min-height: calc(540px) !important;
     max-height: calc(580px) !important;
+}
+
+#client-bottom-container * {
+    pointer-events: all; 
 }
 
 #client-bottom-curve
@@ -157,7 +163,7 @@
     z-index: 100;
     position: relative;
     top: -62;
-    z-index: -5;
+    z-index: 1;
     height: 200px;
 }
 

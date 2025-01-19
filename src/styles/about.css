@@ -49,6 +49,7 @@
     padding-top: 0px;
     margin-bottom: 55px !important;
     margin-top: 0 !important;
+    align-items: center;
 }
 
 #about-img {
@@ -113,7 +114,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100%; /* Ensure it takes full height of the container */
+    min-height: 100%; 
+    max-width: 1500px;
 }
 
 #about-text h1 {

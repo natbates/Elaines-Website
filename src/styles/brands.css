@@ -1,12 +1,13 @@
 #brands {
     padding: 40px;
     text-align: center;
-    background-color: #ffffff;
     box-sizing: border-box;
     width: 100%;
     height: auto;
     position: relative;
-    padding-top: 300px;
+    padding-top: 250px;
+    background-color: #f7eef4;
+    z-index: 2;
 }
 
 .brand-background {
@@ -20,122 +21,73 @@
     background-repeat: repeat;
     background-size: 200px 100px; /* Adjusts the image to 30% of its original size */
     background-position: center; /* Keeps the background centered */
+    z-index: -1;
+    display: none;
 }
 
-
-.carousel-container {
+.brand-container {
     display: flex;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    max-width: 1200px; /* Adjust as needed */
-    margin: 0 auto;
+    flex-wrap: wrap; /* Allows items to wrap to the next row */
+    gap: 16px; /* Adds space between items */
+    justify-content: center; /* Centers the items horizontally */
+    padding: 0px;
+    padding-top: 0;
+    z-index: 2;
 }
 
-.carousel-slide-container {
-    overflow-x: hidden;
-    width: 100%;
-}
-
-.carousel-slide {
-    display: flex;
-    gap: 20px; /* Space between cards */
-    transition: transform 0.5s ease-in-out; /* Smooth slide animation */
-    padding: 0 10px; /* Add padding to avoid clipping */
-}
-
-.carousel-card {
-    flex: 0 0 calc((100% - (20px * 2)) / 3);
-    display: flex;
+.brand {
+    flex: 0 0 auto; /* Prevents items from flexing or shrinking */
+    box-sizing: border-box; /* Includes padding and border in width calculations */
+    padding: 15px;
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Centers content vertically */
+    justify-content: space-between; /* Centers content horizontally */
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    box-sizing: border-box;
-    min-height: 500px;
-    background-color: var(--white);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border: 1px solid #ddd;
-}
-.carousel-image {
-    height: 150px;
-    width: 100%;
-    object-fit: contain;
-    padding: 10px;
 }
 
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: background-color 0.3s ease;
+@media (min-width: 2000px) {
+    .brand
+    {
+        flex: 1 1 calc(16.66% - 16px); /* Each item takes up roughly 1/6th of the row minus the gap */
+        max-width: calc(16.66% - 16px); /* Ensures items do not grow beyond this size */
+    }
 }
 
-.carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.brand-image {
+    width: 100%; /* Makes the image fill the container width */
+    height: 100%; /* Makes the image fill the container height */
+    object-fit: contain; /* Preserves the aspect ratio while ensuring the image fits within the container */
+    display: block; /* Removes any inline space below images */
+    width: 200px; /* Ensures uniform width for brand items */
+    height: 200px; /* Ensures uniform height for brand items */
 }
 
-.carousel-button.prev {
-    left: 10px;
-}
 
-.carousel-button.next {
-    right: 10px;
-}
-
-.brand-name
-{
-    text-align: center;
-    margin: 10px auto;
-    color: var(--hot-pink);
-}
-
-.top-quote-img
-{
-    position: absolute;
-    top: -25px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--hot-pink);
-    border-radius: 50%;
-    z-index: 10;
-}
-
-.brand-review
-{
-    color: #00000071;
-}
-
-.star-rating
-{
-    margin: 10px auto;
-}
-
-.star-rating img
+.star-container img
 {
     width: 20px;
     height: auto;
 }
 
-#car-img
+
+.brand p
 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+#brand-bottom-curve
+{
+    background-image: url("../../public/svgs/brand-bottom-curve.svg");
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
     position: absolute;
-    z-index: 10;
-    top: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: auto;
-    max-width: 700px;
+    top: 00;
+    z-index: 22331;
+    height: 200px;
+    width: 100vw;
+    left: 0;
 }
