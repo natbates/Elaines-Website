@@ -5,14 +5,20 @@
     width: 100%;
     height: auto;
     position: relative;
-    padding-top: 250px;
+    padding-top: 150px;
     background-color: #f7eef4;
     z-index: 2;
 }
 
+#brands h1{
+    font-size: 4rem;
+    margin: 5%;
+    text-align: center;
+}
+
 .brand-background {
     background-image: url("/public/images/processed/polka.png");
-    opacity: 0.3;
+    opacity: 0.1;
     width: 100%;
     position: absolute;
     top: 0;
@@ -21,59 +27,60 @@
     background-repeat: repeat;
     background-size: 200px 100px; /* Adjusts the image to 30% of its original size */
     background-position: center; /* Keeps the background centered */
-    z-index: -1;
-    display: none;
+    z-index: 3;
 }
 
 .brand-container {
     display: flex;
     flex-wrap: wrap; /* Allows items to wrap to the next row */
-    gap: 16px; /* Adds space between items */
+    gap: 24px; /* Adds space between items */
     justify-content: center; /* Centers the items horizontally */
-    padding: 0px;
-    padding-top: 0;
+    align-items: flex-start; /* Aligns items to the top of the row for consistency */
+    padding: 0;
     z-index: 2;
+
 }
 
 .brand {
-    flex: 0 0 auto; /* Prevents items from flexing or shrinking */
-    box-sizing: border-box; /* Includes padding and border in width calculations */
+    display: flex;
+    flex-direction: column; /* Stacks the content vertically */
+    align-items: center; /* Centers content horizontally */
+    justify-content: flex-start; /* Ensures content is aligned to the top */
+    text-align: center; /* Ensures text alignment is consistent */
     padding: 15px;
-    display: flex; /* Enables flexbox */
-    align-items: center; /* Centers content vertically */
-    justify-content: space-between; /* Centers content horizontally */
-    flex-direction: column;
-}
-
-@media (min-width: 2000px) {
-    .brand
-    {
-        flex: 1 1 calc(16.66% - 16px); /* Each item takes up roughly 1/6th of the row minus the gap */
-        max-width: calc(16.66% - 16px); /* Ensures items do not grow beyond this size */
-    }
+    box-sizing: border-box;
+    flex: 0 0 auto; /* Prevents items from growing or shrinking */
+    width: 150px; /* Set a uniform width for all brand items */
+    height: 200px;
 }
 
 .brand-image {
     width: 100%; /* Makes the image fill the container width */
-    height: 100%; /* Makes the image fill the container height */
-    object-fit: contain; /* Preserves the aspect ratio while ensuring the image fits within the container */
-    display: block; /* Removes any inline space below images */
-    width: 200px; /* Ensures uniform width for brand items */
-    height: 200px; /* Ensures uniform height for brand items */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: contain; /* Ensures the image fits inside the container */
+    width: 100px; /* Set a maximum width for the images */
+    height: 100px; /* Set a maximum height for the images */
+    padding-bottom: 10px; /* Adds space between the image and text */
+    box-sizing: border-box;
 }
 
+.star-container {
+    display: flex; /* Enables flexbox for star alignment */
+    justify-content: center; /* Centers stars horizontally */
+    gap: 4px; /* Adds space between stars */
+}
 
-.star-container img
-{
+.star-container img {
     width: 20px;
     height: auto;
 }
 
-
-.brand p
-{
+.brand p {
     font-size: 1.5rem;
-    text-align: center;
+    margin: 10px 0; /* Adds spacing above and below the text */
+    line-height: 1.2; /* Improves readability of multi-line text */
+    text-align: center; /* Ensures text is centered */
+    text-wrap: nowrap;
 }
 
 
@@ -85,9 +92,11 @@
     background-size: cover;
     z-index: 100;
     position: absolute;
-    top: 00;
+    top: 0;
     z-index: 22331;
     height: 200px;
     width: 100vw;
     left: 0;
+    transform: scaleY(0.4);
+    transform-origin: top center;
 }

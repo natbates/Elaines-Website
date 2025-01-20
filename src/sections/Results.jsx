@@ -31,7 +31,6 @@ const Results = () => {
                     </li>
                 ))}
             </ul>
-            <img id = "car-img" src = "/images/processed/car.png"></img>
             <div id = "results-bottom-curve"></div>
         </div>
     );

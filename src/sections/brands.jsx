@@ -41,6 +41,7 @@ const Brands = () => {
 
     return (
         <div id="brands">
+            <h1>Don't just take it from me...</h1>
             <div className="brand-background"></div>
             {loading ? (
                 <div>Loading...</div>
