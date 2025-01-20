@@ -73,7 +73,7 @@ const RemoveItem = ({ items, collectionName, storageFolder, onFetch, itemType })
                                     src={item} 
                                     alt={`Brand ${index + 1}`} 
                                     onClick={() => removeItem(null, item)} 
-                                    className="brand-image clickable" 
+                                    className="remove-brand-image clickable" 
                                 />
                             </div>
                         ))}
