@@ -30,6 +30,7 @@ const AboutMe = () => {
                         global e-commerce giants—driving traffic, boosting
                         conversions, and delivering results that matter.
                     </p>
+                    <img src = "images/processed/family.jpg"></img>
                 </div>
 
                 <div id="section-two" className="section">
@@ -42,6 +43,7 @@ const AboutMe = () => {
                         golden retriever, and a seven-year-old son who keeps me
                         on my toes.
                     </p>
+                    <img src = "/images/processed/milo.jpg"></img>
                 </div>
 
                 <div id="section-three" className="section">
@@ -53,10 +55,7 @@ const AboutMe = () => {
                         Betty—she’s a total joy to drive!
                     </p>
                     <img
-                        src="/images/processed/car.png"
-                        alt="Weekend car"
-                        className="car-img"
-                    />
+                        src="/images/processed/car.png"/>
                 </div>
 
                 <div id="section-four" className="section">
@@ -66,6 +65,7 @@ const AboutMe = () => {
                         HR Strategy with the MTF Institute, always seeking to
                         learn and grow both professionally and personally.
                     </p>
+                    <img src = "images/processed/work.jpg"></img>
                 </div>
             </div>
         </div>
