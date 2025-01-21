@@ -4,6 +4,7 @@ import React from "react";
 const AboutMe = () => {
     return (
         <div id="about-me-page">
+            <div id = "about-me-page-background"></div>
             {/* Top Image Section */}
             <div
                 id="about-top-img"
@@ -14,8 +15,6 @@ const AboutMe = () => {
                 <h1 className="main-text">A bit more about me...</h1>
             </div>
 
-            {/* Curve Divider */}
-            <div id="contact-curve"></div>
 
             {/* About Info Section */}
             <div id="about-info">

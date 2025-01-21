@@ -374,3 +374,56 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 768px) {
+  #nav-bar {
+      height: 80px; /* Increase navbar height */
+      padding: 15px; /* Adjust padding */
+  }
+
+  #logo-icon img {
+      height: 60px; /* Make the logo bigger */
+  }
+
+  .icon--menu-toggle {
+      --size: 50px; /* Increase burger menu size */
+      stroke-width: 7; /* Thicker lines for visibility */
+  }
+
+  .main-navigation {
+      ul {
+          font-size: 16vmin; /* Increase font size for menu items */
+      }
+
+      li {
+          min-height: 120px; /* Increase spacing for touch accessibility */
+      }
+
+      a {
+          font-size: 6rem; /* Larger font size for links */
+      }
+  }
+
+  #nav-items a {
+      font-size: 5rem; /* Bigger font for links */
+  }
+
+  /* Adjust the social links for better spacing */
+  #nav-items #social-links {
+      margin-top: 40px; /* Increase space between links */
+  }
+
+  /* Increase the burger icon's hit area */
+  .main-navigation-toggle + label {
+      top: 10px;
+      right: 10px;
+      width: 60px;
+      height: 60px;
+  }
+
+  .main-navigation-toggle {
+      + label .icon--menu-toggle .icon-group {
+          stroke: var(--white); /* Keep burger icon visible */
+      }
+  }
+}

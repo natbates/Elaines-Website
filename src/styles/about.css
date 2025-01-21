@@ -6,11 +6,12 @@
     background-position: center;
     width: 100%;
     height: calc(200px + 15vw);
-    z-index: -100;
+    z-index: 10;
     position: relative;
     top: 0px;
-    z-index: 3;
+    clip-path: ellipse(95% 100% at 50% 0%);
 }
+
 
 .section
 {
@@ -30,7 +31,7 @@
     width: 100%;
     margin: 0;
     margin-top: 30px;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
 }
 
 .section img
@@ -41,13 +42,26 @@
     display: block;
     overflow: hidden;
     align-self: flex-start;
+    outline: 4px var(--hot-pink) dashed;
+    outline-offset: 5px;
+    margin-left: 5px;
 }
-
-
 
 #about-me-page
 {
     padding-bottom: 90px;
+}
+
+#about-me-page-background
+{
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    opacity: 0.1;
+    position: absolute;
+    height: 100%;
+    background-image: url("/public/images/processed/polka.png");
 }
 
 #about-me-page .main-text
@@ -77,6 +91,7 @@
     margin: 0;
     height: 100%;
     width: 100%;
+    color: black;
 }
 
 #about
