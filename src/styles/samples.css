@@ -4,6 +4,8 @@
     position: relative;
     overflow: hidden;
     max-height: 1200px !important;
+    clip-path: ellipse(190% 100% at 50% 100%);
+    z-index: 4;
 }
 
 #samples::after

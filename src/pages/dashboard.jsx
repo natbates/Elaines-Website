@@ -112,72 +112,85 @@ const DashBoard = () => {
 
     return (
         <div id="dash-board">
-            <h1 style={{ textDecoration: "underline" }}>DashBoard</h1>
 
-            <div id="analytics-container">
-                <h2>Analytics</h2>
-                <Analytics />
+
+            <div id = "about-me-page-background"></div>
+            {/* Top Image Section */}
+            <div
+                id="about-top-img"
+                style={{
+                    backgroundImage: `url(images/elaine/backgrounds/image5.jpg)`,
+                }}
+            >
+                <h1 className="main-text">Your Dashboard</h1>
             </div>
 
-            <h2>Brand Items</h2>
-            <div id="brand-container" className="container-row">
-                <div className="flex-row">
-                    <AddBrandImage onAdd={fetchBrandImages} />
-                    <RemoveBrandImage 
-                        brandImages={brandImages}
-                        onFetch={fetchBrandImages} 
-                    />
+            <div id = "dashboard-container">
+
+                <div id="analytics-container">
+                    <Analytics />
                 </div>
-            </div>
 
-            <h2>Clients</h2>
-            <div id="client-container" className="container-row">
-                <div className="flex-row">
-                    <AddClient onAdd={addClientItem} />
-                    {loading ? (
-                        <p>Loading client items...</p>
-                    ) : error ? (
-                        <p style={{ color: 'red' }}>{error}</p>
-                    ) : (
-                        <RemoveClient 
-                            clientItems={clientItems} 
-                            onFetch={fetchItems}
+                <h2>Brand Items</h2>
+                <div id="brand-container" className="container-row">
+                    <div className="flex-row">
+                        <AddBrandImage onAdd={fetchBrandImages} />
+                        <RemoveBrandImage 
+                            brandImages={brandImages}
+                            onFetch={fetchBrandImages} 
                         />
-                    )}
+                    </div>
                 </div>
-            </div>
 
-            <h2>Samples</h2>
-            <div id="sample-container" className="container-row">
-                <div className="flex-row">
-                    <AddSample onAdd={addSampleItem} />
-                    {loading ? (
-                        <p>Loading sample items...</p>
-                    ) : error ? (
-                        <p style={{ color: 'red' }}>{error}</p>
-                    ) : (
-                        <RemoveSample 
-                            sampleItems={sampleItems} 
-                            onFetch={fetchItems}
-                        />
-                    )}
+                <h2>Clients</h2>
+                <div id="client-container" className="container-row">
+                    <div className="flex-row">
+                        <AddClient onAdd={addClientItem} />
+                        {loading ? (
+                            <p>Loading client items...</p>
+                        ) : error ? (
+                            <p style={{ color: 'red' }}>{error}</p>
+                        ) : (
+                            <RemoveClient 
+                                clientItems={clientItems} 
+                                onFetch={fetchItems}
+                            />
+                        )}
+                    </div>
                 </div>
-            </div>
 
-            <h2>Services</h2>
-            <div id="service-container" className="container-row">
-                <div className="flex-row">
-                    <AddService onAdd={addServiceItem} />
-                    {loading ? (
-                        <p>Loading service items...</p>
-                    ) : error ? (
-                        <p style={{ color: 'red' }}>{error}</p>
-                    ) : (
-                        <RemoveService 
-                            serviceItems={serviceItems} 
-                            onFetch={fetchItems}
-                        />
-                    )}
+                <h2>Samples</h2>
+                <div id="sample-container" className="container-row">
+                    <div className="flex-row">
+                        <AddSample onAdd={addSampleItem} />
+                        {loading ? (
+                            <p>Loading sample items...</p>
+                        ) : error ? (
+                            <p style={{ color: 'red' }}>{error}</p>
+                        ) : (
+                            <RemoveSample 
+                                sampleItems={sampleItems} 
+                                onFetch={fetchItems}
+                            />
+                        )}
+                    </div>
+                </div>
+
+                <h2>Services</h2>
+                <div id="service-container" className="container-row">
+                    <div className="flex-row">
+                        <AddService onAdd={addServiceItem} />
+                        {loading ? (
+                            <p>Loading service items...</p>
+                        ) : error ? (
+                            <p style={{ color: 'red' }}>{error}</p>
+                        ) : (
+                            <RemoveService 
+                                serviceItems={serviceItems} 
+                                onFetch={fetchItems}
+                            />
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

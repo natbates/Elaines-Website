@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { storage, db } from '../../services/firebaseConfig';
-import { doc, getDoc, updateDoc } from "firebase/firestore"; // Import Firestore functions
+import { doc, getDoc } from "firebase/firestore"; // Import Firestore functions
 import "../../styles/analytics.css";
 
 const Analytics = () => {
     const [analyticsData, setAnalyticsData] = useState(null); // State to hold analytics data
     const [loading, setLoading] = useState(true); // Loading state
     const [error, setError] = useState(null); // Error state
-    const [sessionStartTime, setSessionStartTime] = useState(null); // State to track session start time
-    const [sessionDuration, setSessionDuration] = useState(0); // State to track session duration
 
     useEffect(() => {
         const fetchAnalyticsData = async () => {
@@ -43,20 +41,7 @@ const Analytics = () => {
 
     return (
         <div id="analytics-section">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Page Views</th>
-                        <th>Unique Visitors</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{analyticsData.pageViews}</td>
-                        <td>{analyticsData.uniqueVisitors}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <p>Hello Elaine, your page has {analyticsData.pageViews} views with {analyticsData.uniqueVisitors} unique visitors.</p>
         </div>
     );
 };

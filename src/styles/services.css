@@ -1,11 +1,11 @@
 #services {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background-color: #f7eef4;
     padding: 30px;
     position: relative;
     border-bottom: var(--hot-pink) 4px dotted;
+
 }
 
 #services-text {
@@ -54,6 +54,7 @@
     outline: 3px black solid;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: space-between;
 }
 
 .service-background
