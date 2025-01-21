@@ -1,8 +1,4 @@
 
-#about-me-page
-{
-
-}
 
 #about-top-img
 {
@@ -18,48 +14,57 @@
 
 .section
 {
-    padding: 90px;
-    padding-left: 120px;
-    padding-right: 120px;
-    min-height: 300px;
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 50px;
+    padding-bottom: 20;
+}
+
+.section h1
+{
+    width: 100%;
+    margin: 0;
+    margin-top: 30px;
+    font-size: 2.5rem;
+}
+
+@media (min-width: 1500px) {
+    .section
+    {
+        flex-direction: row;
+    }
 }
 
 .section img
 {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: auto;
     object-fit: contain;
     display: block;
+    overflow: hidden;
 }
 
 #section-one
 {
-    background-color: var(--white);
-    padding-top: 0;
+
 }
 
 #section-two
 {
-    background-color: var(--hot-pink);
-    color: var(--white);
 
 }
 
 #section-three
 {
-    display: flex;
-    background-color: #f7eef4;
-    color: black;
 }
 
 #section-four
 {
-    background-color: var(--hot-pink);
-    color: var(--white);
 }
 
 
