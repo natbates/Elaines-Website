@@ -11,8 +11,10 @@ const Footer = () =>
             <div id = "quick-links">
                 <h1>Quick Links</h1>
                 <a href = "#intro">Home</a>
+                <a href = "/about">About me</a>
+                <a href = "https://authory.com/ElaineKeep" target="_blank">Portfolio</a>
                 <a href = "/contact">Contact</a>
-                <a href = "" target="_blank">Portfolio</a>
+                <a href = "/login">Login</a>
             </div>
             <div id = "address">
                 <h1>Business Address</h1>

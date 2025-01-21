@@ -111,6 +111,9 @@
   overflow: hidden;
   padding-bottom: 0;
   cursor: pointer;
+  top: 0;
+  height: 50%;
+  box-sizing: border-box;
 }
 
 #mouse
