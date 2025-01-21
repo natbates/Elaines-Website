@@ -1,7 +1,7 @@
 /* src/styles/addItem.css */
 
 .add-item-container {
-    background-color: #f8f9fa; /* Light background for visibility */
+    background-color: #f9f9f9; /* Light background color */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -9,6 +9,7 @@
     min-width: 45%;
     display: flex;
     flex-direction: column;
+    margin-right: 25px;
 }
 
 .add-item-container h2 {
@@ -40,7 +41,6 @@
 .add-item-container input[type="url"]{
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 15px;
     font-size: 14px;
@@ -59,7 +59,7 @@
 }
 
 .add-item-container button {
-    background-color: #007bff; /* Bootstrap-like blue */
+    background-color: var(--hot-pink);
     color: #fff;
     padding: 10px;
     border: none;

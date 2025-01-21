@@ -25,24 +25,6 @@ const AddItem = ({ onAdd, collectionName, storageFolder, itemType, fields }) => 
         setFormData({ ...formData, [name]: value });
     };
 
-    const fetchScreenshot = async (url) => {
-        const endpoint = `https://v1.nocodeapi.com/natbates/screen/pijXPJPcjkvyfiEt/screenshot?url=${encodeURIComponent(url)}`;
-
-        try {
-            const response = await fetch(endpoint);
-
-            if (!response.ok) {
-                throw new Error('Failed to fetch screenshot');
-            }
-
-            const blob = await response.blob();
-            const imageUrl = URL.createObjectURL(blob);
-            return imageUrl;
-        } catch (error) {
-            console.error('Error fetching screenshot:', error);
-            throw error;
-        }
-    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -93,19 +75,10 @@ const AddItem = ({ onAdd, collectionName, storageFolder, itemType, fields }) => 
             try {
                 let imageUrl;
 
-                if (itemType === "Sample" && url) {
-                    const screenshotUrl = await fetchScreenshot(url);
-                    const screenshotBlob = await (await fetch(screenshotUrl)).blob();
-                    const screenshotRef = ref(storage, `${storageFolder}/screenshots/${nameOrTitle}.png`);
-                    await uploadBytes(screenshotRef, screenshotBlob);
-                    imageUrl = await getDownloadURL(screenshotRef);
-                    setScreenshotUrl(imageUrl);
-                } else {
-                    const imageRef = ref(storage, `${storageFolder}/images/${files[0].name}`);
-                    await uploadBytes(imageRef, files[0]);
-                    imageUrl = await getDownloadURL(imageRef);
-                }
-
+                const imageRef = ref(storage, `${storageFolder}/images/${files[0].name}`);
+                await uploadBytes(imageRef, files[0]);
+                imageUrl = await getDownloadURL(imageRef);
+                
                 const newItemData = {
                     [fields.nameOrTitle]: nameOrTitle,
                     description: description,
@@ -175,6 +148,7 @@ const AddItem = ({ onAdd, collectionName, storageFolder, itemType, fields }) => 
                 </div>
                 )}
                 {itemType === "Sample" && (
+                    <>
                     <div>
                         <label>URL:</label>
                         <input
@@ -186,6 +160,17 @@ const AddItem = ({ onAdd, collectionName, storageFolder, itemType, fields }) => 
                             required
                         />
                     </div>
+                    <div>
+                        <label>Image:</label>
+                        <input
+                            ref={fileInputRef}
+                            type="file"
+                            accept="image/*"
+                            onChange={handleFileChange}
+                            required
+                        />
+                    </div>
+                    </>
                 )}
                 <button type="submit" disabled={loading}>
                     {loading ? 'Uploading...' : `Add ${itemType}`}

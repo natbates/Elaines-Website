@@ -5,7 +5,18 @@
     gap: 20px;
     text-align: center;
     color: var(--hot-pink);
+}
+
+#dash-board .main-text
+{
+    color: var(--white);
+    font-size: 5rem;
+}
+
+#dashboard-container
+{
     padding: 50px;
+    z-index: 5;
 }
 
 #dash-board h1
@@ -17,6 +28,7 @@
 {
     font-size: 2.6rem;
     margin: 0;
+    margin-bottom: 20px;
 }
 
 

@@ -1,12 +1,13 @@
 /* src/styles/removeItem.css */
 
 .remove-item-container {
-    background-color: #f8f9fa; /* Light background for visibility */
+    background-color: #f9f9f9; /* Light background color */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     width: 43%;
+    margin-left: 25px;
 }
 
 .remove-item-container h2 {

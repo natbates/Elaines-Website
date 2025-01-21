@@ -6,8 +6,8 @@
     height: auto;
     position: relative;
     padding-top: 150px;
-    background-color: #f7eef4;
     z-index: 2;
+    padding-bottom: 100px;
 }
 
 #brands h1{
@@ -28,6 +28,9 @@
     background-size: 200px 100px; /* Adjusts the image to 30% of its original size */
     background-position: center; /* Keeps the background centered */
     z-index: 3;
+    transform-origin: top;
+    transform: scaleY(1.1);
+    background-color: #e7dee4;
 }
 
 .brand-container {
@@ -52,6 +55,7 @@
     flex: 0 0 auto; /* Prevents items from growing or shrinking */
     width: 150px; /* Set a uniform width for all brand items */
     height: 200px;
+    z-index: 5;
 }
 
 .brand-image {
@@ -81,22 +85,4 @@
     line-height: 1.2; /* Improves readability of multi-line text */
     text-align: center; /* Ensures text is centered */
     text-wrap: nowrap;
-}
-
-
-#brand-bottom-curve
-{
-    background-image: url("../../public/svgs/brand-bottom-curve.svg");
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    z-index: 100;
-    position: absolute;
-    top: 0;
-    z-index: 22331;
-    height: 200px;
-    width: 100vw;
-    left: 0;
-    transform: scaleY(0.4);
-    transform-origin: top center;
 }
