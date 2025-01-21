@@ -11,10 +11,12 @@ import Contact from "../pages/contact";
 // Private
 import LogIn from "../pages/login";
 import DashBoard from "../pages/dashboard";
-
+import useAnalytics from "../hooks/useAnalytics";
 import AuthProvider from "../contexts/authContext";
 
 const App = () => {
+
+    useAnalytics();
 
     return (
         <AuthProvider>
