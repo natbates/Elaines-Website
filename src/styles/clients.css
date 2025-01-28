@@ -28,6 +28,8 @@
     padding-bottom: 40px;
     border-bottom: 2px #ffffff64 solid;
     margin-top: 0;
+    max-height: 192px;
+    overflow: hidden;
 }
 
 .client-reviews

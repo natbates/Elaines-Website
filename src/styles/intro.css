@@ -99,7 +99,7 @@
   top: -110px;
   color: var(--white) !important;
   font-size: 2rem !important;
-  text-wrap: nowrap;
+  white-space: nowrap;
   margin-top: 0;
   animation: flyDownFadeInText 0.6s ease forwards;
 }
@@ -367,4 +367,16 @@
   {
       font-size: 1.8rem;
   }
+}
+
+.background-video::-webkit-media-controls {
+  display: none !important; /* Safari */
+}
+
+.background-video::-moz-media-controls {
+  display: none !important; /* Firefox */
+}
+
+.background-video::media-controls {
+  display: none !important; /* Chrome */
 }
