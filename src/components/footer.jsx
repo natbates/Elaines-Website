@@ -30,7 +30,7 @@ const Footer = () =>
                     <SocialLinks/>
                 </div>
                 <p>hello@elainekeep.com</p>
-                <p>0781353561</p>
+                <p>07813535671</p>
             </div>
 
         </div>
