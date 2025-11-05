@@ -2,23 +2,23 @@
 
 /* Each layer has a visible image */
 .layer1 {
-  background-image: url("../../public/images/parallax/Paint\ Layer\ 5.PNG");
+  background-image: url("../../public/images/parallax/elaine-parallax/5.PNG");
   z-index: 1;
 }
 .layer2 {
-  background-image: url("../../public/images/parallax/Paint\ Layer\ 4.PNG");
+  background-image: url("../../public/images/parallax/elaine-parallax/4.PNG");
   z-index: 2;
 }
 .layer3 {
-  background-image: url("../../public/images/parallax/Paint\ Layer\ 3.PNG");
+  background-image: url("../../public/images/parallax/elaine-parallax/3.PNG");
   z-index: 3;
 }
 .layer4 {
-  background-image: url("../../public/images/parallax/Paint\ Layer\ 2.PNG");
+  background-image: url("../../public/images/parallax/elaine-parallax/2.PNG");
   z-index: 4;
 }
 .layer5 {
-  background-image: url("../../public/images/parallax/Paint\ Layer\ 1.PNG");
+  background-image: url("../../public/images/parallax/elaine-parallax/1.PNG");
   z-index: 5;
 }
 
@@ -48,33 +48,30 @@
 }
 
 .parallax {
-  position: relative;
-  height: 120vh;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   width: 100vw;
+  z-index: -1;
+  aspect-ratio: 2 / 1;
+  transform: scaleY(1);
 }
 
-.parallax::before {
-  content: "";
-  position: absolute;
-  inset: 2vw; /* replaces top, right, bottom, left margins */
-  border-radius: 5dvw;
-  outline: 1vw solid black;
-  box-sizing: border-box;
-  z-index: 10;
-  background-color: rgba(255, 255, 255, 0.271);
-}
+
 
 /* Base layer setup */
 .parallax .layer {
   position: absolute;
   inset: 0;
-  background-position: center top; /* Center vertically */
-  background-size: cover;
+  background-position: center bottom; /* Center vertically */
+  background-size: contain;
+  background-repeat: repeat-x;
   will-change: transform;
   transition: transform 0.1s linear;
   opacity: 1;

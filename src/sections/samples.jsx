@@ -3,9 +3,9 @@ import "../styles/samples.css";
 
 const Samples = () => {
   const sampleImages = [
-    { title: "Content Strategy", imageUrl: "/images/devices/edited-photo-2.png" },
-    { title: "Editorial Work", imageUrl: "/images/devices/edited-photo-3.png" },
-    { title: "B2B Whitepaper", imageUrl: "/images/devices/edited-photo-4.png" },
+    { title: "Content Strategy", imageUrl: "/images/devices/kato.png" },
+    { title: "Editorial Work", imageUrl: "/images/devices/kerfuffle-2.png" },
+    { title: "B2B Whitepaper", imageUrl: "/images/devices/kerfuffle.png" },
   ];
 
   const containerRef = useRef(null);

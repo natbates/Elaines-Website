@@ -1,34 +1,104 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
 import "../styles/results.css";
 
-// Example image URLs — replace with your own
-const images = [
-  ["1.png", "2.png", "3.png"], // Left column
-  ["4.png", "5.png", "4.png"], // Center column
-  ["3.png", "2.png", "1.png"], // Right column
-];
+// Replace with your actual images
+const images = {
+  left: "11.png", // Left large image
+  rightTop: "12.png", // Right top image
+  rightBottom: ["31.png", "14.png"], // Right bottom two images
+};
 
 const Results = () => {
+  // Motion variant for fade-in
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.2, duration: 0.8, ease: "easeOut" },
+    }),
+  };
+
   return (
     <div id="results-gallery">
-      {/* <h1><span className="white-underline">Results</span> I have delivered</h1> */}
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        What I have done
+      </motion.h1>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
+        perspiciatis unde omnis iste natus error sit voluptatem accusantium
+        doloremque laudantium, totam rem aperiam.
+      </motion.p>
+
       <div className="gallery-container">
-        {images.map((columnImages, colIndex) => (
-          <div
-            key={colIndex}
-            className={`gallery-column ${colIndex === 1 ? "center-column" : "side-column"}`}
+        {/* Left side */}
+        <motion.div
+          className="left-side"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <div className="gallery-item">
+            <img
+              src={`./images/backgrounds/${images.left}`}
+              alt="Left"
+              className="fade-image"
+            />
+          </div>
+        </motion.div>
+
+        {/* Right side */}
+        <div className="right-side">
+          <motion.div
+            className="right-top"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={1}
+            viewport={{ once: true, amount: 0.2 }}
           >
-            {columnImages.map((placeholder, idx) => (
-              <div
+            <div className="gallery-item">
+              <img
+                src={`./images/backgrounds/${images.rightTop}`}
+                alt="Right Top"
+                className="fade-image"
+              />
+            </div>
+          </motion.div>
+
+          <div className="right-bottom">
+            {images.rightBottom.map((img, idx) => (
+              <motion.div
                 key={idx}
-                className={`gallery-item gallery-item-${idx + 1}`}
+                className="gallery-item"
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                custom={idx + 2}
+                viewport={{ once: true, amount: 0.2 }}
               >
-                <img src = {`./images/backgrounds/${placeholder}`} />
-                <span className="placeholder-text">{placeholder}</span>
-              </div>
+                <img
+                  src={`./images/backgrounds/${img}`}
+                  alt={`Right Bottom ${idx}`}
+                  className="fade-image"
+                />
+              </motion.div>
             ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

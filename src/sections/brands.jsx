@@ -2,8 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../styles/brands.css";
 
-// Local brand images
-// Temporary brand logos using Clearbit placeholders
+// Local brand images (using Clearbit logos)
 const brandImages = [
   { url: "https://logo.clearbit.com/github.com", fileName: "GitHub" },
   { url: "https://logo.clearbit.com/google.com", fileName: "Google" },
@@ -22,22 +21,43 @@ const brandImages = [
   { url: "https://logo.clearbit.com/nvidia.com", fileName: "NVIDIA" },
 ];
 
-
 const Brands = () => {
+  // Fade-in animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 1, ease: "easeOut" } 
+    },
+  };
+
   return (
-    <div id="brands">
-      <h1>Don't just take it from me...</h1>
+    <motion.div
+      id="brands"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeIn}
+    >
+      {/* Animate heading */}
+      <motion.h1 variants={fadeIn}>
+        Don’t just take it from me...
+      </motion.h1>
 
       {brandImages.length === 0 ? (
-        <div>No brand images available</div>
+        <motion.div variants={fadeIn}>No brand images available</motion.div>
       ) : (
-        <div className="carousel-wrapper">
+        <motion.div 
+          className="carousel-wrapper" 
+          variants={fadeIn}
+        >
           <motion.div
             className="brand-carousel"
             animate={{ x: ["0%", "-100%"] }}
             transition={{
               repeat: Infinity,
-              duration: 25, // adjust scroll speed
+              duration: 25,
               ease: "linear",
             }}
           >
@@ -52,11 +72,10 @@ const Brands = () => {
               </div>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
 export default Brands;
-   

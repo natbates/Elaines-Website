@@ -1,87 +1,75 @@
+.portfolio-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+  max-width: 1200px;
+  padding: 0 2vw;
+}
 
-
-.portfolio-section
+.portfolio-section h1
 {
-    padding: 2vw;
+  font-size: 4.83rem;
+  font-weight: 100;
+  text-align: center;
+  font-family: "BoldFont";
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.portfolio-image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: 5px solid white;
+  outline-offset: -5px;
+  border-radius: 16px; /* optional */
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 600px;
+  display: block;
+  z-index: -1;
+  object-fit: cover; 
+  background-color: var(--white);
+  border-radius: 16px; 
+}
+
+.portfolio-text {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: var(--dark);
+  font-family: "BoldFont", sans-serif;
+}
+
+.squiggle
+{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-}
-
-.top-line
-{
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    height: fit-content;
     width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    background-image: url("../../public/images/processed/squiggle.png");
+    background-size: clamp(300px, 100%, 800px);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.portfolio-section h1:hover
-{
-    opacity: 1;
-    filter: grayscale(0);
-}
-
-.portfolio-button
-{
-    padding: 1rem 3rem;
-    font-size: 2.5rem;
-    background-color: rgb(39, 39, 39);
-    color: var(--white);
-    border: none;
-    border-radius: 4vw;
-    position: absolute;
-    right: 3vw;
-    font-family: "black";
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 100;
-}
-
-.portfolio-button:hover
-{
-    padding: 1.2rem 3.2rem;
-    font-size: 2.7rem;
-}
-
-@font-face {
-    font-family: "black";
-    src: url("../../public/fonts/Black\ Writing.ttf");
-}
-
-.portfolio-section h1 {
-  font-family: "PortfolioFont", sans-serif;
-  font-size: clamp(4rem, 13dvw, 48rem);
-  text-align: end;
-  text-wrap: nowrap;
-  width: 100%;
+.portfolio-text h1 {
+  position: absolute;
+  font-size: 3rem;
   margin: 0;
-  opacity: 1;
-  filter: grayscale(0) brightness(1);
-  opacity: 1;
-  cursor: pointer;
-  transition: opacity 0.3s ease, filter 0.3s ease;
-
-  /* Image overlay inside text */
-  background-image: url("../../public/images/backgrounds/1.png");
-  background-size: cover;
-  background-position: center;
-
-  /* Magic for text masking */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* fallback for other browsers */
-  background-clip: text;
-  color: transparent;
-
-  /* Optional: subtle overlay gradient to enhance contrast */
-  /* background-image: linear-gradient(to right, #ff0080aa, #ffffff00), url("../../public/images/your-image.jpg"); */
-}
-@font-face {
-    font-family: "PortfolioFont";
-    src: url("../../public/fonts/UT\ Boldonse\ Demo.ttf");
+  z-index: 1;
+  text-align: center !important;
 }

@@ -1,24 +1,15 @@
-import "../styles/portfolio.css";
-import { ReactComponent as SausageDog } from "../assets/sausagedog.svg";
+import React from "react";
 import { motion } from "framer-motion";
+import "../styles/portfolio.css";
 
 const Portfolio = () => {
-  // Animation variants for entry
-  const fadeInUp = {
+  // Motion variants for fade-in
+  const fadeIn = {
     hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1.6, ease: "easeOut" },
-    },
-  };
-
-  const fadeInRight = {
-    hidden: { opacity: 0, x: 50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: "easeOut", delay: 0.2 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 1, ease: "easeOut" } 
     },
   };
 
@@ -28,32 +19,42 @@ const Portfolio = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      onClick={() => window.open("https://www.canva.com/design/DAG2f34whrc/R0vkEJQd1aa_gPN0FXMO_w/edit?utm_content=DAG2f34whrc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton", "_blank")}
+      onClick={() =>
+        window.open(
+          "https://www.canva.com/design/DAG2f34whrc/R0vkEJQd1aa_gPN0FXMO_w/edit?utm_content=DAG2f34whrc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+          "_blank"
+        )
+      }
     >
-      <div className="top-line">
-        <motion.div
-          variants={fadeInUp}
-          className="sausage-dog-wrapper"
-        >
-          <SausageDog className="sausage-dog-animation" />
-        </motion.div>
-
-        <motion.h1 variants={fadeInRight}>SEE MY</motion.h1>
-      </div>
-
-      <motion.h1
-        variants={fadeInUp}
-        transition={{ delay: 0.4, duration: 0.8 }}
+      {/* Animate the title */}
+      <motion.h1 
+        className="portfolio-heading"
+        variants={fadeIn}
       >
-        PORTFOLIO
+        My Portfolio
       </motion.h1>
-      {/* <motion.button
-        variants={fadeInUp}
-        className="portfolio-button"
-        transition={{ delay: 0.4, duration: 0.8 }}
+
+      {/* Image/Video wrapper with motion */}
+      <motion.div 
+        className="portfolio-image-wrapper" 
+        variants={fadeIn}
       >
-        click here to see
-      </motion.button> */}
+        <img
+          className="portfolio-image"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <motion.div 
+          className="portfolio-text" 
+          variants={fadeIn}
+        >
+          <div className="squiggle">
+              <h1>SEE MY PORTFOLIO</h1>
+          </div>
+        </motion.div>
+      </motion.div>
     </motion.div>
   );
 };

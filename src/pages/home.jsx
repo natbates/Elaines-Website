@@ -14,22 +14,27 @@ const Home = () =>
     return(
         <>
             <Intro />
-
+{/* 
             {/* <div id = "intro-curve">
 
             </div> */}
 
-            <About />
+            {/* <About />  */}
             <Services />
-
             <Portfolio />
+            <Results /> 
+
+            <Brands />
+            <Clients /> 
+            <Samples /> 
+            {/*
 
             <Parallax />
-            {/* <Results />  */}
+            <Results /> 
             <Clients />        
 
             <Brands />
-            <Samples />
+            <Samples />   */}
         </>
     );
 };

@@ -1,32 +1,53 @@
 #footer
 {
-    background-color: #fcf4f9;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: start;
-    padding: 2vw;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     position: relative;
-    padding-top: 20px;
+    padding-top: 10px;
     z-index: 6;
+    width: 100%;
+    overflow: hidden;
+    /* border-top: 15px solid black */
 }
 
 .footer-content
 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 1300px;
+    width: 100%;
+    padding: 2vw;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+.footer-content .row
+{
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin-top: 30px;
 }
 
 .footer-title
 {
     font-family: "BoldFont";
-    font-size: clamp(2.9rem, 9dvw, 26rem);
+    color: var(--black);
+    font-size: 7rem;
     margin: 0;
     margin-bottom: 20px;
     margin-top: 10px;
+}
+
+#quick-links h1
+{
+    color: var(--black);
 }
 
 #quick-links {
@@ -77,13 +98,18 @@
 .footer-rose
 {
     position: absolute;
-    bottom: 0;
+    bottom: 0vw;
     background-image: url("../../public/images/processed/rose.png");
     z-index: -11;
-    right: 26%;
-    width: 60%;
-    height: 90%;
-    background-size: cover;
+    right: 0%;
+    transform: translate(0%, 30%);
+    width: 65%;
+    height: 100%;
+    right: 0%;
+    transform: scale(1.7);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
     opacity: 0.8;
 }
 
@@ -99,15 +125,15 @@
     height: 83px;
 }
 
-#footer-socials #social-links
+#extra-info #social-links
 {
+    margin-top: 30px;
     transform-origin: center;
-    transform: scale(0.7);
 }
 
 #extra-info
 {
-    color: var(--hot-pink);
+    color: var(--white);
     margin-top: 0;
 }
 
@@ -115,7 +141,9 @@
 {
     font-size: 1.5rem;
     margin-top: -0;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    font-family: "Source";
 }
 
 #extra-info button
@@ -125,9 +153,8 @@
     color: var(--black);
     margin-top: 20px;
     font-size: 1.3rem;
-    padding: 5px 30px;
-    border-radius: 4vw;
-    outline: 5px solid black;
+    height: fit-content;
+    padding: 10px 30px;
 }
 
 .copy-right {

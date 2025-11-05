@@ -1,7 +1,7 @@
+import "../styles/clients.css";
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import "../styles/clients.css";
 
 const Clients = () => {
   const clients = [
@@ -9,61 +9,57 @@ const Clients = () => {
       company: "Brother Incs",
       quote:
         "She is a great sister, I love her dog and her child is pretty cool!",
-      person: "Nathaniel Cooper",
-      title: "Director of Brothers Inc",
+      person: "Nathaniel",
+      title: "Clients Position",
       avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
-      company: "Acme Corp",
+      company: "Client",
       quote:
-        "Fantastic collaboration experience. They made our brand shine visually.",
-      person: "Samantha Doe",
-      title: "Marketing Lead at Acme Corp",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      person: "Client Name",
+      title: "Clients Position",
       avatar: "https://randomuser.me/api/portraits/women/45.jpg",
     },
     {
-      company: "Nova Labs",
+      company: "Client",
       quote:
-        "They’re an extension of our team — the quality and speed are unmatched.",
-      person: "Elliot Cruz",
-      title: "Head of Creative at Nova Labs",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      person: "Client Name",
+      title: "Clients Position",
       avatar: "https://randomuser.me/api/portraits/men/28.jpg",
     },
     {
-      company: "PixelPeak Studios",
+      company: "Client",
       quote:
-        "Their attention to detail was incredible — our app has never looked better.",
-      person: "Ava Thompson",
-      title: "UI/UX Designer at PixelPeak Studios",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      person: "Client Name",
+      title: "Clients Position",
       avatar: "https://randomuser.me/api/portraits/women/68.jpg",
     },
     {
-      company: "CloudEdge Technologies",
+      company: "Client",
       quote:
-        "Reliable, efficient, and creative. They delivered exactly what we envisioned.",
-      person: "Liam Rodriguez",
-      title: "CTO at CloudEdge Technologies",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      person: "Client Name",
+      title: "Clients Position",
       avatar: "https://randomuser.me/api/portraits/men/60.jpg",
     },
     {
-      company: "BrightMind Analytics",
+      company: "Client",
       quote:
-        "They transformed our data workflow. The collaboration was smooth and insightful.",
-      person: "Emily Carter",
-      title: "Head of Product at BrightMind Analytics",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      person: "Client Name",
+      title: "Clients Position",
       avatar: "https://randomuser.me/api/portraits/women/23.jpg",
     },
   ];
 
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.2 },
-    },
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
   const cardVariants = {
@@ -73,55 +69,58 @@ const Clients = () => {
 
   return (
     <section id="clients" ref={ref}>
-      <motion.div
-        className="clients-container"
-        variants={sectionVariants}
+      {/* Animate heading */}
+      <motion.h1
+        className="main-text"
+        variants={fadeInUp}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
       >
-            <h1 className="main-text">What they <span className="pink-underline">think</span></h1>
-        {clients.map((client, index) => {
-          const isEven = index % 2 === 0;
-          return (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              className={`testimonial-card ${isEven ? "left" : "right"}`}
-            >
-              {isEven ? (
-                <>
-                  <img
-                    src={client.avatar}
-                    alt={client.person}
-                    className="client-avatar"
-                  />
-                  <div className="testimonial-content">
-                    <h2 className="company-name">{client.company}</h2>
-                    <p className="quote">“{client.quote}”</p>
-                    <p className="client-meta">
-                      {client.person}, {client.title}
-                    </p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="testimonial-content">
-                    <h2 className="company-name">{client.company}</h2>
-                    <p className="quote">“{client.quote}”</p>
-                    <p className="client-meta">
-                      {client.person}, {client.title}
-                    </p>
-                  </div>
-                  <img
-                    src={client.avatar}
-                    alt={client.person}
-                    className="client-avatar"
-                  />
-                </>
-              )}
-            </motion.div>
-          );
-        })}
+        What they <span className="pink-underline">think</span>
+      </motion.h1>
+
+      {/* Animate subtext */}
+      <motion.p
+        className="sub-text"
+        variants={fadeInUp}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        transition={{ delay: 0.2 }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+      </motion.p>
+
+      {/* Animate testimonial grid */}
+      <motion.div
+        className="clients-grid"
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={{
+          visible: {
+            transition: { staggerChildren: 0.2 },
+          },
+        }}
+      >
+        {clients.map((client, index) => (
+          <motion.div
+            key={index}
+            className="testimonial-card"
+            variants={cardVariants}
+          >
+            <div className="testimonial-top">
+              <img
+                src={client.avatar}
+                alt={client.person}
+                className="client-avatar"
+              />
+              <h2 className="company-name">{client.company}</h2>
+            </div>
+            <p className="quote">“{client.quote}”</p>
+            <p className="client-meta">
+              {client.person}, {client.title}
+            </p>
+          </motion.div>
+        ))}
       </motion.div>
     </section>
   );

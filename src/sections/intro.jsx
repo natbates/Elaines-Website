@@ -2,6 +2,7 @@ import "../styles/intro.css";
 import SocialLinks from "../components/socialLinks";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Parallax from "../components/parallax";
 
 const Intro = () => {
 
@@ -18,24 +19,35 @@ const Intro = () => {
 
     return (
         <div id = "intro">
-            <div id="intro-cover">
-                <video autoPlay muted loop playsInline className="background-video">
-                    <source src="images/processed/bubbles.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+
+            <Parallax />
+
             <div id = "intro-items">
-                <img id = "intro-logo" src = "images/processed/EK white intro.png"></img>
+                <div id = "intro-text">
+                    <h1>B2B</h1>
+                    <h1 className="middle">COPY</h1>
+                    <h1 className="last">WRITING</h1>
+                </div>
+
+                {/* <div id="intro-video">
+                    <video autoPlay muted loop playsInline className="background-video">
+                        <source src="images/processed/bubbles.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>   */}
+
                 <div id = "social-intro-holder">
                 <p id="social-intro-text">14 + years in marketing in SaaS, HR and tech</p>
+                <div className="line"></div>
+                <div className="social-intro-links">
+                    <SocialLinks />
+                </div>
                 </div>
             </div>
 
-            <div className="social-intro-links">
-                <SocialLinks />
-            </div>
+  
 
-            <div id = "intro-circle">
+            {/* <div id = "intro-circle">
                     <img id = "mouse" src = "svgs/mouse.svg"></img>
                     <img id = "down" src = "svgs/down.svg"></img>
                     <div className="semi-circle-container" onClick={() => {handleScrollToSection('#about')}}>
@@ -44,7 +56,7 @@ const Intro = () => {
                         </svg>
                         <div className="loader"></div>
                     </div>
-            </div>
+            </div> */}
         </div>
     )
 }

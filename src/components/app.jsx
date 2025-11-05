@@ -8,23 +8,25 @@ import AboutMe from "../pages/about-me";
 // Public
 import Contact from "../pages/contact";
 
+import { useNavigate } from "react-router-dom";
 import "../styles/app.css";
 
 const App = () => {
 
+    const navigate = useNavigate();
+
     return (
         <div id="page-container">
-            <BrowserRouter>
-                <Navbar />
-                <div id="content-wrap">
-                    <Routes>
-                        <Route exact path="/" element={<Home />} />
-                        <Route exact path="/about" element={<AboutMe />} />
-                        <Route exact path="/contact" element={<Contact />} />
-                    </Routes>
-                    <Footer />
-                </div>
-            </BrowserRouter>
+            <button onClick = {() => {navigate("contact")}} className="global-button">Get In Touch</button>
+            <Navbar />
+            <div id="content-wrap">
+                <Routes>
+                    <Route exact path="/" element={<Home />} />
+                    <Route exact path="/about" element={<AboutMe />} />
+                    <Route exact path="/contact" element={<Contact />} />
+                </Routes>
+                <Footer />
+            </div>
         </div>
     );
 };

@@ -11,6 +11,15 @@
     z-index: 3;
     background-color: var(--hot-pink);
     border-radius: 4vw;
+    display: none;
+}
+
+#contact
+{
+    padding: 0vw 2vw;
+    height: 100%;
+    flex: 1;
+    max-width: 1200px;
 }
 
 #contact .main-text
@@ -18,11 +27,9 @@
     position: relative;
     color: var(--white);
     z-index: 100;
-    text-wrap: nowrap;
     width: 100%;
-    text-align: end;
-    font-size: 6vw;
-    padding: 30px;
+    text-align: start;
+    font-size: 6rem;
     font-family: "BoldFont";
 }
 
@@ -36,13 +43,12 @@
     width: 100%;
     text-align: start;
     margin-top: 90px;
+    margin-bottom: 0px;
 }
 
 #contact{
-    text-align: center;
     overflow: hidden;
-    padding: 2vw;
-    padding-top: 10vw;
+    margin-top: 150px;
 }
 
 #contact-holder{
@@ -51,52 +57,32 @@
     position: relative;
 }
 
-#contact-holder h1
-{
-    font-size: 2.7rem;
-    text-wrap: nowrap;
-    color: var(--hot-pink);
-}
-
-#contact-curve
-{
-    display: none;
-    position: relative;
-    width: 100%;
-    background-image: url("../../public/svgs/contact-curve.svg");
-    height: 60px;
-    background-position: center;
-    background-size: cover;
-    transform-origin: bottom;
-    top: -60px;
-    z-index: 4;
-    transform: scaleX(1.2);
-}
 
 .contact-form
 {
-    border-top: 1px rgba(0, 0, 0, 0.153) solid;
     margin-top: 8px;
-    padding-top: 20px;
+    padding-top: 0px;
 }
 
 .form-group{
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    gap: 10px;
 }
 
 .form-group label{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     margin-top: 10px;
     font-weight: 550;
+    font-size: 1.2rem;
 }
 
 .form-group input
 {
     height: 70px;
-    border-radius: 35px;
-    border-color: #00000056;
+    border-radius: 16px;
+    border: 3px solid white;
     padding-left: 25px;
     font-size: 1rem;
     font-family: main;
@@ -106,8 +92,8 @@
 .form-group textarea
 {
     height: 190px;
-    border-radius: 35px;
-    border-color: #00000056;
+    border-radius: 16px;
+    border: 3px solid white;
     padding-left: 25px;
     padding-top: 25px;
     font-size: 1rem;
@@ -117,18 +103,18 @@
 
 textarea::placeholder
 {
-    color: var(--black);
+    color: var(--text-colour);
 }
 
 input::placeholder
 {
-    color: var(--black);
+    color: var(--text-colour);
 }
 
 .button-container
 {
     display: flex;
-    gap: 1.5vw;
+    gap: 20px;
     width: 100%;
 }
 
@@ -139,19 +125,16 @@ input::placeholder
 
 .clear-button
 {
-    background-color: var(--white) !important;
-    outline: 4px solid var(--black);
-    color: var(--black) !important;
-    outline-offset: -4px;
+    
 }
 
 .submit-button, .clear-button
 {
-    background-color: var(--hot-pink);
+    background-color: var(--white);
     height: 55px;
     font-weight: bold;
     border: none;
-    color: var(--white);
+    color: var(--dark);
     margin-top: 20px;
     border-radius: 30px;
     padding-left: 30px;

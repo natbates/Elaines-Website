@@ -1,9 +1,8 @@
 #social-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5vw;
-  margin-top: 2rem;
+  justify-content: start;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 #social-links a {
@@ -19,14 +18,14 @@
 }
 
 .social-icon {
-  width: 20px;
-  height: 20px;
-  opacity: 0.8;
+  width: 30px;
+  height: 30px;
+  opacity: 1;
   object-fit: contain;
   transition: transform 0.2s ease;
 }
 
 #social-links a:hover {
   transform: scale(1.2); /* grow a bit */
-  opacity: 1;
+  opacity: 1 !important;
 }

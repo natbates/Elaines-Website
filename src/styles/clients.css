@@ -1,212 +1,80 @@
 #clients {
-  background-color: #ff0080; /* soft greenish tone */
-  display: flex;
-  justify-content: center;
-  padding: 2vw;
-  padding-top: 8vw;
-}
-
-.clients-container {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  align-items: center;
   width: 100%;
-  background-color: #fafafa;
-  border-radius: 5dvw;
-  padding: 2vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0vw 2vw;
 }
 
-.clients-container .main-text
+#clients h1
 {
-  font-size: 6rem;
   text-align: start;
-  width: 100%;
-  margin-bottom: 50;
+  margin-bottom: 0px;
 }
 
-.avatars-column {
-  position: relative;
-  overflow: hidden;
+#clients .sub-text
+{
+  text-align: start;
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 2rem;
 }
 
 .testimonial-card {
-  flex: 1;
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #000;
+}
+
+.testimonial-top {
   display: flex;
   align-items: center;
-  gap: 3rem;
-  width: 100%;
-    max-width: 1200px;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .client-avatar {
-  width: 250px;
-  height: 250px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
-  background-color: var(--hot-pink);
-  outline: 10px solid black;
-}
-
-.client-avatar.faded {
-  filter: grayscale(40%);
-  opacity: 0.5;
-  transform: scale(0.85);
-}
-
-.testimonial-content {
-  flex: 1;
 }
 
 .company-name {
-  font-family: "BoldFont", sans-serif;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  color: #0f2b1e;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .quote {
-  font-size: 1.8rem;
-  line-height: 1.4;
-  color: #1a1a1a;
-  max-width: 700px;
-  margin-bottom: 1.5rem;
-}
-
-.quote strong {
-  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 1rem;
 }
 
 .client-meta {
-  color: #1a1a1a91;
-  margin-bottom: 2.5rem;
-}
-
-.stats-row {
-  display: flex;
-  gap: 3rem;
-  margin-bottom: 2rem;
-}
-
-.stat h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #0f2b1e;
-}
-
-.stat p {
   font-size: 0.9rem;
   color: #555;
 }
 
-.case-study {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.1s ease, box-shadow 0.2s ease;
-}
-
-.case-study:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-.case-study img {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.case-company {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  color: #777;
-}
-
-.case-study h4 {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.arrow {
-  font-size: 1.5rem;
-  margin-left: auto;
-}
-
-/* Animation styles */
-.testimonial-content {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.5s ease;
-}
-
-.testimonial-content.fade-out {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.testimonial-content.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Nav buttons */
-.nav-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-left: 2rem;
-}
-
-.nav-buttons button {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid #222;
-  background: black;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: var(--white);
-}
-
-.nav-buttons button:hover {
-  background-color: #ffffff;
-  color: #000000;
-  transform: translateY(-2px);
-}
-
-
-.testimonial-content.fade-out ~ .avatars-column .client-avatar {
-  opacity: 0.4;
-  transform: scale(0.95);
-}
-
-.testimonial-content.fade-in ~ .avatars-column .client-avatar {
-  opacity: 1;
-  transform: scale(1);
-}
-
-
+/* Responsive */
 @media (max-width: 900px) {
-  .clients-container {
-    flex-direction: column;
-    text-align: center;
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
   }
+}
 
-  .avatars-column {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .stats-row {
-    justify-content: center;
+@media (max-width: 600px) {
+  .clients-grid {
+    grid-template-columns: 1fr;
   }
 }

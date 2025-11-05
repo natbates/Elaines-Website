@@ -1,38 +1,36 @@
 #brands {
   padding: 0vw 2vw;
-  text-align: center;
   box-sizing: border-box;
   width: 100%;
   position: relative;
-    background: linear-gradient(to bottom, #ff0080 0%, #ff225d 100%);
-  color: var(--white);
   overflow: hidden;
   padding-top: 0px;
   padding-bottom: 0px;
+  max-width: 1200px;
 }
 
 #brands h1 {
-  font-size: 7rem;
+  font-size: 4.83em;
   margin: 0;
-  text-align: start;
+  text-align: center;
   color: var(--white);
-  padding: 120px 0 40px 0;
   font-family: "BoldFont", cursive;
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 
 .carousel-wrapper {
   overflow: hidden;
   width: 100%;
   background-color: var(--white);
-  border-radius: 4dvw;
+  border-radius: 16px;
   padding: 40px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+  
 }
 
 .brand-carousel {
   display: flex;
-  gap: 50px;
+  gap: 20px;
 }
 
 .brand {
@@ -45,7 +43,7 @@
 
 .brand-image {
   width: 200px;
-  height: 200px;
+  height: 150px;
   object-fit: contain;
   opacity: 0.8;
   transition: all 0.3s ease;
