@@ -1,66 +1,116 @@
-import React, { useEffect, useState } from 'react';
-import { getFirestore, collection, getDocs } from 'firebase/firestore'; 
+import React from 'react';
+import { motion } from 'framer-motion';
 import Service from '../components/service';
 import "../styles/services.css";
 
 const Services = () => {
-    const [services, setServices] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  // Static services data
+  const services = [
+    {
+      id: 1,
+      title: "Content Revisions",
+      image: "/images/backgrounds/1.png",
+    },
+    {
+      id: 2,
+      title: "B2B Whitepapers",
+      image: "/images/backgrounds/2.png",
+    },
+    {
+      id: 3,
+      title: "Downloads",
+      image: "/images/backgrounds/3.png",
+    },
+    {
+      id: 4,
+      title: "B2B Whitepapers and Downloads",
+      image: "/images/backgrounds/5.png",
+    },
+  ];
 
-    useEffect(() => {
-        const fetchServices = async () => {
-            const db = getFirestore(); 
-            try {
-                const querySnapshot = await getDocs(collection(db, 'serviceDetails'));
-                const entries = querySnapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
-                setServices(entries);
-            } catch (error) {
-                console.error('Error fetching services:', error);
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
-        };
+  // Fonts for each service
+  const fonts = ["BoldFont", "BoldFont", "BoldFont", "BoldFont"];
 
-        fetchServices();
-    }, []);
+  // Animation variants
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: i => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" }
+    })
+  };
 
-    return (
-        <div id="services">
-            <div id="services-text">
-                <div className='top-line-service'>
-                    <h1 className="main-text">What I can do for <span className="pink-underline">you</span></h1>
-                </div>
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: i => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" }
+    })
+  };
 
-                <p className="sub-text">I turn my hand to brochures, white papers, blogs, articles, script writing, internal comms, and beyond. However, here are my key strengths.</p>
-            </div>
-
-            {loading ? (
-                <div>Loading...</div>
-            ) : error ? (
-                <div>{error.message}</div>
-            ) : (
-                <div id="service-container">
-                    {services.map((entry, index) => (
-                        <div className="service-item" key={entry.id}>
-                            <Service
-                                name={entry.title}
-                                description={entry.description}
-                                imageUrl={entry.imageUrl}
-                                direction={index % 2 === 0 ? "left" : "right"} // Alternate between left and right
-                            />
-                        </div>
-                    ))}
-                </div>
-            )}
-
-            <div id = "service-bottom-curve"></div>
+  return (
+    <div id="services">
+      <div id="services-background"></div>
+      <div id="services-content">
+        <div id="services-text">
+          <div className='top-line-service'>
+            <h1 className="main-text">What I can do for <span className="pink-underline">you</span></h1>
+          </div>
+          <p className="sub-text">
+            I turn my hand to brochures, white papers, blogs, articles, script writing, internal comms, and beyond. However, here are my key strengths.
+          </p>
         </div>
-    );
+
+        <div id="service-container">
+          {/* Left column */}
+          <div className="service-column">
+            {[services[0], services[2]].map((service, i) => (
+              <motion.div
+                key={service.id}
+                className={`service-item ${i === 0 ? "tall" : ""}`}
+                variants={fadeInLeft}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                custom={i}
+              >
+                <Service
+                  name={service.title}
+                  font={fonts[i * 2]}
+                  direction="left"
+                  imageUrl={service.image}
+                />
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Right column */}
+          <div className="service-column">
+            {[services[1], services[3]].map((service, i) => (
+              <motion.div
+                key={service.id}
+                className={`service-item ${i === 1 ? "tall" : ""}`}
+                variants={fadeInRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                custom={i}
+              >
+                <Service
+                  name={service.title}
+                  font={fonts[i * 2 + 1]}
+                  direction="right"
+                  imageUrl={service.image}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Services;

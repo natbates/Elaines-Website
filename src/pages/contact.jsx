@@ -40,7 +40,10 @@ const Contact = () => {
                         <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                     </div>
 
-                    <button type="submit" className="submit-button">Submit</button>
+                    <div className="button-container right">
+                        <button className="clear-button">Clear</button>
+                        <button type="submit" className="submit-button">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>

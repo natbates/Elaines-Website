@@ -1,75 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage';
+import React from "react";
+import { motion } from "framer-motion";
 import "../styles/brands.css";
 
+// Local brand images
+// Temporary brand logos using Clearbit placeholders
+const brandImages = [
+  { url: "https://logo.clearbit.com/github.com", fileName: "GitHub" },
+  { url: "https://logo.clearbit.com/google.com", fileName: "Google" },
+  { url: "https://logo.clearbit.com/digitalocean.com", fileName: "DigitalOcean" },
+  { url: "https://logo.clearbit.com/mlh.io", fileName: "MLH" },
+  { url: "https://logo.clearbit.com/netflix.com", fileName: "Netflix" },
+  { url: "https://logo.clearbit.com/spotify.com", fileName: "Spotify" },
+  { url: "https://logo.clearbit.com/slack.com", fileName: "Slack" },
+  { url: "https://logo.clearbit.com/openai.com", fileName: "OpenAI" },
+  { url: "https://logo.clearbit.com/airbnb.com", fileName: "Airbnb" },
+  { url: "https://logo.clearbit.com/microsoft.com", fileName: "Microsoft" },
+  { url: "https://logo.clearbit.com/zoom.us", fileName: "Zoom" },
+  { url: "https://logo.clearbit.com/stripe.com", fileName: "Stripe" },
+  { url: "https://logo.clearbit.com/atlassian.com", fileName: "Atlassian" },
+  { url: "https://logo.clearbit.com/figma.com", fileName: "Figma" },
+  { url: "https://logo.clearbit.com/nvidia.com", fileName: "NVIDIA" },
+];
+
+
 const Brands = () => {
-    const [brandImages, setBrandImages] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  return (
+    <div id="brands">
+      <h1>Don't just take it from me...</h1>
 
-    useEffect(() => {
-        const fetchBrandImages = async () => {
-            const storage = getStorage();
-            const brandImagesRef = ref(storage, 'brandImages/images');
-
-            try {
-                const result = await listAll(brandImagesRef);
-                const urlPromises = result.items.map(async (itemRef) => {
-                    const url = await getDownloadURL(itemRef);
-                    const fileName = itemRef.name.replace(/\.[^/.]+$/, ""); // Remove file extension
-                    
-                    // Capitalize the start of each word in the file name
-                    const capitalizedFileName = fileName
-                        .split(' ')
-                        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                        .join(' ');
-                    
-                    return { url, fileName: capitalizedFileName };
-                });
-                const brandData = await Promise.all(urlPromises);
-                setBrandImages(brandData);
-            } catch (err) {
-                console.error('Error fetching brand images:', err);
-                setError(err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchBrandImages();
-    }, []);
-
-    return (
-        <div id="brands">
-            <h1>Don't just take it from me...</h1>
-            <div className="brand-background"></div>
-            {loading ? (
-                <div>Loading...</div>
-            ) : error ? (
-                <div>{error.message}</div>
-            ) : brandImages.length === 0 ? (
-                <div>No brand images available</div>
-            ) : (
-                <div className="brand-container">
-                    {brandImages.map((brand, index) => (
-                        <div key={index} className="brand">
-                            <img className="brand-image" src={brand.url} alt={brand.fileName} />
-                            <div>
-                                <p>{brand.fileName}</p>
-                                <div className="star-container">
-                                    <img src="./images/processed/black-star.png" alt="star" />
-                                    <img src="./images/processed/black-star.png" alt="star" />
-                                    <img src="./images/processed/black-star.png" alt="star" />
-                                    <img src="./images/processed/black-star.png" alt="star" />
-                                    <img src="./images/processed/black-star.png" alt="star" />
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            )}
+      {brandImages.length === 0 ? (
+        <div>No brand images available</div>
+      ) : (
+        <div className="carousel-wrapper">
+          <motion.div
+            className="brand-carousel"
+            animate={{ x: ["0%", "-100%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 25, // adjust scroll speed
+              ease: "linear",
+            }}
+          >
+            {[...brandImages, ...brandImages].map((brand, index) => (
+              <div key={index} className="brand">
+                <img
+                  className="brand-image"
+                  src={brand.url}
+                  alt={brand.fileName}
+                />
+                <p>{brand.fileName}</p>
+              </div>
+            ))}
+          </motion.div>
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default Brands;
+   

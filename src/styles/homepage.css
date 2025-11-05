@@ -4,44 +4,21 @@
     --hot-pink: #e82f8c;
     --white: #ffffff;
     --black: #000000;
-    --highlighted: #e82f8c77;
+    --highlighted: #e82f8c38;
 }
 
-html
-{
-  scroll-behavior: smooth;
-}
 
-body
-{
-    background-color: var(--white);
-    font-family: main;
-    margin: 0;
-    overflow-x: hidden;
-}
 
 .highlight
 {
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
   background-color: var(--highlighted);
 }
 
-#content-wrap
-{
-  height: auto;
-  position: relative;
-}
-
-#content-wrap:after
-{
-    content: "";
-    display: table;
-    clear: both;
-}
 
 .pink-underline {
-    font-family: main !important;
+    font-family: inherit !important;
     --s: 0.1em; /* Thickness of the line */
     --c: var(--hot-pink);
     padding-right: 1px;
@@ -146,8 +123,6 @@ textarea{
 }
 
 #sausage{
-    position: relative;
-    left: 50%;
     max-width: 400px;
     bottom: 400px;
     height: auto;
@@ -158,9 +133,12 @@ textarea{
 
 
 .sausage-dog-animation {
-    height: 25rem;
-    max-height: 80vh;
-    max-width: 80vw;
+    position: relative;
+    height: 100%;
+    flex: 1;
+    transform: scale(1.8);
+    transform-origin: left center;
+
   }
   
   .ear,

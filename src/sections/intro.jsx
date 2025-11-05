@@ -27,25 +27,23 @@ const Intro = () => {
             <div id = "intro-items">
                 <img id = "intro-logo" src = "images/processed/EK white intro.png"></img>
                 <div id = "social-intro-holder">
-                    <p id="social-intro-text">14 + years in marketing in SaaS, HR and tech</p>
-                    <SocialLinks />
+                <p id="social-intro-text">14 + years in marketing in SaaS, HR and tech</p>
                 </div>
             </div>
-            <div id = "intro-bottom">
-                <div id = "intro-curve"></div>
-                <div id = "intro-circle">
+
+            <div className="social-intro-links">
+                <SocialLinks />
+            </div>
+
+            <div id = "intro-circle">
                     <img id = "mouse" src = "svgs/mouse.svg"></img>
                     <img id = "down" src = "svgs/down.svg"></img>
-                    <div class="semi-circle-container" onClick={() => {handleScrollToSection('#about')}}>
+                    <div className="semi-circle-container" onClick={() => {handleScrollToSection('#about')}}>
                         <svg viewBox="0 0 100 50" width="100%" height="100%" overflow="visible">
                             <path d="M0,50 A50,50 0 0,1 100,50" />
                         </svg>
-                        <div class="loader"></div>
+                        <div className="loader"></div>
                     </div>
-                </div>
-                <div id="intro-text">
-                    <h1>B2B Content <span class="pink-underline">Marketing</span></h1>            
-                </div>
             </div>
         </div>
     )

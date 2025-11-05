@@ -8,34 +8,24 @@ import AboutMe from "../pages/about-me";
 // Public
 import Contact from "../pages/contact";
 
-// Private
-import LogIn from "../pages/login";
-import DashBoard from "../pages/dashboard";
-import useAnalytics from "../hooks/useAnalytics";
-import AuthProvider from "../contexts/authContext";
+import "../styles/app.css";
 
 const App = () => {
 
-    useAnalytics();
-
     return (
-        <AuthProvider>
-            <div id="page-container">
-                <BrowserRouter>
-                    <Navbar />
-                    <div id="content-wrap">
-                        <Routes>
-                            <Route exact path="/" element={<Home />} />
-                            <Route exact path="/login" element={<LogIn />} />
-                            <Route exact path="/about" element={<AboutMe />} />
-                            <Route exact path="/contact" element={<Contact />} />
-                            <Route exact path = "/dashboard" element={<DashBoard />} />
-                        </Routes>
-                        <Footer />
-                    </div>
-                </BrowserRouter>
-            </div>
-        </AuthProvider>
+        <div id="page-container">
+            <BrowserRouter>
+                <Navbar />
+                <div id="content-wrap">
+                    <Routes>
+                        <Route exact path="/" element={<Home />} />
+                        <Route exact path="/about" element={<AboutMe />} />
+                        <Route exact path="/contact" element={<Contact />} />
+                    </Routes>
+                    <Footer />
+                </div>
+            </BrowserRouter>
+        </div>
     );
 };
 

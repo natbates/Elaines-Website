@@ -1,88 +1,75 @@
 #brands {
-    padding: 40px;
-    text-align: center;
-    box-sizing: border-box;
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding-top: 150px;
-    z-index: 2;
-    padding-bottom: 100px;
+  padding: 0vw 2vw;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+    background: linear-gradient(to bottom, #ff0080 0%, #ff225d 100%);
+  color: var(--white);
+  overflow: hidden;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
-#brands h1{
-    font-size: 4rem;
-    margin: 5%;
-    text-align: center;
+#brands h1 {
+  font-size: 7rem;
+  margin: 0;
+  text-align: start;
+  color: var(--white);
+  padding: 120px 0 40px 0;
+  font-family: "BoldFont", cursive;
 }
 
-.brand-background {
-    background-image: url("/public/images/processed/polka.png");
-    opacity: 0.1;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background-repeat: repeat;
-    background-size: 200px 100px; /* Adjusts the image to 30% of its original size */
-    background-position: center; /* Keeps the background centered */
-    z-index: 3;
-    transform-origin: top;
-    transform: scaleY(1.1);
-    background-color: #e7dee4;
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 4dvw;
+  padding: 40px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
-.brand-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next row */
-    gap: 24px; /* Adds space between items */
-    justify-content: center; /* Centers the items horizontally */
-    align-items: flex-start; /* Aligns items to the top of the row for consistency */
-    padding: 0;
-    z-index: 2;
-
+.brand-carousel {
+  display: flex;
+  gap: 50px;
 }
 
 .brand {
-    display: flex;
-    flex-direction: column; /* Stacks the content vertically */
-    align-items: center; /* Centers content horizontally */
-    justify-content: flex-start; /* Ensures content is aligned to the top */
-    text-align: center; /* Ensures text alignment is consistent */
-    padding: 15px;
-    box-sizing: border-box;
-    flex: 0 0 auto; /* Prevents items from growing or shrinking */
-    width: 150px; /* Set a uniform width for all brand items */
-    height: 200px;
-    z-index: 5;
+  flex: 0 0 auto;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .brand-image {
-    width: 100%; /* Makes the image fill the container width */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: contain; /* Ensures the image fits inside the container */
-    width: 100px; /* Set a maximum width for the images */
-    height: 100px; /* Set a maximum height for the images */
-    padding-bottom: 10px; /* Adds space between the image and text */
-    box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
-.star-container {
-    display: flex; /* Enables flexbox for star alignment */
-    justify-content: center; /* Centers stars horizontally */
-    gap: 4px; /* Adds space between stars */
-}
-
-.star-container img {
-    width: 20px;
-    height: auto;
+.brand-image:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .brand p {
-    font-size: 1.5rem;
-    margin: 10px 0; /* Adds spacing above and below the text */
-    line-height: 1.2; /* Improves readability of multi-line text */
-    text-align: center; /* Ensures text is centered */
-    text-wrap: nowrap;
+  margin-top: 10px;
+  font-size: 1.6rem;
+  color: #000;
+  font-family: "main", monospace;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url("../../public/fonts/SourceCodePro-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Brands";
+    src: url("../../public/fonts/Panchang-Variable.ttf");
 }

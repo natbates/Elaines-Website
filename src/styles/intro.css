@@ -3,19 +3,12 @@
 #intro
 {
     width: 100%;
-    height: fit-content !important;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#intro-text
-{
-    text-align: center;
-    width: 100%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    z-index: 199 ;
-    position: absolute;
-    top: 900;
-}
 
 #intro h1
 {
@@ -38,11 +31,12 @@
     background-size: cover; /* Makes the image cover the entire container */ 
     background-position: center;
     width: 100%;
-    position: relative;
+    position: absolute;
     z-index: -100;
-    height: 900px;
-    top: 0
-}
+    height: 100dvh;
+    top: 0;
+    left: 0;
+  }
 
 .background-video {
   position: absolute;
@@ -52,6 +46,16 @@
   height: 100%;
   object-fit: cover; 
   z-index: -1;
+  padding: 2vw;
+  border-radius: 5dvw;
+  filter: brightness(1.1);
+}
+
+.social-intro-links
+{
+  position: absolute;
+  right: 4dvw;
+  bottom: 3.5dvw;
 }
 
 #intro-bottom
@@ -65,9 +69,12 @@
     background-position: center;
     position: absolute;
     width: 100%;
-    height: 300px;
-    top: 650px;
+    height: 14dvw;
     z-index: -100;
+    left: 0;
+    bottom: 0;
+    transform: translateY(-14dvw);
+    min-height: 200px;
 }
 
 #polka-dot {
@@ -76,7 +83,7 @@
     height: 800px; /* Set the initial height */
     z-index: -10;
     top: 800px;
-    opacity: 0.1;
+    opacity: 0;
     background-image: url('../../public/images/processed/polka.png'); /* Add your image URL */
     background-repeat: repeat-y; /* Repeat the image vertically */
     background-size: auto;
@@ -85,52 +92,55 @@
 
 #social-intro-holder
 {
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  top: 600px;
-  left: 50%;
-  width: 0;
+  text-align: center;
+  margin-top: 3vw;
 }
 
 #social-intro-text
 {
   position: relative;
-  top: -110px;
   color: var(--white) !important;
-  font-size: 2rem !important;
+  font-size: 1.3rem !important;
   text-wrap: nowrap;
   margin-top: 0;
-  animation: flyDownFadeInText 0.6s ease forwards;
+  width: fit-content;
+  padding: 15px 30px;
+  background-color: rgba(220, 220, 220, 0.284);
+  z-index: 1;
+  border-radius: 7dvw;
 }
 
 .semi-circle-container {
   position: absolute;
-  padding: 10px;
   z-index: 152;
-  overflow: hidden;
   padding-bottom: 0;
   cursor: pointer;
   top: 0;
   height: 50%;
+  left: 0%;
   box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.7vw;
+  padding-bottom: 0px;
 }
 
 #mouse
 {
-    width: 50px;
-    height: 50px;
+    width: 3dvw;
+    height: 3dvw;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 2dvw;
     transition: transform 0.3s ease;
 }
 
 #down {
-  width: 30px;
-  height: 30px;
+  width: 2dvw;
+  height: 2dvw;
   margin: 5px auto;
   position: relative; /* Make top property effective */
   animation: bob 2s ease-in-out infinite;
+  z-index: 153;
 }
 
 @keyframes bob {
@@ -147,36 +157,21 @@
 
 
 #intro-logo {
-    position: absolute;
-    left: 50%;
-    width: 900px;
+    width: 100%;
     height: auto;
-    transform: translate(-50%, -20px);
     z-index: -10;
+    width: 70dvw;;
+    opacity: 0.1;
+    padding-bottom: 10px;
+    padding-top: 50px;
     animation: flyDownFadeIn 0.6s ease forwards;
-}
+  }
 
 .highlight {
     position: relative;
     display: inline-block;
 }
 
-.highlight::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px; /* Adjust the position as needed */
-    width: 100%;
-    height: 3px; /* Adjust the height of the line */
-    background-color: var(--hot-pink); /* Change to your desired color */
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s ease-in-out;
-}
-
-.highlight:hover::after {
-    transform: scaleX(1);
-}
 
 /* The semi-circle line */
 .semi-circle-container svg path {
@@ -185,30 +180,32 @@
     stroke-width: 3px;
 }
 
-#intro-circle
-{
-  position: relative;
+#intro-circle {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  width: 220px;
-  height: 220px;
-  background-color: var(--white);
+  height: 15dvw;
+  width: 15dvw;
   border-radius: 50%;
-  margin: auto;
-  top: -200px;
+  background-color: var(--white);
+  margin: 0px;  
   z-index: 151;
+  gap: 0.4dvw;
+  bottom: 2vw;
+  transform: translateY(50%);
+  padding: 6px;
+  /* clip-path: inset(0 0 50% 0) */
 }
 
 .loader {
   position: absolute;
-  margin: 0 !important;
-  width: 177px;
-  height: 177px;
-  left: 11.3px;
-  top: 11px;
+  width: 100%;
+  height: 200%;
+  left: 0%;
+  top: 0px;
   border-radius: 50%;
-  border: 10px solid transparent;
-  border-top: 10px solid var(--hot-pink);
+  border: 0.9dvw solid transparent;
+  border-top: 0.9dvw solid var(--hot-pink);
   animation: spin 1.5s infinite linear;
   transform-origin: center;
   margin: 0 !important;
@@ -216,28 +213,34 @@
 
 #intro-items
 {
-  position: absolute;
-  top: 0;
-  left: 50%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 
 @keyframes spin {
   0%{
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(0.94);
   }
 
   100%{
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(0.94);
   }
 }
 
 
 @keyframes flyDownFadeIn {
     0% {
+        transform: scale(0.95);
         opacity: 0;
         top: 100px;
     }
     100% {
+        transform: scale(1);
         opacity: 1;
         top: 170px;
     }
@@ -254,117 +257,3 @@
   }
 }
 
-@media (max-width: 1000px) {
-
-  #intro-items
-  {
-    transform: scale(0.8);
-  }
-  #intro-cover
-  {
-    height: 650px;
-  }
-  #intro-curve
-  {
-    top: 500px;
-    height: 300px;
-  }
-  #intro-circle
-  {
-    transform: scale(0.8);
-    top: -100px;
-  }
-  #social-intro-holder #social-links
-  {
-    top: -40px;
-  }
-  #intro-text
-  {
-    top: 700;
-  }
-  #about
-  {        
-    padding-top: 60px !important;
-  }
-
-  #social-intro-holder
-  {
-    top: 610px;
-  }
-}
-
-@media (max-width: 700px) {
-
-  #intro-items
-  {
-    transform: scale(0.6);
-  }
-  #intro-cover
-  {
-    height: 450px;
-  }
-  #intro-curve
-  {
-    top: 285px;
-  }
-  #intro-circle
-  {
-    transform: scale(0.6);
-    top: -100px;
-  }
-  #social-intro-holder #social-links
-  {
-    top: -40px;
-  }
-  #intro-text
-  {
-    top: 500;
-    width: 100%;
-  }
-  #about
-  {        
-    padding-top: 20px !important;
-  }
-
-  #social-links a
-  {
-    transform: scale(0.8) !important;
-  }
-
-  #social-intro-holder
-  {
-    top: 590px;
-  }
-}
-
-@media (max-width: 730px) {
-  #intro h1
-  {
-      font-size: 3.5rem;
-  }
-}
-
-@media (max-width: 550px) {
-  #intro h1
-  {
-      font-size: 2.8rem;
-  }
-  #about
-  {        
-    padding-top: 0px !important;
-  }
-}
-
-@media (max-width: 544.44px) {
-  #about
-  {
-    padding-top: 0px !important;
-  }
-}
-
-@media (max-width: 450px) {
-  #intro h1
-  {
-      font-size: 1.8rem;
-  }
-}

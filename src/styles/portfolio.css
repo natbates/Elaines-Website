@@ -1,0 +1,87 @@
+
+
+.portfolio-section
+{
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.top-line
+{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    height: fit-content;
+    width: 100%;
+}
+
+.portfolio-section h1:hover
+{
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+.portfolio-button
+{
+    padding: 1rem 3rem;
+    font-size: 2.5rem;
+    background-color: rgb(39, 39, 39);
+    color: var(--white);
+    border: none;
+    border-radius: 4vw;
+    position: absolute;
+    right: 3vw;
+    font-family: "black";
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.portfolio-button:hover
+{
+    padding: 1.2rem 3.2rem;
+    font-size: 2.7rem;
+}
+
+@font-face {
+    font-family: "black";
+    src: url("../../public/fonts/Black\ Writing.ttf");
+}
+
+.portfolio-section h1 {
+  font-family: "PortfolioFont", sans-serif;
+  font-size: clamp(4rem, 13dvw, 48rem);
+  text-align: end;
+  text-wrap: nowrap;
+  width: 100%;
+  margin: 0;
+  opacity: 1;
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+
+  /* Image overlay inside text */
+  background-image: url("../../public/images/backgrounds/1.png");
+  background-size: cover;
+  background-position: center;
+
+  /* Magic for text masking */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* fallback for other browsers */
+  background-clip: text;
+  color: transparent;
+
+  /* Optional: subtle overlay gradient to enhance contrast */
+  /* background-image: linear-gradient(to right, #ff0080aa, #ffffff00), url("../../public/images/your-image.jpg"); */
+}
+@font-face {
+    font-family: "PortfolioFont";
+    src: url("../../public/fonts/UT\ Boldonse\ Demo.ttf");
+}

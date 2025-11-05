@@ -1,113 +1,130 @@
-import React, { useEffect, useState } from 'react';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import Client from '../components/client';
-import SeeStudies from '../components/seeCaseStudies';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "../styles/clients.css";
 
 const Clients = () => {
-    const [clients, setClients] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [slideDirection, setSlideDirection] = useState(''); // Track slide direction
-    const [clientHeight, setClientHeight] = useState(3); // Initial client count
+  const clients = [
+    {
+      company: "Brother Incs",
+      quote:
+        "She is a great sister, I love her dog and her child is pretty cool!",
+      person: "Nathaniel Cooper",
+      title: "Director of Brothers Inc",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    },
+    {
+      company: "Acme Corp",
+      quote:
+        "Fantastic collaboration experience. They made our brand shine visually.",
+      person: "Samantha Doe",
+      title: "Marketing Lead at Acme Corp",
+      avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+    },
+    {
+      company: "Nova Labs",
+      quote:
+        "They’re an extension of our team — the quality and speed are unmatched.",
+      person: "Elliot Cruz",
+      title: "Head of Creative at Nova Labs",
+      avatar: "https://randomuser.me/api/portraits/men/28.jpg",
+    },
+    {
+      company: "PixelPeak Studios",
+      quote:
+        "Their attention to detail was incredible — our app has never looked better.",
+      person: "Ava Thompson",
+      title: "UI/UX Designer at PixelPeak Studios",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      company: "CloudEdge Technologies",
+      quote:
+        "Reliable, efficient, and creative. They delivered exactly what we envisioned.",
+      person: "Liam Rodriguez",
+      title: "CTO at CloudEdge Technologies",
+      avatar: "https://randomuser.me/api/portraits/men/60.jpg",
+    },
+    {
+      company: "BrightMind Analytics",
+      quote:
+        "They transformed our data workflow. The collaboration was smooth and insightful.",
+      person: "Emily Carter",
+      title: "Head of Product at BrightMind Analytics",
+      avatar: "https://randomuser.me/api/portraits/women/23.jpg",
+    },
+  ];
 
-    useEffect(() => {
-        const fetchClients = async () => {
-            const db = getFirestore();
-            try {
-                const querySnapshot = await getDocs(collection(db, 'clientDetails'));
-                const entries = querySnapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
-                setClients(entries);
-            } catch (error) {
-                console.error('Error fetching client entries:', error);
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
-        };
+  const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
-        fetchClients();
-    }, []);
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.2 },
+    },
+  };
 
-    const CLIENT_INCREMENT = 3; // Define constant increment value
-    const MIN_CLIENTS = 3; // Minimum number of clients to display
-    const MAX_CLIENTS = clients.length; // Maximum number of clients available
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
 
-    const handleShowMore = () => {
-        // Increase the number of displayed clients
-        setClientHeight((prevHeight) => {
-            const remainingClients = clients.length - prevHeight;
-            if (remainingClients > CLIENT_INCREMENT) {
-                return prevHeight + CLIENT_INCREMENT; // Add the increment
-            } else {
-                return prevHeight + remainingClients; // Add only the remaining number of clients
-            }
-        });
-    };
-
-    const handleShowLess = () => {
-        // Decrease the number of displayed clients, but don't go below the minimum
-        setClientHeight(MIN_CLIENTS);
-    };
-
-    return (
-        <>
-            <div id="clients" style={{ height: clientHeight * 176 + 134 }}>
-                <div id="clients-text">
-                    <h1 className="main-text">What My <span className='yellow-underline'>Clients</span> Think Of Me</h1>
-                </div>
-
-                {loading ? (
-                    <div>Loading...</div>
-                ) : error ? (
-                    <div>{error.message}</div>
-                ) : (
-                    <>
-                        <div className={`client-reviews ${slideDirection}`}>
-                            {clients.slice(0, clientHeight).map((entry, idx) => (
-                                <div key={entry.id} className="client-container">
-                                    <Client
-                                        key={idx}
-                                        name={entry.name}
-                                        description={entry.description}
-                                        imageUrl={entry.image}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                    </>
-                )}
-            </div>
-
-            <div id = "client-bottom-container">
-                
-                <SeeStudies />
-
-                <div id="control-buttons">
-                    <button
-                        className={`show-more-button flip ${clientHeight >= MAX_CLIENTS ? 'disabled' : ''}`}
-                        onClick={handleShowMore}
-                        disabled={clientHeight >= MAX_CLIENTS}
-                    >
-                        <img src="svgs/arrow.svg" alt="Show more" />
-                    </button>
-                    <button
-                        className={`show-more-button ${clientHeight <= MIN_CLIENTS ? 'disabled' : ''}`}
-                        onClick={handleShowLess}
-                        disabled={clientHeight <= MIN_CLIENTS}
-                    >
-                        <img src="svgs/arrow.svg" alt="Show less" />
-                    </button>
-                </div>
-
-                <div id="client-bottom-curve">
-                </div>
-            </div>
-        </>
-    );
+  return (
+    <section id="clients" ref={ref}>
+      <motion.div
+        className="clients-container"
+        variants={sectionVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+            <h1 className="main-text">What they <span className="pink-underline">think</span></h1>
+        {clients.map((client, index) => {
+          const isEven = index % 2 === 0;
+          return (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              className={`testimonial-card ${isEven ? "left" : "right"}`}
+            >
+              {isEven ? (
+                <>
+                  <img
+                    src={client.avatar}
+                    alt={client.person}
+                    className="client-avatar"
+                  />
+                  <div className="testimonial-content">
+                    <h2 className="company-name">{client.company}</h2>
+                    <p className="quote">“{client.quote}”</p>
+                    <p className="client-meta">
+                      {client.person}, {client.title}
+                    </p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="testimonial-content">
+                    <h2 className="company-name">{client.company}</h2>
+                    <p className="quote">“{client.quote}”</p>
+                    <p className="client-meta">
+                      {client.person}, {client.title}
+                    </p>
+                  </div>
+                  <img
+                    src={client.avatar}
+                    alt={client.person}
+                    className="client-avatar"
+                  />
+                </>
+              )}
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </section>
+  );
 };
 
 export default Clients;

@@ -5,6 +5,8 @@ import Samples from "../sections/samples";
 import About from "../sections/About";
 import Services from "../sections/services";
 import Results from "../sections/Results";
+import Parallax from "../components/parallax";
+import Portfolio from "../sections/Portfolio";
 import "../styles/homepage.css";
 
 const Home = () =>
@@ -12,12 +14,22 @@ const Home = () =>
     return(
         <>
             <Intro />
+
+            {/* <div id = "intro-curve">
+
+            </div> */}
+
             <About />
             <Services />
-            <Results />
+
+            <Portfolio />
+
+            <Parallax />
+            {/* <Results />  */}
+            <Clients />        
+
             <Brands />
             <Samples />
-            <Clients />        
         </>
     );
 };
