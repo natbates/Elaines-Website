@@ -6,19 +6,12 @@
     max-width: 1200px;
     height: fit-content;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2vw;
     position: relative;
     /* border-bottom: 1px solid #ffffff57; */
-}
-
-
-#intro p
-{
-    color: var(--black);
-    font-size: 1rem;
-    margin-bottom: 0;
 }
 
 #intro-video
@@ -57,7 +50,10 @@
 
 #social-intro-holder
 {
+  isolation: isolate;
   width: 100%;
+  max-width: 1200px;
+  padding: 0 2vw;
   display: flex;
   text-align: center;
   margin-top: 3vw;
@@ -72,20 +68,31 @@
   margin: 0 30;
 }
 
-#social-intro-text
-{
+#social-intro-text {
   position: relative;
   color: var(--white) !important;
-  font-size: 1.3rem !important;
+  font-size: 1rem;
   text-wrap: wrap;
-  margin-top: 0;
+  margin: 0;
   width: fit-content;
   padding: 15px 30px;
-  background-color: rgba(220, 220, 220, 0.284);
+
+  background-color: rgba(220, 220, 220, 0.25);
+  border-radius: 50px; /* ✅ avoid dynamic vw radius on mobile */
   z-index: 1;
-  border-radius: 7dvw;
-  transition: all 0.3s ease;
+
+  /* Remove these to stop Safari flashing */
+  /* backface-visibility: hidden; */
+  /* transform: translateZ(0); */
+
+  /* Replace with this instead: */
+  transform: translate3d(0, 0, 0);
+  will-change: opacity;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  contain: paint; /* ✅ isolates the layer safely */
 }
+
 
 #intro-text
 {
@@ -104,9 +111,12 @@
   font-family: "BoldFont";
   width: 100%;
   opacity: 0;
-  margin-top: 10px;
-  animation: fade-in 1s ease-in-out forwards;
-  transition: all 0.3s ease;
+  margin-top: 20px;
+
+  /* Remove these lines */
+  /* animation: fade-in 1s ease-in-out forwards; */
+  /* transition: all 0.3s ease; */
+  /* transition: none; optional */
 }
 
 @keyframes fade-in {
@@ -147,7 +157,6 @@
 #intro-items
 {
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -227,3 +236,21 @@
     margin-left: 0;
   }
 }
+
+/* @media (max-width: 510px) {
+ #social-intro-holder {
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 410px) {
+ #social-intro-holder {
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 480px) {
+  #social-intro-text {
+    font-size: 0.8rem;
+  }
+} */

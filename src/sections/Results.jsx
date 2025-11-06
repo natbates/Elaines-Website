@@ -2,15 +2,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../styles/results.css";
 
-// Replace with your actual images
 const images = {
-  left: "11.png", // Left large image
-  rightTop: "12.png", // Right top image
-  rightBottom: ["31.png", "14.png"], // Right bottom two images
+  left: { src: "11.png", text: "Left Project" },
+  rightTop: { src: "12.png", text: "Top Project" },
+  rightBottom: [
+    { src: "31.png", text: "Bottom Left" },
+    { src: "14.png", text: "Bottom Right" },
+  ],
 };
 
 const Results = () => {
-  // Motion variant for fade-in
   const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
     visible: (i = 0) => ({
@@ -53,10 +54,11 @@ const Results = () => {
         >
           <div className="gallery-item">
             <img
-              src={`./images/backgrounds/${images.left}`}
+              src={`./images/backgrounds/${images.left.src}`}
               alt="Left"
               className="fade-image"
             />
+            <div className="overlay-text">{images.left.text}</div>
           </div>
         </motion.div>
 
@@ -72,10 +74,11 @@ const Results = () => {
           >
             <div className="gallery-item">
               <img
-                src={`./images/backgrounds/${images.rightTop}`}
+                src={`./images/backgrounds/${images.rightTop.src}`}
                 alt="Right Top"
                 className="fade-image"
               />
+              <div className="overlay-text">{images.rightTop.text}</div>
             </div>
           </motion.div>
 
@@ -91,10 +94,11 @@ const Results = () => {
                 viewport={{ once: true, amount: 0.2 }}
               >
                 <img
-                  src={`./images/backgrounds/${img}`}
+                  src={`./images/backgrounds/${img.src}`}
                   alt={`Right Bottom ${idx}`}
                   className="fade-image"
                 />
+                <div className="overlay-text">{img.text}</div>
               </motion.div>
             ))}
           </div>

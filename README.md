@@ -14,3 +14,9 @@ loading
 // add images and texts
 
 // interactive hovering
+
+
+// footer padding for mobile
+// samples fucked on mobile
+// navbar background above
+// samples in 2 x 2

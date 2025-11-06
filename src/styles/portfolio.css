@@ -73,10 +73,29 @@
     background-position: center;
 }
 
-.portfolio-text h1 {
+.portfolio-text h3 {
   position: absolute;
-  font-size: 3rem;
+  font-size: 3rem !important;
   margin: 0;
   z-index: 1;
   text-align: center !important;
+  transition: font-size 0.3s ease;
+}
+
+@media (max-width: 730px) {
+    .portfolio-text h3 {
+        font-size: 2.5rem !important;
+    }
+}
+
+@media (max-width: 630px) {
+    .portfolio-text h3 {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .portfolio-text h3 {
+        font-size: 1.5rem !important;
+    }
 }

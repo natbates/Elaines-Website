@@ -64,7 +64,7 @@ const Clients = () => {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6,  ease: [0.22, 1, 0.36, 1] } },
   };
 
   return (
@@ -76,7 +76,7 @@ const Clients = () => {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
       >
-        What they <span className="pink-underline">think</span>
+        What they Think
       </motion.h1>
 
       {/* Animate subtext */}
@@ -97,7 +97,12 @@ const Clients = () => {
         animate={inView ? "visible" : "hidden"}
         variants={{
           visible: {
-            transition: { staggerChildren: 0.2 },
+            transition: {
+              delayChildren: 0.2, 
+              staggerChildren: 0.25, 
+              when: "beforeChildren", 
+              staggerDirection: 1,
+            },
           },
         }}
       >
@@ -105,14 +110,20 @@ const Clients = () => {
           <motion.div
             key={index}
             className="testimonial-card"
-            variants={cardVariants}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                  ease: "easeOut", // ✅ simpler, Safari-safe easing
+                },
+              },
+            }}
           >
             <div className="testimonial-top">
-              <img
-                src={client.avatar}
-                alt={client.person}
-                className="client-avatar"
-              />
+              <img src={client.avatar} alt={client.person} className="client-avatar" />
               <h2 className="company-name">{client.company}</h2>
             </div>
             <p className="quote">“{client.quote}”</p>
@@ -122,6 +133,7 @@ const Clients = () => {
           </motion.div>
         ))}
       </motion.div>
+
     </section>
   );
 };

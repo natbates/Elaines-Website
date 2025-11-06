@@ -13,14 +13,14 @@
 html
 {
     scroll-behavior: smooth;
-    overscroll-behavior: none;
+    /* overscroll-behavior: none; */
     width: 100%;
     overflow-x: hidden;
 }
 
 body
 {
-    background-color: var(--background-colour);
+    background-color: var(--accent);
     font-family: main;
     margin: 0;
     overflow-x: hidden;
@@ -44,7 +44,6 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 120px;
 }
 
 button
@@ -146,6 +145,12 @@ button
   }
 }
 
+@media (max-width: 1500px) {
+    .global-button
+    {
+        display: none;
+    }
+}
 
 /* Mobile view */
 
@@ -154,10 +159,34 @@ button
     h1
     {
         font-size: 4rem !important;
+        transition: font-size 0.3s ease;
+    }
+
+    #footer
+    {
+        padding: 2vw;
+    }
+
+    .brand
+    {
+        width: 180px;
+    }
+
+    .brand-image
+    {
+        height: 100px;
+        width: 100px;
     }
 
 }
 
+@media (max-width: 480px) {
+    h1
+    {
+        font-size: 3rem !important;
+    }
+
+}
 
 .not-found
 {

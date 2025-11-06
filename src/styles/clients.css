@@ -23,6 +23,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 2rem;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .testimonial-card {
@@ -34,9 +36,22 @@
   justify-content: flex-start;
   align-items: flex-start;
   color: #000;
-  transition: all 0.3s ease;
-}
 
+  will-change: opacity, transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  contain: paint;
+  z-index: 0;
+
+  /* keep opacity at 0.9999 to prevent Safari from dropping the layer */
+  opacity: 0.9999;
+}
+@supports (-webkit-touch-callout: none) {
+  .testimonial-card {
+    opacity: 0.9999; /* Safari won’t drop the layer */
+  }
+}
 
 .testimonial-top {
   display: flex;
@@ -75,7 +90,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
   .clients-grid {
     grid-template-columns: 1fr;
   }

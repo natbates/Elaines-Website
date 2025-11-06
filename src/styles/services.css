@@ -71,7 +71,7 @@
   position: relative;
   padding: 1.5rem;
   z-index: 2;
-  height: 200px;
+  min-height: 200px;
 }
 
 .service-title {
@@ -95,11 +95,27 @@
 
 @media (max-width: 1220px) {
   #service-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-auto-rows: 500px; /* match card height */
-    gap: 1rem; /* spacing between items */
-    justify-items: center; /* center items horizontally */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  #service-row .service-item {
+    flex: 1 1 calc(50% - 1rem); /* two per row */
+    min-height: 500px;
+  }
+
+  #service-row .service-description{
+    font-size: 1.3rem;
+  }  
+  #service-row .service-title{
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  /* Make the last one take full width */
+  #service-row .service-item:last-child {
+    flex: 1 1 100%;
   }
 
   .service-item {
@@ -112,6 +128,12 @@
     #service-row {
         display: flex;
         flex-direction: column;
+    }
+
+    .service-item
+    {
+        min-height: 0px !important;
+        height: fit-content;
     }
 
     .service-card

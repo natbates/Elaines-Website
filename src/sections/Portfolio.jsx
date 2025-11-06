@@ -51,7 +51,7 @@ const Portfolio = () => {
           variants={fadeIn}
         >
           <div className="squiggle">
-              <h1>SEE MY PORTFOLIO</h1>
+              <h3>SEE MY PORTFOLIO</h3>
           </div>
         </motion.div>
       </motion.div>

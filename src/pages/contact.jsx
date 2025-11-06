@@ -63,7 +63,7 @@ const Contact = () => {
       <motion.div id="contact-curve" variants={itemVariants}></motion.div>
 
       <motion.p className="sub-text" variants={itemVariants}>
-        Over to you to message me <span className="pink-underline">Today</span>.
+        Over to you to message me Today.
         Either use the contact form below or feel free to drop me a message using my details.
       </motion.p>
 

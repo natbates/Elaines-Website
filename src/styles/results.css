@@ -87,31 +87,104 @@
 /* RESPONSIVE DESIGN */
 /* --------------------------------------------- */
 
-/* Tablet: stack vertically but keep right-bottom as a row */
+/* 4x4 grid for tablet / small desktop and below */
+/* FLEX layout for tablet / small desktop and below */
 @media (max-width: 1024px) {
+  /* Container switches to column flex instead of grid */
   .gallery-container {
-    flex-direction: column;
-    height: 1100px;
+    display: flex !important;       /* use flex */
+    flex-direction: column;         /* stack all items vertically */
+    gap: 16px;                      /* spacing between items */
+    width: 100%;
+    height: 500px;
+    padding: 0;
   }
 
+  /* Reset children to behave naturally in flex column */
+  .gallery-container > * {
+    display: block !important;
+    flex: none !important;
+    order: initial !important;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  /* Left side stays full width */
   .left-side {
-    order: 1;
-    height: 200px;
+    flex: 1;
+    width: 100%;
+    height: auto;
+    display: block;
+    height: 50%;
   }
 
+  /* Right side stacked under left side */
   .right-side {
-    order: 2;
-    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* stack top and bottom */
+    gap: 1rem;
+    height: 50%;
+  }
+
+  .right-top
+  {
+    display: none;
   }
 
   .right-top {
-    height: 400px;
+    width: 100%;
+    height: auto;
   }
 
   .right-bottom {
-    flex-direction: row;
-    height: 350px;
+    width: 100%;
+    height: 100%;
+    display: flex;      
+    gap: 1rem;
+    flex-wrap: wrap;    
+  }
+
+  .right-bottom .gallery-item {
+    flex: 1 1 48%;      
+    height: auto;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
+.overlay-text {
+  padding: 2vw 2vw;
+  position: absolute;
+  inset: 0; /* covers entire image */
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  color: var(--dark);
+  font-family: "BoldFont", sans-serif;
+  font-size: 2rem;
+  width: 100%;
+  font-weight: bold;
+  opacity: 1;
+  border-radius: 16px;
+  pointer-events: none; /* so hover still hits the image */
+}
 
+/* Responsive overlay text */
+@media (max-width: 1024px) {
+  .overlay-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .overlay-text {
+    font-size: 1.2rem;
+  }
+}

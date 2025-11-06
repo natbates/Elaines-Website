@@ -1,30 +1,39 @@
 import "../styles/navBar.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  // Variants for the container to stagger children
+  // Container variant: smooth stagger, no layout jump
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2, // Delay between each link
+        staggerChildren: 0.15,
+        delayChildren: 0.3, // small global delay
       },
     },
   };
 
-  // Variants for each link
+  // Link animation: translateY + opacity only (no layout reflow)
   const linkVariants = {
-    hidden: { opacity: 0, y: -20 }, // start above and invisible
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, y: -6, scale: 0.98 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 1.2, ease: "easeOut" },
+    },
   };
 
   return (
-    <div className="navbar-background" style={{
-        backgroundColor: window.location.pathname !== "/" && "transparent"
-      }}>
+    <div
+      className="navbar-background"
+      style={{
+      }}
+    >
       <nav className="navbar">
         {/* Left: Logo */}
         <div className="navbar-logo" onClick={() => navigate("/")}>
@@ -41,6 +50,7 @@ const Navbar = () => {
           <motion.li variants={linkVariants} onClick={() => navigate("/about")}>
             About Me
           </motion.li>
+
           <motion.li variants={linkVariants}>
             <a
               href="https://authory.com/ElaineKeep"
@@ -50,21 +60,27 @@ const Navbar = () => {
               Portfolio
             </a>
           </motion.li>
+
           <motion.li variants={linkVariants} onClick={() => navigate("/contact")}>
             Contact
           </motion.li>
         </motion.ul>
 
         {/* Right: Connect Button */}
-        <div className="navbar-action">
+        <motion.div
+          className="navbar-action"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
+        >
           <button
-            onClick={() => {
-              window.open("https://www.linkedin.com/in/your-profile", "_blank");
-            }}
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/your-profile", "_blank")
+            }
           >
             Connect
           </button>
-        </div>
+        </motion.div>
       </nav>
     </div>
   );

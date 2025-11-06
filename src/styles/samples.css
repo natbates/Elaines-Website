@@ -21,6 +21,7 @@
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5vw;
+  height: fit-content;
   align-items: flex-end;
   padding: 20px;
   padding-top: 70px;
@@ -102,17 +103,18 @@
   }
 }
 
-@media (max-width: 600px) {
-  .samples-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media (max-width: 900px) {
   .samples-grid
   {
     display: flex;
     flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .sample-image
+  {
+    height: auto;
   }
 
   .sample-item
@@ -120,14 +122,8 @@
     width: 100%;
   }
 
-  .sample-text
-  {
-    height: 100%;
-  }
-
   .sample-text h2
   {
     font-size: 4rem;
-    height: 100%;
   }
 }

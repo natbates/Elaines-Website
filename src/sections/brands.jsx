@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../styles/brands.css";
 
-// Local brand images (using Clearbit logos)
 const brandImages = [
   { url: "https://logo.clearbit.com/github.com", fileName: "GitHub" },
   { url: "https://logo.clearbit.com/google.com", fileName: "Google" },
@@ -22,14 +21,9 @@ const brandImages = [
 ];
 
 const Brands = () => {
-  // Fade-in animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 1, ease: "easeOut" } 
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
   };
 
   return (
@@ -40,40 +34,28 @@ const Brands = () => {
       viewport={{ once: true, amount: 0.3 }}
       variants={fadeIn}
     >
-      {/* Animate heading */}
-      <motion.h1 variants={fadeIn}>
-        Don’t just take it from me...
-      </motion.h1>
+      <motion.h1 variants={fadeIn}>Don’t just take it from me...</motion.h1>
 
-      {brandImages.length === 0 ? (
-        <motion.div variants={fadeIn}>No brand images available</motion.div>
-      ) : (
-        <motion.div 
-          className="carousel-wrapper" 
-          variants={fadeIn}
+      <div className="carousel-wrapper">
+        {/* motion.div scrolls infinitely */}
+        <motion.div
+          className="brand-carousel"
+          animate={{ x: ["0%", "-50%"] }} // only move half, since duplicated
+          transition={{
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 30, // adjust speed
+            ease: "linear",
+          }}
         >
-          <motion.div
-            className="brand-carousel"
-            animate={{ x: ["0%", "-100%"] }}
-            transition={{
-              repeat: Infinity,
-              duration: 25,
-              ease: "linear",
-            }}
-          >
-            {[...brandImages, ...brandImages].map((brand, index) => (
-              <div key={index} className="brand">
-                <img
-                  className="brand-image"
-                  src={brand.url}
-                  alt={brand.fileName}
-                />
-                <p>{brand.fileName}</p>
-              </div>
-            ))}
-          </motion.div>
+          {[...brandImages, ...brandImages].map((brand, index) => (
+            <div key={index} className="brand">
+              <img src={brand.url} alt={brand.fileName} className="brand-image" />
+              <p>{brand.fileName}</p>
+            </div>
+          ))}
         </motion.div>
-      )}
+      </div>
     </motion.div>
   );
 };

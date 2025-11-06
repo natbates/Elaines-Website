@@ -184,11 +184,16 @@
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .row
     {
         margin-top: 0 !important;
         flex-direction: column;
+    }
+
+    .copy-right
+    {
+        text-align: end;
     }
 
     .links-address

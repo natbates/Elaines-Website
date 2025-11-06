@@ -31,7 +31,7 @@ const Samples = () => {
   return (
     <div id="samples">
       <h1 className="samples-title">
-        Recent <span className="pink-underline">Works</span>
+        Recent Work
       </h1>
 
       <div className="samples-grid" ref={containerRef}>
