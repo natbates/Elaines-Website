@@ -1,7 +1,6 @@
 #services {
   margin-top: 90px;
   max-width: 1200px;
-  overflow: hidden;
   width: 100%;
   padding: 0vw 2vw;
 }
@@ -31,7 +30,6 @@
   flex-wrap: nowrap;
   justify-content: center;
   gap: 1rem;
-  overflow: hidden;
 }
 
 .service-item {
@@ -47,6 +45,13 @@
   color: white;
   cursor: pointer;
   border-radius: 16px;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover
+{
+    transform: scale(1.03) !important;
 }
 
 .service-background {

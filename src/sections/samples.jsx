@@ -37,10 +37,10 @@ const Samples = () => {
       <div className="samples-grid" ref={containerRef}>
         {sampleImages.map((sample, index) => (
           <div key={index} className="sample-item">
-            <img src={sample.imageUrl} alt={sample.title} className="sample-image" />
-            <div className="sample-overlay">
+            <div className="sample-text">
               <h2>{sample.title}</h2>
             </div>
+            <img src={sample.imageUrl} alt={sample.title} className="sample-image" />
           </div>
         ))}
       </div>

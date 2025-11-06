@@ -42,6 +42,17 @@
     transform: scale(1.05);
 }
 
+.parallax::after
+{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  z-index: -5111111;
+  width: 100%;
+  height: 150%;
+  background-color: var(--accent);
+}
+
 .parallax::before,
 .parallax-overlay {
   pointer-events: none;

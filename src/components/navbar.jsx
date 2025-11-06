@@ -22,47 +22,49 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      {/* Left: Logo */}
-      <div className="navbar-logo" onClick={() => navigate("/")}>
-        <img src="images/processed/white logo.png" alt="Logo" />
-      </div>
+    <div className="navbar-background">
+      <nav className="navbar">
+        {/* Left: Logo */}
+        <div className="navbar-logo" onClick={() => navigate("/")}>
+          <img src="images/processed/white logo.png" alt="Logo" />
+        </div>
 
-      {/* Center: Navigation Links */}
-      <motion.ul
-        className="navbar-links"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.li variants={linkVariants} onClick={() => navigate("/about")}>
-          About Me
-        </motion.li>
-        <motion.li variants={linkVariants}>
-          <a
-            href="https://authory.com/ElaineKeep"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Portfolio
-          </a>
-        </motion.li>
-        <motion.li variants={linkVariants} onClick={() => navigate("/contact")}>
-          Contact
-        </motion.li>
-      </motion.ul>
-
-      {/* Right: Connect Button */}
-      <div className="navbar-action">
-        <button
-          onClick={() => {
-            window.open("https://www.linkedin.com/in/your-profile", "_blank");
-          }}
+        {/* Center: Navigation Links */}
+        <motion.ul
+          className="navbar-links"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          Connect
-        </button>
-      </div>
-    </nav>
+          <motion.li variants={linkVariants} onClick={() => navigate("/about")}>
+            About Me
+          </motion.li>
+          <motion.li variants={linkVariants}>
+            <a
+              href="https://authory.com/ElaineKeep"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Portfolio
+            </a>
+          </motion.li>
+          <motion.li variants={linkVariants} onClick={() => navigate("/contact")}>
+            Contact
+          </motion.li>
+        </motion.ul>
+
+        {/* Right: Connect Button */}
+        <div className="navbar-action">
+          <button
+            onClick={() => {
+              window.open("https://www.linkedin.com/in/your-profile", "_blank");
+            }}
+          >
+            Connect
+          </button>
+        </div>
+      </nav>
+    </div>
   );
 };
 

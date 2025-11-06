@@ -17,6 +17,8 @@
 .samples-grid {
   display: grid;
   overflow: hidden;
+  justify-items: center;
+  justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5vw;
   align-items: flex-end;
@@ -66,10 +68,16 @@
   object-fit: contain;
   object-position: bottom center;
   transform-origin: bottom center;
+  transition: all 0.3s ease;
 }
 
-.sample-overlay {
-  position: absolute;
+.sample-image:hover
+{
+  transform: scale(1.03);
+}
+
+.sample-text {
+  position: relative;
   inset: 0;
   color: var(--dark);
   opacity: 1;
@@ -77,14 +85,14 @@
   height: fit-content;
   justify-content: center;
   align-items: center;
-  top: -86px;
   transition: opacity 0.2s ease-in-out;
+  margin-bottom: 15px;
 }
 
-.sample-overlay h2 {
+.sample-text h2 {
   font-size: 2rem;
   text-align: center;
-  padding: 1rem;
+  margin: 0;
 }
 
 /* ✅ Responsive grid */
@@ -97,5 +105,29 @@
 @media (max-width: 600px) {
   .samples-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .samples-grid
+  {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sample-item
+  {
+    width: 100%;
+  }
+
+  .sample-text
+  {
+    height: 100%;
+  }
+
+  .sample-text h2
+  {
+    font-size: 4rem;
+    height: 100%;
   }
 }

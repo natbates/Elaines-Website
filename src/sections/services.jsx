@@ -39,13 +39,13 @@ const Services = () => {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image: "images/flowers/31.jpg",
     },
-    {
-      id: 4,
-      title: "Service 4",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "images/flowers/41.jpg",
-    },
+    // {
+    //   id: 4,
+    //   title: "Service 4",
+    //   description:
+    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    //   image: "images/flowers/41.jpg",
+    // },
   ];
 
   // Animation variants

@@ -16,21 +16,21 @@ const Footer = () =>
             
                 <div className="row">
 
-                    <div id = "quick-links">
-                        <h1>Quick Links</h1>
-                        <a href = "#intro">Home</a>
-                        <a href = "/about">About me</a>
-                        <a href = "https://authory.com/ElaineKeep" target="_blank">Portfolio</a>
-                        <a href = "/contact">Contact</a>
-                        <a href = "/login">Login</a>
+                    <div className="links-address">
+                        <div id = "quick-links">
+                            <h1>Quick Links</h1>
+                            <a href = "#intro">Home</a>
+                            <a href = "/about">About me</a>
+                            <a href = "https://authory.com/ElaineKeep" target="_blank">Portfolio</a>
+                            <a href = "/contact">Contact</a>
+                        </div>
+                        <div id = "address">
+                            <h1>Business Address</h1>
+                            <p>20 - 22 Wenlock Road</p>
+                            <p>London</p>
+                            <p>N17GU</p>
+                        </div>
                     </div>
-                    <div id = "address">
-                        <h1>Business Address</h1>
-                        <p>20 - 22 Wenlock Road</p>
-                        <p>London</p>
-                        <p>N17GU</p>
-                    </div>
-                    
 
                     <div id = "extra-info">
                         <img id = "footer-logo" src = "images/processed/white logo.png"></img>

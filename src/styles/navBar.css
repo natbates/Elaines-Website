@@ -14,6 +14,13 @@
   transition: all 0.3s ease;
 }
 
+.navbar-background
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--accent);
+}
 
 .navbar-logo
 {

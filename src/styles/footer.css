@@ -1,6 +1,6 @@
 #footer
 {
-    background-color: white;
+    background-color: var(--accent);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +9,7 @@
     padding-bottom: 0px;
     position: relative;
     padding-top: 10px;
-    z-index: 6;
+    z-index: 1;
     width: 100%;
     overflow: hidden;
     /* border-top: 15px solid black */
@@ -28,17 +28,25 @@
     margin-bottom: 0px;
 }
 
+.links-address
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .footer-content .row
 {
     display: flex;
     width: 100%;
+    margin-top: 30px;
     justify-content: space-between;
 }
 
 .footer-title
 {
     font-family: "BoldFont";
-    color: var(--black);
+    color: var(--white);
     font-size: 7rem;
     margin: 0;
     margin-bottom: 20px;
@@ -47,7 +55,9 @@
 
 #quick-links h1
 {
-    color: var(--black);
+    font-size: 2.3rem !important;
+    text-decoration: underline;
+    color: var(--text-colour);
 }
 
 #quick-links {
@@ -56,10 +66,11 @@
     justify-content: flex-start;
     align-items: flex-start;
     text-align: start;
+    flex: 1;
 }
 
 #quick-links a {
-    color: var(--hot-pink);
+    color: var(--text-colour);
     font-size: 1.5rem;
     margin-bottom: 10px;
     cursor: pointer;
@@ -72,11 +83,17 @@
     font-weight: bold;
 }
 
+#address
+{
+    flex: 1;
+}
+
 #address h1
 {
     margin-top: 27px;
+    font-size: 2.3rem !important;
     color: var(--white);
-    font-family: "BoldFont";
+    text-decoration: underline;
 }
 
 #address p
@@ -91,12 +108,13 @@
 {
     width: 300px;
     align-self: center;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
     margin-top: 6px;
 }
 
 .footer-rose
 {
+    display: none;
     position: absolute;
     bottom: 0vw;
     background-image: url("../../public/images/processed/rose.png");
@@ -160,12 +178,29 @@
 .copy-right {
   text-align: start;
   font-size: 1.2rem;
-  color: #383838;
+  color: #ffffff;
   margin-top: 2rem;
   padding: 1rem 0;
 }
 
 
-@media (min-width: 960px) {
+@media (max-width: 1000px) {
+    .row
+    {
+        margin-top: 0 !important;
+        flex-direction: column;
+    }
 
+    .links-address
+    {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width: 630px) {
+
+.links-address{
+    flex-direction: column;
+    gap: 30px;
+}
 }
