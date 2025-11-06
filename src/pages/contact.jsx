@@ -1,19 +1,48 @@
 import "../styles/contact.css";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const Contact = () => {
-  // Variants for the parent container to stagger children
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const isFormValid = Object.values(formData).every((field) => field.trim() !== "");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Variants for each child (fade in + slight upward movement)
+  const handleClear = () => {
+    setFormData({ name: "", email: "", subject: "", message: "" });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+
+    setIsSubmitting(true);
+
+    // Simulate sending form data
+    setTimeout(() => {
+      alert("Message sent successfully!");
+      handleClear();
+      setIsSubmitting(false);
+    }, 1500);
+  };
+
+  // Animation variants
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.15 } },
+  };
+
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -39,30 +68,58 @@ const Contact = () => {
       </motion.p>
 
       <motion.div id="contact-holder" variants={containerVariants}>
-        <motion.form className="contact-form" variants={containerVariants}>
-          <motion.div className="form-group" variants={itemVariants}>
-            <label htmlFor="name">Whats your name?</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required />
-          </motion.div>
-
-          <motion.div className="form-group" variants={itemVariants}>
-            <label htmlFor="email">Whats your email?</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required />
-          </motion.div>
-
-          <motion.div className="form-group" variants={itemVariants}>
-            <label htmlFor="subject">What do you want to discuss?</label>
-            <input type="text" id="subject" name="subject" placeholder="Subject" required />
-          </motion.div>
-
-          <motion.div className="form-group" variants={itemVariants}>
-            <label htmlFor="message">Speak your mind:</label>
-            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-          </motion.div>
+        <motion.form className="contact-form" onSubmit={handleSubmit} variants={containerVariants}>
+          {["name", "email", "subject", "message"].map((field, index) => (
+            <motion.div className="form-group" variants={itemVariants} key={index}>
+              <label htmlFor={field}>
+                {field === "name"
+                  ? "What's your name?"
+                  : field === "email"
+                  ? "What's your email?"
+                  : field === "subject"
+                  ? "What do you want to discuss?"
+                  : "Speak your mind:"}
+              </label>
+              {field === "message" ? (
+                <textarea
+                  id={field}
+                  name={field}
+                  rows="5"
+                  placeholder="Your Message"
+                  value={formData[field]}
+                  onChange={handleChange}
+                  required
+                />
+              ) : (
+                <input
+                  type={field === "email" ? "email" : "text"}
+                  id={field}
+                  name={field}
+                  placeholder={`Your ${field.charAt(0).toUpperCase() + field.slice(1)}`}
+                  value={formData[field]}
+                  onChange={handleChange}
+                  required
+                />
+              )}
+            </motion.div>
+          ))}
 
           <motion.div className="button-container right" variants={itemVariants}>
-            <button className="clear-button" type="button">Clear</button>
-            <button type="submit" className="submit-button">Submit</button>
+            <button
+              className="clear-button"
+              type="button"
+              onClick={handleClear}
+              disabled={Object.values(formData).every((f) => f === "")}
+            >
+              Clear
+            </button>
+            <button
+              type="submit"
+              className="submit-button"
+              disabled={!isFormValid || isSubmitting}
+            >
+              {isSubmitting ? "Sending..." : "Submit"}
+            </button>
           </motion.div>
         </motion.form>
       </motion.div>

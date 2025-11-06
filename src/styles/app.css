@@ -55,6 +55,7 @@ button
 
 .global-button
 {
+    opacity: 0.6;
     padding: 1rem 1.5rem;
     border: none;
     color: var(--dark);
@@ -72,6 +73,7 @@ button
 
 .global-button:hover
 {
+    opacity: 1;
     transform: scale(1.03);
 }
 

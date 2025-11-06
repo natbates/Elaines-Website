@@ -125,7 +125,9 @@ input::placeholder
 
 .clear-button
 {
-    
+    background-color: transparent !important;
+    outline: 2px solid var(--white);
+    color: var(--white) !important;
 }
 
 .submit-button, .clear-button

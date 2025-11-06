@@ -10,21 +10,24 @@ const Parallax = () => {
 
     const layers = section.querySelectorAll(".layer");
     const totalLayers = layers.length;
-    const windowHeight = window.innerHeight;
 
-    const width = window.innerWidth;
-    const speedFactor = Math.min(width / 1500);
+    const baseSpeed = 140; // overall intensity
 
-    // ----> Define a reusable update function
     const updateParallax = () => {
       const rect = section.getBoundingClientRect();
       const sectionTop = rect.top;
       const sectionHeight = rect.height;
+      const windowHeight = window.innerHeight;
 
-      const scrollProgress = Math.min(
+      // ✅ Normalized scroll progress between 0 → 1
+      let scrollProgress = Math.min(
         Math.max((windowHeight - sectionTop) / (windowHeight + sectionHeight), 0),
         1
       );
+
+      // ✅ Apply an ease-out curve for smoother start + stronger middle motion
+      // This makes the effect weaker near the top, faster as you scroll down
+      const easedProgress = Math.pow(scrollProgress, 5);
 
       layers.forEach((layer, index) => {
         if (layer.classList.contains("layer5")) {
@@ -32,23 +35,23 @@ const Parallax = () => {
           return;
         }
 
-        const depthMultiplier = totalLayers - index * 1.5;
-        const baseSpeed = depthMultiplier * 40;
-        const speed = baseSpeed * speedFactor;
-        const translateY = scrollProgress * speed;
+        // Back layers move faster
+        const depth = totalLayers - index;
+        const speed = baseSpeed * (depth / totalLayers) * 5;
+
+        // Amplify movement in the middle range, but ease near top
+        const translateY = easedProgress * speed;
 
         layer.style.transform = `translateY(${translateY}px)`;
       });
     };
 
-    // ----> Fix: Run the update *after paint* to avoid jump
+    // ✅ Run once initially (after paint)
     requestAnimationFrame(updateParallax);
 
-    // Add scroll listener
     window.addEventListener("scroll", updateParallax);
     window.addEventListener("resize", updateParallax);
 
-    // Clean up
     return () => {
       window.removeEventListener("scroll", updateParallax);
       window.removeEventListener("resize", updateParallax);
