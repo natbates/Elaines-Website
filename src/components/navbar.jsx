@@ -47,7 +47,7 @@ const Navbar = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.li variants={linkVariants} onClick={() => navigate("/about")}>
+          <motion.li className={location.pathname === '/about' ? "active" : ""} variants={linkVariants} onClick={() => navigate("/about")}>
             About Me
           </motion.li>
 
@@ -61,7 +61,7 @@ const Navbar = () => {
             </a>
           </motion.li>
 
-          <motion.li variants={linkVariants} onClick={() => navigate("/contact")}>
+          <motion.li   className={location.pathname === '/contact' ? "active" : ""} variants={linkVariants} onClick={() => navigate("/contact")}>
             Contact
           </motion.li>
         </motion.ul>

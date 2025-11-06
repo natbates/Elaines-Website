@@ -68,6 +68,11 @@
   transition: transform 0.3s ease;
 }
 
+.navbar-links li.active
+{
+  text-decoration: underline;
+}
+
 .navbar-links li:hover {
   transform: scale(1.05);
 }
