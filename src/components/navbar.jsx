@@ -22,7 +22,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar-background">
+    <div className="navbar-background" style={{
+        backgroundColor: window.location.pathname !== "/" && "transparent"
+      }}>
       <nav className="navbar">
         {/* Left: Logo */}
         <div className="navbar-logo" onClick={() => navigate("/")}>
