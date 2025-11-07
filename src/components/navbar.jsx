@@ -51,15 +51,15 @@ const Navbar = () => {
             <p>About Me</p>
           </motion.li>
 
-          <motion.li variants={linkVariants}>
-            <a
-              href="https://www.canva.com/design/DAG2f34whrc/R0vkEJQd1aa_gPN0FXMO_w/edit?utm_content=DAG2f34whrc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p>Marketing Portfolio</p>
-            </a>
-          </motion.li>
+        <motion.li variants={linkVariants}>
+          <a
+            href="/files/Elaine Portfolio 2026.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <p>Marketing Portfolio</p>
+          </a>
+        </motion.li>
 
           <motion.li variants={linkVariants}>
             <a
