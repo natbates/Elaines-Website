@@ -87,7 +87,7 @@ const Clients = () => {
         animate={inView ? "visible" : "hidden"}
         transition={{ delay: 0.2 }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+        I’m pleased to have great reviews for my results, but I’m more pleased when the reviews speak highly of my character and attitude.
       </motion.p>
 
       {/* Animate testimonial grid */}
