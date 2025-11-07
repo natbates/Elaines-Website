@@ -111,6 +111,14 @@
     src: url("/public/fonts/SCHABO-XCondensed.otf");
 }
 
+@media (max-width: 500px)
+{
+  .service-title
+  {
+    font-size: 2.3rem !important;
+  }
+}
+
 @media (max-width: 1220px) {
   #service-row {
     display: flex;

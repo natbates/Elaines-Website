@@ -5,7 +5,7 @@ import "../styles/samples.css";
 const Samples = () => {
   const sampleImages = [
     { title: "Content Strategy", imageUrl: "/images/devices/kato.png" },
-    { title: "Editorial Work", imageUrl: "/images/devices/kerfuffle-2.png" },
+    { title: "Email Marketing", imageUrl: "/images/devices/kerfuffle-2.png" },
     { title: "B2B Whitepaper", imageUrl: "/images/devices/kerfuffle.png" },
   ];
 

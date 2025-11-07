@@ -54,7 +54,7 @@ const Results = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        What I have done
+        What i've done
       </motion.h1>
 
       <motion.p

@@ -35,7 +35,6 @@ const Footer = () =>
                     <div id = "extra-info">
                         <img id = "footer-logo" src = "images/processed/white logo.svg"></img>
                         <p>hello@elainekeep.com</p>
-                        <p>07813535671</p>
                         <SocialLinks />
                     </div>
                 </div>

@@ -113,3 +113,22 @@
     font-size: 4rem;
   }
 }
+
+@media (max-width: 525px) {
+
+  .sample-text h2
+  {
+    font-size: 3rem;
+  }
+  
+}
+
+
+@media (max-width: 420px) {
+
+  .sample-text h2
+  {
+    font-size: 2rem;
+  }
+  
+}

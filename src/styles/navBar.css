@@ -142,10 +142,6 @@
     padding-right: 50px;
   }
 
-}
-
-@media (max-width: 850px) {
-
   .navbar
   {
     padding-left: 20px;
@@ -156,7 +152,7 @@
     flex-direction: column;
     position: absolute;
     align-items: flex-end;
-    right: 0;
+    right: -5;
     top: -20;
     padding-top: 20px;
     gap: 0.8rem;
