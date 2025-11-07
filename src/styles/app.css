@@ -119,7 +119,7 @@ button
     height: 100%;
     background-image: url("../../public/images/lemons.png");
     background-repeat: repeat-y;
-    z-index: 2;
+    z-index: 111;
 
     /* Animation */
     animation: slideInLeft 1s ease-out forwards;
@@ -137,7 +137,7 @@ button
     background-image: url("../../public/images/left-lemons.png");
     background-repeat: repeat-y;
     background-position: 0px 6vw;
-    z-index: 1;
+    z-index: 111;
 
     /* Animation */
     animation: slideInRight 1s ease-out forwards;

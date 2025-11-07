@@ -35,7 +35,7 @@
   display: flex;
   justify-content: center;
   background-color: var(--accent);
-  z-index: 111;
+  z-index: 100;
 }
 
 .navbar-logo

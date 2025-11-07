@@ -9,7 +9,7 @@
     padding-bottom: 0px;
     position: relative;
     padding-top: 10px;
-    z-index: 1;
+    z-index: 200;
     width: 100%;
     overflow: hidden;
     /* border-top: 15px solid black */
