@@ -41,10 +41,7 @@ const Portfolio = () => {
       >
         <img
           className="portfolio-image"
-          autoPlay
-          loop
-          muted
-          playsInline
+          src="images/backgrounds/portfolio.png"
         />
         <motion.div 
           className="portfolio-text" 

@@ -54,12 +54,11 @@ button
 
 .global-button
 {
-    opacity: 0.6;
     padding: 1rem 1.5rem;
     border: none;
     color: var(--dark);
     background-color: white;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1rem;
     border-radius: 26px;
     position: fixed;
@@ -162,20 +161,20 @@ button
         transition: font-size 0.3s ease;
     }
 
+    .portfolio-image
+    {
+        height: 400px;
+    }
+
     #footer
     {
         padding: 2vw;
     }
 
+
     .brand
     {
-        width: 180px;
-    }
-
-    .brand-image
-    {
-        height: 100px;
-        width: 100px;
+        height: 200px;
     }
 
 }

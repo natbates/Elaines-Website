@@ -15,6 +15,11 @@
     /* border-top: 15px solid black */
 }
 
+#footer.not-home
+{
+    background-color: var(--background-colour) !important;
+}
+
 .footer-content
 {
     position: relative;
@@ -48,6 +53,7 @@
     font-family: "BoldFont";
     color: var(--white);
     font-size: 7rem;
+    font-weight: lighter;
     margin: 0;
     margin-bottom: 20px;
     margin-top: 10px;

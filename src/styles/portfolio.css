@@ -11,8 +11,8 @@
 .portfolio-section h1
 {
   font-size: 4.83rem;
-  font-weight: 100;
-  text-align: center;
+  font-weight: lighter;
+  text-align: start;
   font-family: "BoldFont";
   margin: 0;
   margin-bottom: 50px;
@@ -54,7 +54,7 @@
   justify-content: center;
   align-items: center;
   height: 300px;
-  color: var(--dark);
+  color: var(--white);
   font-family: "BoldFont", sans-serif;
 }
 
@@ -71,12 +71,14 @@
     background-size: clamp(300px, 100%, 800px);
     background-repeat: no-repeat;
     background-position: center;
+    filter: brightness(0) invert(0);
 }
 
 .portfolio-text h3 {
   position: absolute;
   font-size: 3rem !important;
   margin: 0;
+  font-weight: lighter;
   z-index: 1;
   text-align: center !important;
   transition: font-size 0.3s ease;

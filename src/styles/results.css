@@ -6,8 +6,8 @@
 
 #results-gallery h1 {
   font-size: 4.83rem;
-  font-weight: 100;
-  text-align: end;
+  font-weight: lighter;
+  text-align: start;
   font-family: "BoldFont";
   margin: 0;
   margin-bottom: 10px;
@@ -16,7 +16,7 @@
 #results-gallery p {
   margin-bottom: 50px;
   font-size: 1.5rem;
-  text-align: end;
+  text-align: start;
 }
 
 .gallery-container {
@@ -36,11 +36,6 @@
   position: relative;
 }
 
-.left-side .gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 /* Right side */
 .right-side {
@@ -67,21 +62,49 @@
 }
 
 .gallery-item img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
+  flex: 1;
+  padding: 4px;
+  height: 0px;
   object-fit: cover;
   background-color: #ffffff;
   border-radius: 16px;
   transition: transform 0.3s ease;
+  box-sizing: border-box;
 }
 
-.gallery-item img:hover
+.gallery-item, .right-top
 {
-  transform: scale(1.03);
+  outline: 5px solid white;
+  border-radius: 16px;
+  outline-offset: -2.5px;
+  transition: border-width 0.3s ease;
+  overflow: hidden;
 }
+
+.gallery-item
+{
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+}
+
+.overlay-text
+{
+  transform: scale(1);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.right-bottom p
+{
+  font-size: 1rem !important;
+}
+
 
 /* --------------------------------------------- */
 /* RESPONSIVE DESIGN */
@@ -96,7 +119,7 @@
     flex-direction: column;         /* stack all items vertically */
     gap: 16px;                      /* spacing between items */
     width: 100%;
-    height: 500px;
+    height: fit-content !important;
     padding: 0;
   }
 
@@ -123,15 +146,15 @@
   .right-side {
     flex: 1;
     width: 100%;
-    display: flex;
+    display: flex !important;
     flex-direction: column; /* stack top and bottom */
     gap: 1rem;
-    height: 50%;
+    height: fit-content;
   }
 
-  .right-top
+  .gallery-item
   {
-    display: none;
+    height: fit-content;
   }
 
   .right-top {
@@ -147,33 +170,55 @@
     flex-wrap: wrap;    
   }
 
+  .right-bottom p
+  {
+    font-size: 1.5rem !important;
+  }
+
+
   .right-bottom .gallery-item {
     flex: 1 1 48%;      
     height: auto;
   }
 
   .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: none;
   }
 }
 
 .overlay-text {
-  padding: 2vw 2vw;
-  position: absolute;
+  padding: 40px 30px;
+  position: relative;
   inset: 0; /* covers entire image */
   display: flex;
-  justify-content: start;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 10px;
   color: var(--dark);
-  font-family: "BoldFont", sans-serif;
-  font-size: 2rem;
   width: 100%;
-  font-weight: bold;
+  font-weight: lighter;
   opacity: 1;
   border-radius: 16px;
   pointer-events: none; /* so hover still hits the image */
+  transition: transform 0.3s ease;
+}
+
+.overlay-text h2
+{
+  font-family: "BoldFont";
+  font-size: 2rem;
+  margin: 0;
+  font-weight: lighter;
+  will-change: transform;
+}
+
+.overlay-text p
+{
+  text-align: start !important;
+  font-size: 1rem;
+  margin: 0;
+  margin-bottom: 0 !important;
 }
 
 /* Responsive overlay text */

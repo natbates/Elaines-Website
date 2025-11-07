@@ -37,7 +37,7 @@ const Navbar = () => {
       <nav className="navbar">
         {/* Left: Logo */}
         <div className="navbar-logo" onClick={() => navigate("/")}>
-          <img src="images/processed/white logo.png" alt="Logo" />
+          <img src="images/processed/white logo.svg" alt="Logo" />
         </div>
 
         {/* Center: Navigation Links */}
@@ -48,7 +48,7 @@ const Navbar = () => {
           animate="visible"
         >
           <motion.li className={location.pathname === '/about' ? "active" : ""} variants={linkVariants} onClick={() => navigate("/about")}>
-            About Me
+            <p>About Me</p>
           </motion.li>
 
           <motion.li variants={linkVariants}>
@@ -57,12 +57,12 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Portfolio
+              <p>Portfolio</p>
             </a>
           </motion.li>
 
           <motion.li   className={location.pathname === '/contact' ? "active" : ""} variants={linkVariants} onClick={() => navigate("/contact")}>
-            Contact
+            <p>Contact</p>
           </motion.li>
         </motion.ul>
 

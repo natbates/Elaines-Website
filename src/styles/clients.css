@@ -9,6 +9,7 @@
 {
   text-align: start;
   margin-bottom: 0px;
+  font-weight: lighter;
 }
 
 #clients .sub-text
@@ -69,12 +70,13 @@
 
 .company-name {
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: lighter;
 }
 
 .quote {
   font-style: italic;
   margin-bottom: 1rem;
+  margin-top: 0px;
 }
 
 .client-meta {
@@ -83,7 +85,7 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .clients-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;

@@ -3,50 +3,56 @@ import { motion } from "framer-motion";
 import "../styles/services.css";
 
 // Service card component
-const Service = ({ name, description, imageUrl }) => {
+// Service card component
+const Service = ({ name, tag, description, imageUrl, iconUrl }) => {
   return (
     <div className="service-card">
       <img src={imageUrl} alt={name} className="service-background" />
+
+      {/* Icon on top of background */}
+      {iconUrl && (
+        <img src={iconUrl} alt={`${name} icon`} className="service-icon" />
+      )}
+
       <div className="service-content">
         <h3 className="service-title">{name}</h3>
+        <h4 className="service-tag">{tag}</h4>
         <p className="service-description">{description}</p>
       </div>
     </div>
   );
 };
 
+
 const Services = () => {
   // Services data
   const services = [
     {
       id: 1,
-      title: "Service 1",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "images/flowers/11.jpg",
+      title: "Email Marketing",
+      tag: "Emails that sell, not shout.",
+      description: "I design, code, and build campaigns — from landing pages and newsletters to full drip sequences — all built to drive demos and conversions.",
+      image: "images/backgrounds/services.avif",
+      icon: "images/services/email.svg", // <-- icon
     },
     {
       id: 2,
-      title: "Service 2",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "images/flowers/21.jpg",
+      title: "Social Content & Strategy",
+      tag: "Strategy meets storytelling.",
+      description: "Handwritten posts for founders and brands that want to sound human again. Smart, consistent content with a plan behind it.",
+      image: "images/backgrounds/services.avif",
+      icon: "images/services/social.svg", // <-- icon
     },
     {
       id: 3,
-      title: "Service 3",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "images/flowers/31.jpg",
+      title: "SEO & Optimisation",
+      tag: "Content that climbs",
+      description: "I rework pages for geo and AI search, improve linking, and track performance — turning words into steady organic growth.",
+      image: "images/backgrounds/services.avif",
+      icon: "images/services/seo.svg", // <-- icon
     },
-    // {
-    //   id: 4,
-    //   title: "Service 4",
-    //   description:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    //   image: "images/flowers/41.jpg",
-    // },
   ];
+
 
   // Animation variants
   const fadeInUp = {
@@ -89,9 +95,7 @@ const Services = () => {
             custom={1}
             viewport={{ once: true, amount: 0.3 }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-            perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque laudantium, totam rem aperiam.
+            You don’t need more content. You need results. That’s why multi-billion-pound brands trust me to plan, write, and deliver marketing that actually performs.
           </motion.p>
         </div>
 
@@ -106,11 +110,13 @@ const Services = () => {
               viewport={{ once: true, amount: 0.2 }}
               custom={i + 2} // starts after text animations
             >
-              <Service
-                name={service.title.toUpperCase()}
-                description={service.description}
-                imageUrl={service.image}
-              />
+            <Service
+              name={service.title.toUpperCase()}
+              tag={service.tag}
+              description={service.description}
+              imageUrl={service.image}
+              iconUrl={service.icon}
+            />
             </motion.div>
           ))}
         </div>

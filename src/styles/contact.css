@@ -20,12 +20,14 @@
     height: 100%;
     flex: 1;
     max-width: 1200px;
+    padding-bottom: 110px;
 }
 
 #contact .main-text
 {
     position: relative;
     color: var(--white);
+    font-weight: lighter;
     z-index: 100;
     width: 100%;
     text-align: start;
@@ -83,6 +85,7 @@
     height: 70px;
     border-radius: 16px;
     border: 3px solid white;
+    color: var(--white);
     padding-left: 25px;
     font-size: 1rem;
     font-family: main;
@@ -91,31 +94,39 @@
 
 .form-group textarea
 {
+    color: var(--white);
     height: 190px;
     border-radius: 16px;
     border: 3px solid white;
     padding-left: 25px;
     padding-top: 25px;
     font-size: 1rem;
-    color: var(--black);
     background-color: transparent;
 }
 
 textarea::placeholder
 {
-    color: var(--text-colour);
+    color: #ffffffbe;
 }
 
 input::placeholder
 {
-    color: var(--text-colour);
+    color: #ffffffbe;
 }
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--white); /* color you want on focus */
+}
+
 
 .button-container
 {
     display: flex;
     gap: 20px;
     width: 100%;
+    margin-top: 40px;
 }
 
 .button-container.right
@@ -130,11 +141,16 @@ input::placeholder
     color: var(--white) !important;
 }
 
-.submit-button, .clear-button
-{
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6; /* optional: visually indicate disabled state */
+}
+
+.submit-button,
+.clear-button {
     background-color: var(--white);
     height: 55px;
-    font-weight: bold;
+    font-weight: normal;
     border: none;
     color: var(--dark);
     margin-top: 20px;
@@ -146,7 +162,8 @@ input::placeholder
     transition: transform 0.3s ease;
 }
 
-.submit-button:hover
-{
+/* Only scale on hover if button is NOT disabled */
+.submit-button:not(:disabled):hover,
+.clear-button:not(:disabled):hover {
     transform: scale(1.05);
 }

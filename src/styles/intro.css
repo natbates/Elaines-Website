@@ -109,6 +109,7 @@
   text-align: start;
   word-wrap: break-word;
   font-family: "BoldFont";
+  font-weight: lighter;
   width: 100%;
   opacity: 0;
   margin-top: 20px;

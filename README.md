@@ -20,3 +20,8 @@ loading
 // samples fucked on mobile
 // navbar background above
 // samples in 2 x 2
+
+// social logos
+// add content
+// missing sample on mobile
+// fix mobile formatting

@@ -3,13 +3,38 @@ import { motion } from "framer-motion";
 import "../styles/results.css";
 
 const images = {
-  left: { src: "11.png", text: "Left Project" },
-  rightTop: { src: "12.png", text: "Top Project" },
+  left: {
+    src: "../../images/backgrounds/services.avif",
+    text: "AI21 Labs",
+    description:
+      "Over 50 enterprise blogs on generative AI, written for senior audiences in finance, retail, and healthcare. Each piece balances research, structure, and tone — positioning the brand as a genuine thought leader.",
+    link: "https://www.ai21.com", // add the URL
+  },
+  rightTop: {
+    src: "../../images/backgrounds/services.avif",
+    text: "MoxiWorks",
+    description:
+      "UK launch of a multi-billion-dollar US brand re-entering the market. This meant building the strategy from the ground up — developing sales assets, content marketing, and high-performing blog content to educate, convert, and grow.",
+    link: "https://www.moxiworks.com",
+  },
   rightBottom: [
-    { src: "31.png", text: "Bottom Left" },
-    { src: "14.png", text: "Bottom Right" },
+    {
+      src: "../../images/backgrounds/services.avif",
+      text: "Kerfuffle",
+      description:
+        "Oversee all marketing for Kerfuffle and Relocation Agent Network. Strategy, content, campaigns, and partnerships that keep everything running smoothly.",
+      link: "https://www.kerfuffle.com",
+    },
+    {
+      src: "../../images/backgrounds/services.avif",
+      text: "Acaboom",
+      description:
+        "Manage ongoing content and marketing for estate agency software — campaigns, partner comms, and lead generation that stay on-brand and measurable.",
+      link: "https://www.acaboom.com",
+    },
   ],
 };
+
 
 const Results = () => {
   const fadeInUp = {
@@ -38,9 +63,7 @@ const Results = () => {
         transition={{ delay: 0.3, duration: 0.8 }}
         viewport={{ once: true }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut
-        perspiciatis unde omnis iste natus error sit voluptatem accusantium
-        doloremque laudantium, totam rem aperiam.
+        Over the years I’ve helped brands — big and small — cut through the noise with sharper words, smarter strategy, and consistent marketing that actually gets done.
       </motion.p>
 
       <div className="gallery-container">
@@ -52,13 +75,16 @@ const Results = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="gallery-item">
+          <div className="gallery-item" onClick={() => window.open(images.left.link, "_blank")}>
             <img
               src={`./images/backgrounds/${images.left.src}`}
               alt="Left"
               className="fade-image"
             />
-            <div className="overlay-text">{images.left.text}</div>
+            <div className="overlay-text">
+                <h2>{images.left.text}</h2>
+                <p>{images.left.description}</p>
+            </div>
           </div>
         </motion.div>
 
@@ -72,13 +98,11 @@ const Results = () => {
             custom={1}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="gallery-item">
-              <img
-                src={`./images/backgrounds/${images.rightTop.src}`}
-                alt="Right Top"
-                className="fade-image"
-              />
-              <div className="overlay-text">{images.rightTop.text}</div>
+            <div className="gallery-item" onClick={() => window.open(images.rightTop.link, "_blank")}>
+            <div className="overlay-text">
+                <h2>{images.rightTop.text}</h2>
+                <p>{images.rightTop.description}</p>
+            </div>
             </div>
           </motion.div>
 
@@ -87,19 +111,18 @@ const Results = () => {
               <motion.div
                 key={idx}
                 className="gallery-item"
+                onClick={() => window.open(img.link, "_blank")}
                 variants={fadeInUp}
                 initial="hidden"
                 whileInView="visible"
                 custom={idx + 2}
                 viewport={{ once: true, amount: 0.2 }}
               >
-                <img
-                  src={`./images/backgrounds/${img.src}`}
-                  alt={`Right Bottom ${idx}`}
-                  className="fade-image"
-                />
-                <div className="overlay-text">{img.text}</div>
-              </motion.div>
+              <div className="overlay-text">
+                  <h2>{img.text}</h2>
+                  <p>{img.description}</p>
+              </div>              
+            </motion.div>
             ))}
           </div>
         </div>

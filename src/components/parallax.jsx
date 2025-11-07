@@ -27,7 +27,7 @@ const Parallax = () => {
 
       // ✅ Apply an ease-out curve for smoother start + stronger middle motion
       // This makes the effect weaker near the top, faster as you scroll down
-      const easedProgress = Math.pow(scrollProgress, 5);
+      const easedProgress = Math.pow(scrollProgress, 3);
 
       layers.forEach((layer, index) => {
         if (layer.classList.contains("layer5")) {
@@ -36,8 +36,8 @@ const Parallax = () => {
         }
 
         // Back layers move faster
-        const depth = totalLayers - index;
-        const speed = baseSpeed * (depth / totalLayers) * 5;
+        const depth = totalLayers - index / 1.3;
+        const speed = baseSpeed * (depth / totalLayers) * 3;
 
         // Amplify movement in the middle range, but ease near top
         const translateY = easedProgress * speed;

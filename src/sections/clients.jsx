@@ -6,52 +6,52 @@ import { useInView } from "react-intersection-observer";
 const Clients = () => {
   const clients = [
     {
-      company: "Brother Incs",
+      company: "People HR",
       quote:
-        "She is a great sister, I love her dog and her child is pretty cool!",
-      person: "Nathaniel",
-      title: "Clients Position",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+        "Elaine is a brilliant content writer to work with. She has supported SMB at the Access group and contributed towards increasing organic traffic. Elaine is an absolute pleasure to work with and I look forward to more projects together in the future.",
+      person: "Sophie Parry",
+      title: "Head of Marketing",
+      avatar: "images/clients/sophie.png",
     },
     {
-      company: "Client",
+      company: "Kolekti",
       quote:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      person: "Client Name",
-      title: "Clients Position",
-      avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+        "I discovered Elaine on a search for a specialist content writer to support us during the launch of our website. We needed content that was delivered at speed, with a focus on quality, readability and SEO optimisation. And she has delivered! ",
+      person: "Simon Kirrane",
+      title: "Senior Content Marketing Manager",
+      avatar: "images/clients/simon.png",
     },
     {
-      company: "Client",
+      company: "Motivates",
       quote:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      person: "Client Name",
-      title: "Clients Position",
-      avatar: "https://randomuser.me/api/portraits/men/28.jpg",
+        "Elaine's a B2B marketing & copywriting whiz I wholeheartedly recommend! Her SEO-driven website & brochure copywriting captivated us and our audience. She is quick, clear, compelling in her delivery. Plus, she writes a wonderful blog! A reliable pro!",
+      person: "Michelle L P Boland",
+      title: "Marketing Director",
+      avatar: "images/clients/michelle.png",
     },
     {
-      company: "Client",
+      company: "Orderly",
       quote:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      person: "Client Name",
-      title: "Clients Position",
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+        "I’ve had the pleasure of working with Elaine, and she consistently delivers amazing copy on time, perfect from the first draft. Her ability to understand our audience’s needs is almost like she has a crystal ball. She presents our brand’s message in a beautifully fitting and easily digestible manner, which has significantly enhanced our communication efforts.",
+      person: "Peter Evans",
+      title: "CEO",
+      avatar: "images/clients/peter.png",
     },
     {
-      company: "Client",
+      company: "Acaboom",
       quote:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      person: "Client Name",
-      title: "Clients Position",
-      avatar: "https://randomuser.me/api/portraits/men/60.jpg",
+        "I’ve had the pleasure of working closely with Elaine in her capacity as sole marketing lead, and I can confidently say she is one of the most talented and positive professionals I’ve encountered. Elaine’s content writing is exceptional; it’s consistently clear, compelling, and aligned with brand tone and strategy.",
+      person: "Abi Teale",
+      title: "Supply Chain and Operations Specialist",
+      avatar: "images/clients/abi.png",
     },
     {
-      company: "Client",
+      company: "Women In Incentives Network",
       quote:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      person: "Client Name",
-      title: "Clients Position",
-      avatar: "https://randomuser.me/api/portraits/women/23.jpg",
+        "We are super happy with Elaine for our content at the Women in Incentives Network (WiiN)! She writes highly personal and easy to read pieces, like interviews and industry articles. Also the communication and project updates are amazing. It's a joy to work with Elaine!",
+      person: "Rachelle Leerling",
+      title: "Content Manager",
+      avatar: "images/clients/rachel.png",
     },
   ];
 
@@ -124,11 +124,11 @@ const Clients = () => {
           >
             <div className="testimonial-top">
               <img src={client.avatar} alt={client.person} className="client-avatar" />
-              <h2 className="company-name">{client.company}</h2>
+              <h2 className="company-name">{client.person}</h2>
             </div>
             <p className="quote">“{client.quote}”</p>
             <p className="client-meta">
-              {client.person}, {client.title}
+              {client.company}, {client.title}
             </p>
           </motion.div>
         ))}

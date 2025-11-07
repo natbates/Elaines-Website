@@ -1,0 +1,40 @@
+#stats
+{
+    max-width: 1200px;
+    padding: 0 2vw;
+    text-align: start;
+}
+
+#stats .main-text
+{
+    text-align: start;
+    font-weight: lighter;
+}
+
+#stats .sub-text
+{
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: start;
+    font-weight: lighter;
+}
+
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.stat-item {
+  font-size: 2rem;
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  font-weight: 1.5rem;
+  color: var(--dark);
+  width: 100%;
+}

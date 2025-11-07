@@ -7,7 +7,7 @@ const Footer = () =>
     if (location.pathname == '/login'){return null}
 
     return (
-        <div id = "footer">
+        <div id = "footer" className={window.location.pathname !== "/" ? "not-home" : ""}>
             <div className="footer-content"> 
 
                 <h1 className="footer-title">
@@ -33,7 +33,7 @@ const Footer = () =>
                     </div>
 
                     <div id = "extra-info">
-                        <img id = "footer-logo" src = "images/processed/white logo.png"></img>
+                        <img id = "footer-logo" src = "images/processed/white logo.svg"></img>
                         <p>hello@elainekeep.com</p>
                         <p>07813535671</p>
                         <SocialLinks />

@@ -11,6 +11,7 @@ import "../styles/homepage.css";
 
 import { motion } from "framer-motion";
 import SocialLinks from "../components/socialLinks";
+import Stats from "../sections/Stats";
 
 const SocialIntro = () => {
   const fadeIn = {
@@ -58,7 +59,7 @@ const SocialIntro = () => {
       {/* Social links fade-up */}
       <motion.div
         className="social-intro-links"
-        initial={{ opacity: 0, x: -10 }}
+        initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, delay: 1.17}}
         style={{
@@ -88,6 +89,7 @@ const Home = () =>
                 <SocialIntro />
                 <Services />
                 <Portfolio />
+                <Stats />
                 <Results /> 
                 <Brands />
                 <Clients /> 
