@@ -19,7 +19,7 @@ const SocialLinks = () => {
 
       {/* Authory */}
       <a
-        href="https://authory.com/ElaineKeep"
+        href="/files/Elaine Portfolio 2026.pdf"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Authory"
