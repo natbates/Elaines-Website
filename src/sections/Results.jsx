@@ -5,10 +5,11 @@ import "../styles/results.css";
 const images = {
   left: {
     src: "../../images/backgrounds/services.avif",
-    text: "AI21 Labs",
+    img: "../../images/processed/amplified.png",
+    text: "Amplified Group",
     description:
-      "Over 50 enterprise blogs on generative AI, written for senior audiences in finance, retail, and healthcare. Each piece balances research, structure, and tone — positioning the brand as a genuine thought leader.",
-    link: "https://www.ai21.com", // add the URL
+      "Write and manage social media content for Amplified, JBM, Unleashed, and 40 Minute Mentor, creating on-brand posts that promote podcasts, highlight leadership stories, and grow community engagement across LinkedIn and other platforms.",
+    link: "https://www.unleashed.company", // add the URL
   },
   rightTop: {
     src: "../../images/backgrounds/services.avif",
@@ -76,11 +77,16 @@ const Results = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <div className="gallery-item" onClick={() => window.open(images.left.link, "_blank")}>
-            <img
-              src={`./images/backgrounds/${images.left.src}`}
-              alt="Left"
-              className="fade-image"
-            />
+            <div className="img-container">
+              <img
+                src={`./images/backgrounds/${images.left.src}`}
+                alt="Left"
+                className="fade-image"
+              >
+              </img>
+              <img className="amplified-img" src = {images.left.img}></img>
+            </div>
+
             <div className="overlay-text">
                 <h2>{images.left.text}</h2>
                 <p>{images.left.description}</p>

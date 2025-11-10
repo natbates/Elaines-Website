@@ -62,11 +62,11 @@
 }
 
 .gallery-item img {
-  position: relative;
+  position: absolute;
+  height: 100%;
   width: 100%;
   flex: 1;
   padding: 4px;
-  height: 0px;
   object-fit: cover;
   background-color: #ffffff;
   border-radius: 16px;
@@ -211,6 +211,23 @@
   margin: 0;
   font-weight: lighter;
   will-change: transform;
+}
+
+.img-container
+{
+  position: relative;
+  flex: 1;
+}
+
+.amplified-img
+{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  background-color: transparent !important;
+  object-fit: contain !important;
+  padding: 80px !important;
 }
 
 .overlay-text p
