@@ -51,15 +51,15 @@ const Navbar = () => {
             <p>About Me</p>
           </motion.li>
 
-        <motion.li variants={linkVariants}>
-          <a
-            href="/files/Elaine Portfolio 2026.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p>Marketing Portfolio</p>
-          </a>
-        </motion.li>
+          <motion.li variants={linkVariants}>
+            <a
+              href="/files/Elaine Portfolio 2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p>Marketing Portfolio</p>
+            </a>
+          </motion.li>
 
           <motion.li variants={linkVariants}>
             <a
@@ -86,7 +86,7 @@ const Navbar = () => {
         >
           <button
             onClick={() =>
-              window.open("https://www.linkedin.com/in/your-profile", "_blank")
+              window.open("https://www.linkedin.com/in/elaine-keep/", "_blank")
             }
           >
             Connect
