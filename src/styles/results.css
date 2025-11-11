@@ -106,18 +106,11 @@
 }
 
 
-/* --------------------------------------------- */
-/* RESPONSIVE DESIGN */
-/* --------------------------------------------- */
-
-/* 4x4 grid for tablet / small desktop and below */
-/* FLEX layout for tablet / small desktop and below */
 @media (max-width: 1024px) {
-  /* Container switches to column flex instead of grid */
   .gallery-container {
-    display: flex !important;       /* use flex */
-    flex-direction: column;         /* stack all items vertically */
-    gap: 16px;                      /* spacing between items */
+    display: flex !important;       
+    flex-direction: column;        
+    gap: 16px;                    
     width: 100%;
     height: fit-content !important;
     padding: 0;

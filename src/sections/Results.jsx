@@ -15,7 +15,7 @@ const images = {
     src: "../../images/backgrounds/services.avif",
     text: "MoxiWorks",
     description:
-      "UK launch of a multi-billion-dollar US brand re-entering the market. This meant building the strategy from the ground up — developing sales assets, content marketing, and high-performing blog content to educate, convert, and grow.",
+      "UK launch of a multi-million-dollar US brand re-entering the market. This meant building the strategy from the ground up — developing sales assets, content marketing, and high-performing blog content to educate, convert, and grow.",
     link: "https://www.moxiworks.com",
   },
   rightBottom: [

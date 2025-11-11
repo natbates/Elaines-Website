@@ -19,7 +19,7 @@ const SocialLinks = () => {
 
       {/* Authory */}
       <a
-        href="/files/Elaine Portfolio 2026.pdf"
+        href="https://authory.com/ElaineKeep"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Authory"
@@ -33,13 +33,13 @@ const SocialLinks = () => {
 
       {/* Canva */}
       <a
-        href="https://www.canva.com/design/DAG2f34whrc/R0vkEJQd1aa_gPN0FXMO_w/edit?utm_content=DAG2f34whrc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+        href="/files/Elaine Portfolio 2026.pdf"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Canva"
       >
         <img
-          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/canva.svg"
+          src = "../../images/processed/PDF.svg"
           alt="Canva"
           className="social-icon"
         />
