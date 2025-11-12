@@ -107,7 +107,6 @@
   z-index: 111;
   margin: 0;
   text-align: start;
-  word-wrap: break-word;
   font-family: "BoldFont";
   font-weight: lighter;
   width: 100%;
@@ -255,3 +254,15 @@
     font-size: 0.8rem;
   }
 } */
+
+@media (max-width: 395px) {
+    #intro-text h1{
+      font-size: 4rem !important;
+    }
+}
+
+@media (max-width: 325px) {
+    #intro-text h1{
+      font-size: 3.5rem !important;
+    }
+}
