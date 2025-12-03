@@ -95,7 +95,7 @@ const Services = () => {
             custom={1}
             viewport={{ once: true, amount: 0.3 }}
           >
-            You don’t need more content. You need results. That’s why multi-billion-pound brands trust me to plan, write, and deliver marketing that actually performs.
+            You don’t need more content. You need results. That’s why million pound brands trust me to plan, write, and deliver marketing that actually performs.
           </motion.p>
         </div>
 

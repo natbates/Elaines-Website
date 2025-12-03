@@ -40,7 +40,7 @@ const Stats = () => {
         Stats
       </motion.h1>
       <motion.p className="sub-text" variants={textVariant}>
-        Trusted by multi-billion-pound brands, startups, and everything in between. I plan, write,
+        Trusted by million pound brands, startups, and everything in between. I plan, write,
         and deliver content and campaigns that move the metrics that matter: sales, demos, and
         steady growth.
       </motion.p>
