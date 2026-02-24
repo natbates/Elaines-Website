@@ -16,7 +16,6 @@ const Brands = () => {
         const importAll = (r) => r.keys().map(r);
         const images = importAll(require.context("../assets/brands", false, /\.(png|jpe?g|gif)$/));
         setBrands(images);
-        console.log(images);
     }, []);
 
   return (

@@ -34,16 +34,17 @@ const AboutMe = () => {
 
   return (
     <div id="about-me-page">
-      <h1 className="main-text">A bit more about me...</h1>
 
       <motion.div
         className="about-content"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
-        {/* Animated paragraph */}
+        <motion.h1 className="main-text" variants={textVariants}>
+         A bit more about me...
+        </motion.h1>
         <motion.p variants={textVariants}>
           From crafting impactful email sequences to long-form blog posts,
           landing pages, and web copy, I specialize in helping businesses

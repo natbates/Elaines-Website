@@ -60,7 +60,6 @@ const Contact = () => {
         Let's Have A Coffee
       </motion.h1>
 
-      <motion.div id="contact-curve" variants={itemVariants}></motion.div>
 
       <motion.p className="sub-text" variants={itemVariants}>
         Over to you to message me Today.

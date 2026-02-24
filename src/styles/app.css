@@ -48,8 +48,9 @@ body
 
 button
 {
-    font-family: "Source";
+    font-family: "BoldFont";
     cursor: pointer;
+    letter-spacing: 3px;
 }
 
 .global-button
