@@ -15,7 +15,6 @@ import { motion } from "framer-motion";
 const PageNotFound = () => {
   const navigate = useNavigate();
 
-  // animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -49,6 +48,7 @@ const PageNotFound = () => {
         variants={fadeInUp}
         initial="hidden"
         animate="visible"
+        style={{marginBottom: "50px"}}
         transition={{ delay: 0.3 }}
         onClick={() => navigate("/")}
       >
