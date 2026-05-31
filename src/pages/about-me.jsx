@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 
 const AboutMe = () => {
   const images = [
-    "images/processed/family.jpg",
-    "/images/processed/milo.jpg",
-    "/images/processed/car.png",
-    "images/processed/work.jpg",
+    "images/elaine/about/family.jpg",
+    "/images/elaine/about/milo.jpg",
+    "/images/elaine/about/car.png",
   ];
 
   // Variants for staggered animation container
@@ -55,7 +54,7 @@ const AboutMe = () => {
           running (currently training for my next 10K), enjoying my quirky
           collection of handbags, or spending time with my family. I live in a
           busy household with my engineer husband, a golden retriever, and a
-          seven-year-old son who keeps me on my toes. I'm also a huge fan of
+          seven-year-old son who keeps me on my toes. I&apos;m also a huge fan of
           podcasts and love a good cup of tea with biscuits (preferably more
           biscuits than tea). Oh, and my weekend car? A 1991 Nissan Figaro
           named Betty—she’s a total joy to drive! Currently, I’m working toward

@@ -23,14 +23,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: 2rem;
+  gap: 1rem;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
 
 .testimonial-card {
   background-color: var(--white);
-  border-radius: 16px;
+  border-radius: 0;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -82,6 +82,7 @@
 .client-meta {
   font-size: 0.9rem;
   color: #555;
+  margin-top: auto;
 }
 
 /* Responsive */

@@ -1,139 +1,101 @@
-import React from "react";
+﻿import React from "react";
 import { motion } from "framer-motion";
 import "../styles/results.css";
+import SectionHeader from "../components/common/SectionHeader/sectionHeader";
 
-const images = {
-  left: {
-    src: "../../images/backgrounds/services.avif",
-    img: "../../images/processed/amplified.png",
-    text: "Amplified Group",
+const caseStudies = [
+  {
+    kicker: "TUFFNELLS — HERITAGE BRAND REBRAND",
+    headline: "100+ year old brand. Zero SEO presence. Rebuilt from scratch — and drove 3,000% more traffic.",
     description:
-      "Write and manage social media content for Amplified, JBM, Unleashed, and 40 Minute Mentor, creating on-brand posts that promote podcasts, highlight leadership stories, and grow community engagement across LinkedIn and other platforms.",
-    link: "https://www.unleashed.company", // add the URL
+      "Full brand rework including new website, identity, livery, and SEO strategy. Set up email marketing programme — drove highest site traffic in 3 years on first send. Grew LinkedIn from 300 to 1,000+ organically. Trustpilot went from 2.0 to 8.0 for under £1k. Long lengths campaign generated 600 new customer quotes in 3 months.",
+    metrics: [
+      { value: "3,000%", label: "Traffic increase YoY" },
+      { value: "30+", label: "Keywords on pages 1–3" },
+      { value: "2.0→8.0", label: "Trustpilot score for <£1k" },
+    ],
   },
-  rightTop: {
-    src: "../../images/backgrounds/services.avif",
-    text: "MoxiWorks",
+  {
+    kicker: "COLLECTION POT — FINTECH",
+    headline: "One blog. 15,000 monthly visitors. Outperforms every other marketing channel.",
     description:
-      "UK launch of a multi-million-dollar US brand re-entering the market. This meant building the strategy from the ground up — developing sales assets, content marketing, and high-performing blog content to educate, convert, and grow.",
-    link: "https://www.moxiworks.com",
+      "Creating optimised copy for Collection Pot since its early days — from lead magnets and site copy to social, email and ongoing blog content. A single blog post now receives ~15,000 visits per month. Blog traffic is 2,963% higher than homepage traffic. This content outperforms PPC and all other marketing strategies for lead generation.",
+    metrics: [
+      { value: "19,637", label: "Blog visits/month vs 641 homepage" },
+      { value: "2,963%", label: "More traffic than homepage" },
+      { value: "#1", label: "Lead source vs PPC" },
+    ],
   },
-  rightBottom: [
-    {
-      src: "../../images/backgrounds/services.avif",
-      text: "Kerfuffle",
-      description:
-        "Oversee all marketing for Kerfuffle and Relocation Agent Network. Strategy, content, campaigns, and partnerships that keep everything running smoothly.",
-      link: "https://www.kerfuffle.com",
-    },
-    {
-      src: "../../images/backgrounds/services.avif",
-      text: "Acaboom",
-      description:
-        "Manage ongoing content and marketing for estate agency software — campaigns, partner comms, and lead generation that stay on-brand and measurable.",
-      link: "https://www.acaboom.com",
-    },
-  ],
-};
-
+  {
+    kicker: "ACABOOM — PROPTECH MARKETING",
+    headline: "Rebranded and ran the entire marketing function for a growing proptech business — and turned £40k into £280k.",
+    description:
+      "Took sole ownership of all marketing at Acaboom: brand relaunch, sales approach rework, PR, SEO, social, campaigns, event stands, and email strategy. Built a 12-email prospecting and demo journey from scratch. Grew their customer base from 1,040 to 1,140 in 2024 and increased monthly subscription revenue by 6%.",
+    metrics: [
+      { value: "£155k+", label: "Conservative direct return annually" },
+      { value: "£35,370", label: "From white paper sequence alone" },
+      { value: "+100", label: "New paying customers in 2024" },
+    ],
+  },
+  {
+    kicker: "GAPS LTD — AEROSPACE & AUTOMOTIVE",
+    headline: "7 meetings. £1,250 budget. £637,250 in new business. In under a quarter.",
+    description:
+      "A niche B2B brand with under 100 global ICPs — mostly abroad. Created a full rebrand, social media presence, and targeted email + direct mail sequence with a personalised gift to drive meeting bookings. Month one: 7 meetings booked. Result: two major client wins totalling over £637k in booked business.",
+    metrics: [
+      { value: "£600k+", label: "Booked business Q1 2025" },
+      { value: "£37,250", label: "Additional sales Q4 2024" },
+      { value: "7", label: "Meetings booked month one" },
+    ],
+  },
+];
 
 const Results = () => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i = 0) => ({
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.2, duration: 0.8, ease: "easeOut" },
+      transition: { delay: i * 0.1, duration: 0.6, ease: "easeOut" },
     }),
   };
 
   return (
-    <div id="results-gallery">
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        What i've done
-      </motion.h1>
+    <section id="results-gallery">
+      <SectionHeader
+        title="What I&apos;ve done"
+        subtitle="Over the years I've helped brands — big and small — cut through the noise with sharper words, smarter strategy, and consistent marketing that actually gets done."
+      />
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        Over the years I’ve helped brands — big and small — cut through the noise with sharper words, smarter strategy, and consistent marketing that actually gets done.
-      </motion.p>
-
-      <div className="gallery-container">
-        {/* Left side */}
-        <motion.div
-          className="left-side"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <div className="gallery-item" onClick={() => window.open(images.left.link, "_blank")}>
-            <div className="img-container">
-              <img
-                src={`./images/backgrounds/${images.left.src}`}
-                alt="Left"
-                className="fade-image"
-              >
-              </img>
-              <img className="amplified-img" src = {images.left.img}></img>
-            </div>
-
-            <div className="overlay-text">
-                <h2>{images.left.text}</h2>
-                <p>{images.left.description}</p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Right side */}
-        <div className="right-side">
+      <div className="case-studies-grid">
+        {caseStudies.map((study, index) => (
           <motion.div
-            className="right-top"
-            variants={fadeInUp}
+            key={index}
+            className="case-study-card"
+            custom={index}
+            variants={cardVariants}
             initial="hidden"
             whileInView="visible"
-            custom={1}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="gallery-item" onClick={() => window.open(images.rightTop.link, "_blank")}>
-            <div className="overlay-text">
-                <h2>{images.rightTop.text}</h2>
-                <p>{images.rightTop.description}</p>
-            </div>
+            <div className="card-inner">
+              <span className="card-kicker">{study.kicker}</span>
+              <h3 className="card-headline">{study.headline}</h3>
+              <p className="card-description">{study.description}</p>
+              
+              <div className="card-metrics">
+                {study.metrics.map((metric, idx) => (
+                  <div key={idx} className="metric">
+                    <div className="metric-value">{metric.value}</div>
+                    <div className="metric-label">{metric.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
-
-          <div className="right-bottom">
-            {images.rightBottom.map((img, idx) => (
-              <motion.div
-                key={idx}
-                className="gallery-item"
-                onClick={() => window.open(img.link, "_blank")}
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-                custom={idx + 2}
-                viewport={{ once: true, amount: 0.2 }}
-              >
-              <div className="overlay-text">
-                  <h2>{img.text}</h2>
-                  <p>{img.description}</p>
-              </div>              
-            </motion.div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

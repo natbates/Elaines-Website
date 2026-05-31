@@ -29,16 +29,12 @@ const Navbar = () => {
   };
 
   return (
-    <div
-      className="navbar-background"
-      style={{
-      }}
-    >
+    <div className="navbar-background">
       <nav className="navbar">
         {/* Left: Logo */}
-        <div className="navbar-logo" onClick={() => navigate("/")}>
-          <img src="images/processed/white logo.svg" alt="Logo" />
-        </div>
+        <button type="button" className="navbar-logo" onClick={() => navigate("/")} aria-label="Go to home page">
+          <img src="images/elaine/white logo.svg" alt="Logo" />
+        </button>
 
         {/* Center: Navigation Links */}
         <motion.ul
@@ -47,8 +43,8 @@ const Navbar = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.li className={location.pathname === '/about' ? "active" : ""} variants={linkVariants} onClick={() => navigate("/about")}>
-            <p>About Me</p>
+          <motion.li className={location.pathname === '/about' ? "active" : ""} variants={linkVariants}>
+            <button type="button" onClick={() => navigate("/about")}>About Me</button>
           </motion.li>
 
           <motion.li variants={linkVariants}>
@@ -57,7 +53,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p>Marketing Portfolio</p>
+              Marketing Portfolio
             </a>
           </motion.li>
 
@@ -67,13 +63,13 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p>Content Samples</p>
+              Content Samples
             </a>
           </motion.li>
 
 
-          <motion.li   className={location.pathname === '/contact' ? "active" : ""} variants={linkVariants} onClick={() => navigate("/contact")}>
-            <p>Contact</p>
+          <motion.li   className={location.pathname === '/contact' ? "active" : ""} variants={linkVariants}>
+            <button type="button" onClick={() => navigate("/contact")}>Contact</button>
           </motion.li>
         </motion.ul>
 
@@ -85,6 +81,7 @@ const Navbar = () => {
           transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
         >
           <button
+              type="button"
             onClick={() =>
               window.open("https://www.linkedin.com/in/elaine-keep/", "_blank")
             }

@@ -1,18 +1,4 @@
-#contact-top-img
-{
-    background-image: url("../../public/images//elaine/image00037.jpg");
-    background-size: cover; /* Makes the image cover the entire container */ 
-    background-position: center;
-    width: 100%;
-    height: calc(200px + 15vw);
-    z-index: -100;
-    position: relative;
-    top: 0px;
-    z-index: 3;
-    background-color: var(--hot-pink);
-    border-radius: 4vw;
-    display: none;
-}
+
 
 #contact
 {

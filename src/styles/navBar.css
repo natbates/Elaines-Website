@@ -41,6 +41,10 @@
 .navbar-logo
 {
     width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .navbar-logo img {
@@ -59,7 +63,6 @@
 }
 
 .navbar-links li {
-  cursor: pointer;
   min-width: 75px;
   margin: 0;
   display: flex;
@@ -72,7 +75,17 @@
   transform-origin: center;
 }
 
-.navbar-links li p
+.navbar-links li button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.navbar-links li p,
+.navbar-links li button
 {
   position: relative;
   text-align: center;
@@ -80,7 +93,8 @@
   margin: 0 !important;
 }
 
-.navbar-links li p::after {
+.navbar-links li p::after,
+.navbar-links li button::after {
   content: "";
   position: absolute;
   bottom: -6px;
@@ -92,7 +106,8 @@
   transition: width 0.3s ease, left 0.3s ease;
 }
 
-.navbar-links li:hover p::after {
+.navbar-links li:hover p::after,
+.navbar-links li:hover button::after {
   width: 100%;
 }
 
@@ -100,6 +115,13 @@
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+}
+
+.navbar-logo:focus-visible,
+.navbar-links li button:focus-visible,
+.navbar-action button:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 4px;
 }
 
 .navbar-action
@@ -143,7 +165,8 @@
     padding-right: 50px;
   }
 
-  .navbar-links li p::after {
+  .navbar-links li p::after,
+  .navbar-links li button::after {
     display: none;
   }
 

@@ -1,0 +1,112 @@
+#stats {
+  padding: 0vw 2vw;
+  width: 100%;
+  max-width: 1200px;
+}
+
+#stats .main-text {
+  margin: 0 0 10px;
+  text-align: start;
+}
+
+#stats .sub-text {
+  margin: 0 0 50px;
+  text-align: start;
+  font-size: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  min-height: 215px;
+  padding: 22px 20px 18px;
+  border: 1px solid #ece8eb;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+  box-shadow: 0 1px 0 rgba(15, 15, 15, 0.02);
+  border-radius: 0;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.stat-card:hover,
+.stat-card:focus-within {
+  background: #ff2f6d;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.stat-card__kicker {
+  margin: 0;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ff2f6d;
+}
+
+.stat-card:hover .stat-card__kicker,
+.stat-card:focus-within .stat-card__kicker,
+.stat-card:hover .stat-card__copy,
+.stat-card:focus-within .stat-card__copy {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.stat-card__value {
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw, 4.9rem);
+  line-height: 0.95;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -0.05em;
+  color: #ff2f6d;
+}
+
+.stat-card:hover .stat-card__value,
+.stat-card:focus-within .stat-card__value {
+  color: #fff;
+}
+
+.stat-card__copy {
+  margin: 0;
+  max-width: 32ch;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #66707a;
+}
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  #stats {
+    padding: 0 2vw;
+  }
+
+  #stats .main-text {
+    font-size: 3rem;
+  }
+
+  #stats .sub-text {
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    min-height: auto;
+  }
+}

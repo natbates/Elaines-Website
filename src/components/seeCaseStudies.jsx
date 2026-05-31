@@ -9,7 +9,7 @@ const SeeStudies = () => {
         <section className="see-my">
             <div className="see-my-text">
                 <p>See What I Can Do</p>
-                <a href = "https://authory.com/ElaineKeep" target="_blank"><span className="pink-underline">See My Portfolio</span></a>
+                <a href = "https://authory.com/ElaineKeep" target="_blank" rel="noreferrer"><span className="pink-underline">See My Portfolio</span></a>
                 <button onClick={handleButtonClick} className="findout-more-button">
                     Find out more
                 </button>

@@ -118,26 +118,6 @@
     margin-top: 6px;
 }
 
-.footer-rose
-{
-    display: none;
-    position: absolute;
-    bottom: 0vw;
-    background-image: url("../../public/images/processed/rose.png");
-    z-index: -11;
-    right: 0%;
-    transform: translate(0%, 30%);
-    width: 65%;
-    height: 100%;
-    right: 0%;
-    transform: scale(1.7);
-    background-size: contain;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-}
-
-
 #footer-socials
 {
     display: flex;

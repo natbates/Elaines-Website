@@ -2,16 +2,14 @@ import Intro from "../sections/intro";
 import Brands from "../sections/brands";
 import Clients from "../sections/clients";
 import Samples from "../sections/samples";
-import About from "../sections/About";
 import Services from "../sections/services";
 import Results from "../sections/Results";
-import Parallax from "../components/parallax";
-import Portfolio from "../sections/Portfolio";
+import Experience from "../sections/Experience";
 import "../styles/homepage.css";
 
 import { motion } from "framer-motion";
 import SocialLinks from "../components/socialLinks";
-import Stats from "../sections/Stats";
+import Stats from "../sections/Stats/Stats";
 
 const SocialIntro = () => {
   const fadeIn = {
@@ -20,20 +18,19 @@ const SocialIntro = () => {
       opacity: 1,
       transition: {
         duration: 1.6,
-        ease: "easeOut", // ✅ use valid ease
+        ease: "easeOut",
       },
     },
   };
 
   return (
     <div id="social-intro-holder">
-      {/* Smooth fade-in text */}
         <motion.p
         id="social-intro-text"
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }} // ✅ only runs once when visible
+        viewport={{ once: true, amount: 0.4 }}
         style={{
             willChange: "opacity, transform",
             backfaceVisibility: "hidden",
@@ -43,7 +40,6 @@ const SocialIntro = () => {
         14+ years in marketing in SaaS, HR and tech
         </motion.p>
 
-      {/* Animated line under text */}
       <motion.div
         className="line"
         initial={{ scaleX: 0 }}
@@ -51,12 +47,11 @@ const SocialIntro = () => {
         transition={{
           duration: 1,
           ease: "easeOut",
-          delay: 0.4, // ✅ slight delay, no overlap repaint
+          delay: 0.4,
         }}
         style={{ transformOrigin: "left" }}
       />
 
-      {/* Social links fade-up */}
       <motion.div
         className="social-intro-links"
         initial={{ opacity: 0, x: 20 }}
@@ -77,18 +72,12 @@ const SocialIntro = () => {
 const Home = () =>
 {
     return(
-        <>
+        <div className="home-page">
             <Intro />
-{/* 
-            {/* <div id = "intro-curve">
-
-            </div> */}
-
-            {/* <About />  */}
             <div className="page-background">
                 <SocialIntro />
+                <Experience />
                 <Services />
-                <Portfolio />
                 <Stats />
                 <Results /> 
                 <Brands />
@@ -96,15 +85,8 @@ const Home = () =>
                 <Samples /> 
             </div>
 
-            {/*
 
-            <Parallax />
-            <Results /> 
-            <Clients />        
-
-            <Brands />
-            <Samples />   */}
-        </>
+        </div>
     );
 };
 

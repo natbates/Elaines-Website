@@ -1,22 +1,19 @@
-import React, {useState, useEffect} from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import "../styles/brands.css";
 
 
 const Brands = () => {
 
-  const [brands, setBrands] = useState([]);
-
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
   };
 
-    useEffect(() => {
-        const importAll = (r) => r.keys().map(r);
-        const images = importAll(require.context("../assets/brands", false, /\.(png|jpe?g|gif)$/));
-        setBrands(images);
-    }, []);
+  const brands = useMemo(() => {
+    const importAll = (r) => r.keys().map(r);
+    return importAll(require.context("../brands", false, /\.(png|jpe?g|gif)$/));
+  }, []);
 
   return (
     <motion.div
@@ -41,8 +38,11 @@ const Brands = () => {
         >
           {[...brands, ...brands].map((brand, index) => (
             <div key={index} className="brand">
-              <img src={brand} alt="Fuck" className="brand-image" />
-              <p>{brand.name}</p>
+              <img
+                src={brand}
+                alt={brand.split("/").pop()?.replace(/\.[^.]+$/, "") || "Brand logo"}
+                className="brand-image"
+              />
             </div>
           ))}
         </motion.div>

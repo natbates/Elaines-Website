@@ -2,6 +2,8 @@ import "../styles/clients.css";
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import SectionHeader from "../components/common/SectionHeader/sectionHeader";
+import TestimonialCard from "../components/common/TestimonialCard/testimonialCard";
 
 const Clients = () => {
   const clients = [
@@ -57,38 +59,12 @@ const Clients = () => {
 
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6,  ease: [0.22, 1, 0.36, 1] } },
-  };
-
   return (
     <section id="clients" ref={ref}>
-      {/* Animate heading */}
-      <motion.h1
-        className="main-text"
-        variants={fadeInUp}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-      >
-        What they Think
-      </motion.h1>
-
-      {/* Animate subtext */}
-      <motion.p
-        className="sub-text"
-        variants={fadeInUp}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        transition={{ delay: 0.2 }}
-      >
-        I’m pleased to have great reviews for my results, but I’m more pleased when the reviews speak highly of my character and attitude.
-      </motion.p>
+      <SectionHeader
+        title="What they Think"
+        subtitle="I’m pleased to have great reviews for my results, but I’m more pleased when the reviews speak highly of my character and attitude."
+      />
 
       {/* Animate testimonial grid */}
       <motion.div
@@ -107,30 +83,7 @@ const Clients = () => {
         }}
       >
         {clients.map((client, index) => (
-          <motion.div
-            key={index}
-            className="testimonial-card"
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                  duration: 1.2,
-                  ease: "easeOut", // ✅ simpler, Safari-safe easing
-                },
-              },
-            }}
-          >
-            <div className="testimonial-top">
-              <img src={client.avatar} alt={client.person} className="client-avatar" />
-              <h2 className="company-name">{client.person}</h2>
-            </div>
-            <p className="quote">“{client.quote}”</p>
-            <p className="client-meta">
-              {client.company}, {client.title}
-            </p>
-          </motion.div>
+          <TestimonialCard key={index} client={client} />
         ))}
       </motion.div>
 

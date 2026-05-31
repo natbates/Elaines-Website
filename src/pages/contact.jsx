@@ -57,7 +57,7 @@ const Contact = () => {
       variants={containerVariants}
     >
       <motion.h1 className="main-text" variants={itemVariants}>
-        Let's Have A Coffee
+        Let&apos;s Have A Coffee
       </motion.h1>
 
 

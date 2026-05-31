@@ -46,6 +46,14 @@ body
     align-items: center;
 }
 
+.home-page
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 button
 {
     font-family: "BoldFont";
@@ -83,7 +91,12 @@ button
 
 @font-face {
     font-family: "BoldFont";
-    src: url(../../public/fonts/Milker.otf)
+    src: url("../../public/fonts/Milker.otf");
+}
+
+@font-face {
+    font-family: main;
+    src: url("../../public/fonts/Halyard\ Display.ttf");
 }
 
 @keyframes slideInLeft {
@@ -137,7 +150,6 @@ button
     height: 100%;
     background-image: url("../../public/images/left-lemons.png");
     background-repeat: repeat-y;
-    background-position: 0px 6vw;
     z-index: 111;
 
     /* Animation */

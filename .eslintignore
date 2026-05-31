@@ -1,0 +1,5 @@
+node_modules
+public/pdf.min.mjs
+public/**/pdf*.mjs
+build
+dist

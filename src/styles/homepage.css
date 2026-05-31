@@ -81,46 +81,11 @@
     }
 }
 
-.texture-1
-{
-    background-image: url("../../public/images/shapes/graph\ \(1\).png");
-    height: 500px;
-    width: 500px;
-    position: absolute;
-    right: -20;
-    top: 990;
-    z-index: -100;
-}
-
-.texture-2
-{
-    background-image: url("../../public/images/shapes/graph\ \(5\).png");
-    height: 500px;
-    width: 500px;
-    position: absolute;
-    left: -330;
-    top: -150px;
-    z-index: -100;
-}
-
-.texture-3 {
-    background-image: url("../../public/images/shapes/graph\ \(4\).png");
-    height: 500px;
-    width: 500px;
-    position: absolute;
-    right: -300;
-    top: 230px;
-    z-index: -100;
-}
 
 textarea{
   font-family: main;
 }
 
-@font-face {
-    font-family: main;
-    src: url("../../public/fonts/Halyard\ Display.ttf");
-}
 
 #sausage{
     max-width: 400px;

@@ -1,5 +1,4 @@
 import "../styles/intro.css";
-import SocialLinks from "../components/socialLinks";
 import { motion } from "framer-motion";
 import Parallax from "../components/parallax";
 

@@ -1,0 +1,162 @@
+#experience {
+  padding: 0px 2vw;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#experience .main-text {
+  font-size: 4.83rem;
+  font-weight: lighter;
+  text-align: start;
+  font-family: "BoldFont";
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#experience .sub-text {
+  margin: 0 0 50px;
+  text-align: start;
+  font-size: 1.5rem;
+}
+
+.experience-timeline {
+  position: relative;
+}
+
+
+.experience-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-bottom: 0;
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+.experience-content {
+  transition: all 0.3s ease;
+  background-color: white;
+  padding: 25px 20px;
+}
+
+.experience-year {
+  display: block;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--accent);
+  margin-bottom: 8px;
+  line-height: 1;
+  font-family: "BoldFont";
+}
+
+.experience-title {
+  font-size: 1.1rem;
+  font-family: main;
+  margin: 0 0 6px 0;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.experience-description {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #505050;
+  max-width: 600px;
+}
+
+
+@media (max-width: 768px) {
+  #experience {
+    padding: 60px 2vw;
+  }
+
+  #experience .main-text {
+    font-size: 3rem;
+  }
+
+  #experience .sub-text {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+
+  .experience-timeline {
+    padding-left: 30px;
+  }
+
+  .experience-timeline::before {
+    left: 3px;
+  }
+
+  .experience-marker {
+    left: -30px;
+  }
+
+  .experience-dot {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+  }
+
+  .experience-title {
+    font-size: 1.2rem;
+  }
+
+  .experience-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #experience {
+    padding: 50px 2vw;
+  }
+
+  #experience .main-text {
+    font-size: 2rem;
+  }
+
+  #experience .sub-text {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .experience-timeline {
+    padding-left: 25px;
+  }
+
+  .experience-timeline::before {
+    left: 2px;
+  }
+
+  .experience-marker {
+    left: -25px;
+  }
+
+  .experience-dot {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+  }
+
+  .experience-year {
+    font-size: 0.75rem;
+  }
+
+  .experience-title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .experience-description {
+    font-size: 0.9rem;
+  }
+
+  .experience-item {
+    margin-bottom: 30px;
+  }
+}

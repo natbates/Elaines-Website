@@ -11,12 +11,11 @@
     align-items: center;
     padding: 2vw;
     position: relative;
-    /* border-bottom: 1px solid #ffffff57; */
 }
 
 #intro-video
 {
-    background-size: cover; /* Makes the image cover the entire container */ 
+    background-size: cover;
     background-position: center;
     width: 100%;
     position: relative;
@@ -70,27 +69,21 @@
 
 #social-intro-text {
   position: relative;
-  color: var(--white) !important;
+  color: var(--black) !important;
   font-size: 1rem;
   text-wrap: wrap;
   margin: 0;
   width: fit-content;
   padding: 15px 30px;
 
-  background-color: rgba(220, 220, 220, 0.25);
+  background-color: rgb(255, 255, 255);
   border-radius: 50px; /* ✅ avoid dynamic vw radius on mobile */
   z-index: 1;
-
-  /* Remove these to stop Safari flashing */
-  /* backface-visibility: hidden; */
-  /* transform: translateZ(0); */
-
-  /* Replace with this instead: */
   transform: translate3d(0, 0, 0);
   will-change: opacity;
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-font-smoothing: antialiased;
-  contain: paint; /* ✅ isolates the layer safely */
+  contain: paint;
 }
 
 
