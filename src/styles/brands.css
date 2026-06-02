@@ -9,7 +9,7 @@
   max-width: 1200px;
 }
 
-#brands h1 {
+#brands .main-text {
   font-size: 4.83em;
   font-weight: lighter;
   margin: 0;
@@ -17,7 +17,14 @@
   color: var(--white);
   font-family: "BoldFont", cursive;
   margin-top: 0;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+}
+
+#brands .sub-text {
+  margin: 0 0 50px;
+  text-align: start;
+  font-size: 1.5rem;
+  color: var(--white);
 }
 
 .carousel-wrapper {
@@ -64,6 +71,5 @@
   margin-top: auto auto;
   font-size: 1.6rem;
   color: #000;
-  font-family: "main", monospace;
   margin-bottom: 0;
 }

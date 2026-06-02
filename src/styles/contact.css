@@ -69,7 +69,6 @@
 .form-group input
 {
     height: 70px;
-    border-radius: 16px;
     border: 3px solid white;
     color: var(--white);
     padding-left: 25px;
@@ -82,7 +81,6 @@
 {
     color: var(--white);
     height: 190px;
-    border-radius: 16px;
     border: 3px solid white;
     padding-left: 25px;
     padding-top: 25px;

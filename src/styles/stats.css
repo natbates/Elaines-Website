@@ -49,7 +49,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 700;
-  color: #ff2f6d;
+  color: var(--accent);
 }
 
 .stat-card:hover .stat-card__kicker,

@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import "../styles/brands.css";
+import SectionHeader from "../components/common/SectionHeader/sectionHeader";
 
 
 const Brands = () => {
@@ -23,7 +24,10 @@ const Brands = () => {
       viewport={{ once: true, amount: 0.3 }}
       variants={fadeIn}
     >
-      <motion.h1 variants={fadeIn}>Don’t just take it from me...</motion.h1>
+      <SectionHeader
+        title="Who are they?"
+        subtitle="A selection of brands I’ve supported across content, campaigns, SEO, and brand storytelling."
+      />
 
       <div className="carousel-wrapper">
         <motion.div

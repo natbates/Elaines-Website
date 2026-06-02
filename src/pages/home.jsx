@@ -5,11 +5,11 @@ import Samples from "../sections/samples";
 import Services from "../sections/services";
 import Results from "../sections/Results";
 import Experience from "../sections/Experience";
-import "../styles/homepage.css";
+import Stats from "../sections/Stats";
 
+import "../styles/homepage.css";
 import { motion } from "framer-motion";
 import SocialLinks from "../components/socialLinks";
-import Stats from "../sections/Stats/Stats";
 
 const SocialIntro = () => {
   const fadeIn = {
@@ -76,9 +76,9 @@ const Home = () =>
             <Intro />
             <div className="page-background">
                 <SocialIntro />
-                <Experience />
                 <Services />
                 <Stats />
+                <Experience />
                 <Results /> 
                 <Brands />
                 <Clients /> 

@@ -1,13 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/services.css";
+import { useNavigate } from "react-router-dom";
 
 // Service card component
-// Service card component
-const Service = ({ name, tag, description, imageUrl, iconUrl }) => {
+const Service = ({ name, tag, description, iconUrl }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="service-card">
-      <img src={imageUrl} alt={name} className="service-background" />
+    <div className="service-card" onClick={() => {navigate('/contact')}}>
 
       {/* Icon on top of background */}
       {iconUrl && (
@@ -15,8 +16,10 @@ const Service = ({ name, tag, description, imageUrl, iconUrl }) => {
       )}
 
       <div className="service-content">
-        <h3 className="service-title">{name}</h3>
-        <h4 className="service-tag">{tag}</h4>
+        <div className="service-topline">
+          <h3 className="service-title">{name}</h3>
+          <h4 className="service-tag">{tag}</h4>
+        </div>
         <p className="service-description">{description}</p>
       </div>
     </div>

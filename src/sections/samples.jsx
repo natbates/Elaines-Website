@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/samples.css";
+import SectionHeader from "../components/common/SectionHeader/sectionHeader";
 
 const Samples = () => {
   const sampleImages = [
@@ -22,15 +23,11 @@ const Samples = () => {
   return (
     <div id="samples">
       {/* Animate main title */}
-      <motion.h1
-        className="samples-title"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-      >
-        Recent Work
-      </motion.h1>
+
+      <SectionHeader
+        title="Recent Works"
+        subtitle="Over the years I've helped brands — big and small — cut through the noise with sharper words, smarter strategy, and consistent marketing that actually gets done."
+      />
 
       {/* Grid of sample items */}
       <div className="samples-grid">

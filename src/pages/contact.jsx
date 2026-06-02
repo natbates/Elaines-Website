@@ -1,5 +1,5 @@
 import "../styles/contact.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -11,6 +11,10 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const isFormValid = Object.values(formData).every((field) => field.trim() !== "");
 
@@ -57,7 +61,7 @@ const Contact = () => {
       variants={containerVariants}
     >
       <motion.h1 className="main-text" variants={itemVariants}>
-        Let&apos;s Have A Coffee
+        Let&apos;s Meet for A Coffee
       </motion.h1>
 
 

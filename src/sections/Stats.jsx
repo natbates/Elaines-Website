@@ -1,5 +1,5 @@
-import "./stats.css";
-import StatCard from "./StatCard";
+import "../styles/stats.css";
+import { motion } from "framer-motion";
 
 const statsList = [
   {
@@ -59,10 +59,26 @@ const statsList = [
   },
 ];
 
+const StatCard = ({ stat, index }) => {
+  return (
+    <motion.article
+      className="stat-card"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.08 + index * 0.08, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <p className="stat-card__kicker">{stat.kicker}</p>
+      <h2 className="stat-card__value">{stat.value}</h2>
+      <p className="stat-card__copy">{stat.copy}</p>
+    </motion.article>
+  );
+};
+
 const Stats = () => {
   return (
     <section id="stats" aria-label="Marketing stats and results">
-      <h1 className="main-text">Stats</h1>
+      <h1 className="main-text">What I Can Do</h1>
       <p className="sub-text">
         A snapshot of the outcomes behind the campaigns, content, and strategy.
       </p>
