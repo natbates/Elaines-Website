@@ -36,7 +36,7 @@ const Intro = () => {
             }}
           >
             <motion.h1 variants={childVariants} style={{ transform: "translate3d(0,0,0)" }}>B2B</motion.h1>
-            <motion.h1 variants={childVariants} className="middle" style={{ transform: "translate3d(0,0,0)" }}>COPY</motion.h1>
+            <motion.h1 variants={childVariants} className="middle" style={{ transform: "translate3d(0,0,0)" }}>CONTENT</motion.h1>
             <motion.h1 variants={childVariants} className="last" style={{ transform: "translate3d(0,0,0)" }}>WRITING</motion.h1>
           </motion.div>
         </div>
