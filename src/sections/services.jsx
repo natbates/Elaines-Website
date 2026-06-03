@@ -53,6 +53,13 @@ const Services = () => {
       description: "I rework pages for geo and AI search, improve linking, and track performance — turning words into steady organic growth.",
       image: "images/backgrounds/services.avif",
     },
+    {
+      id: 4,
+      title: "Marketing Management",
+      tag: "Strategy & delivery",
+      description: "Including event marketing, agency management, research & interviews and sales team assets.",
+      image: "images/backgrounds/services.avif",
+    },
   ];
 
 
@@ -99,7 +106,7 @@ const Services = () => {
             custom={0}
             viewport={sectionViewport}
           >
-            Services I Offer
+            Areas of expertise
           </motion.h1>
 
           <motion.p
