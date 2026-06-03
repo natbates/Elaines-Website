@@ -5,6 +5,29 @@
   padding: 0vw 2vw;
 }
 
+#samples > * {
+  position: relative;
+  z-index: 2;
+}
+
+#samples .home-decor-arrow--samples {
+  top: -116px;
+  right: 84px;
+  width: 180px;
+  height: auto;
+  position: absolute;
+  transform: rotate(-162deg) !important;
+  z-index: 60;
+  transition: all 0.3s ease;
+  will-change: transform opacity;
+}
+
+@media (max-width: 1100px) {
+  #samples .home-decor-arrow--samples {
+    opacity: 0 !important;
+  }
+}
+
 #samples .main-text {
   font-size: 4.83rem;
   font-weight: lighter;

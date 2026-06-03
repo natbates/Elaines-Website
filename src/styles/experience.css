@@ -2,7 +2,32 @@
   padding: 0px 2vw;
   width: 100%;
   max-width: 1200px;
+  padding-bottom: 0px !important;
   margin: 0 auto;
+  position: relative;
+}
+
+#experience > * {
+  position: relative;
+  z-index: 2;
+}
+
+#experience .home-decor-arrow--experience {
+  top: -138px;
+  right: 128px;
+  width: 200px;
+  height: auto;
+  position: absolute;
+  transform: rotate(60deg) rotateX(180deg) !important;
+  z-index: 60;
+  transition: all 0.3s ease;
+  will-change: transform opacity;
+}
+
+@media (max-width: 1130px) {
+  #experience .home-decor-arrow--experience {
+    opacity: 0 !important;
+  }
 }
 
 #experience .main-text {
@@ -58,21 +83,36 @@
 
 .experience-year {
   display: block;
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: clamp(1.5rem, 2vw, 2rem);
   font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
   color: var(--accent);
   margin-bottom: 8px;
   line-height: 1;
-  font-family: "BoldFont";
+  font-family: "Georgia, "Times New Roman", serif";
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  margin-right: 20px;
+  font-style: italic;
+  letter-spacing: 0.2em;
+}
+
+.experience-topline
+{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .experience-title {
-  font-size: 1.1rem;
-  font-family: main;
+  font-size: 2.1rem;
+  font-family: "BoldFont";
   margin: 0 0 6px 0;
-  color: var(--accent);
+  color: var(--black);
   letter-spacing: 0;
 }
 
@@ -98,9 +138,7 @@
     margin-bottom: 40px;
   }
 
-  .experience-timeline {
-    padding-left: 30px;
-  }
+  /* no-op: keep timeline layout from base rules */
 
   .experience-timeline::before {
     left: 3px;
@@ -139,9 +177,6 @@
     margin-bottom: 30px;
   }
 
-  .experience-timeline {
-    padding-left: 25px;
-  }
 
   .experience-timeline::before {
     left: 2px;
@@ -158,19 +193,16 @@
   }
 
   .experience-year {
-    font-size: 0.75rem;
+    font-size: 1.4rem;
   }
 
   .experience-title {
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin-bottom: 6px;
   }
 
   .experience-description {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
   }
 
-  .experience-item {
-    margin-bottom: 30px;
-  }
 }

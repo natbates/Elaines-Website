@@ -86,6 +86,52 @@
   contain: paint;
 }
 
+.social-intro-connect-wrap {
+  display: none;
+  --connect-arrow-rot-offset: 0deg;
+}
+
+.social-intro-connect-arrow {
+  display: none;
+}
+
+#social-intro-connect {
+  display: none;
+  position: relative;
+  color: var(--black) !important;
+  font-size: 1.15rem;
+  margin: 0;
+  width: fit-content;
+  padding: 18px 44px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  z-index: 1;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "BoldFont";
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 22px rgba(15, 15, 15, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#social-intro-connect:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 6px 14px rgba(15, 15, 15, 0.12);
+}
+
+#social-intro-connect:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  #social-intro-connect:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px rgba(15, 15, 15, 0.14);
+  }
+}
+
 
 #intro-text
 {
@@ -155,6 +201,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  z-index: 1;
 }
 
 
@@ -196,8 +243,92 @@
 }
 
 @media (max-width: 750px) {
+  #social-intro-holder {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  #intro-text
+  {
+    padding-bottom: 30px;
+  }
+
+  #social-intro-text
+  {
+    opacity: 0.9 !important;
+    color: var(--text-colour) !important;
+    font-size: 1.9rem;
+    margin-bottom: 50;
+    background-color: transparent !important;
+  }
+
+  .social-intro-connect-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+    --connect-arrow-rot-offset: -10deg;
+  }
+
+  .social-intro-connect-arrow {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: clamp(72px, 20vw, 132px);
+    height: auto;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.98;
+    transform-origin: center;
+    /* mirror control via --mirror: 1 (normal) or -1 (flipped horizontally) */
+    --mirror: 1;
+    transform: translate3d(
+        calc(-50% + var(--dx, 0px)),
+        calc(-50% + var(--dy, 0px)),
+        0
+      )
+      rotate(calc(var(--rot, 0deg) + var(--connect-arrow-rot-offset)))
+      scaleX(var(--mirror));
+  }
+
+  .social-intro-connect-arrow--left {
+    --dx: clamp(-210px, -43vw, -110px);
+    --dy: clamp(5px, -2vw, 10px);
+    --rot: 55deg;
+  }
+
+  .social-intro-connect-arrow--right {
+    --dx: clamp(110px, 43vw, 210px);
+    --dy: clamp(5px, -2vw, 10px);
+    /* remove rotation and flip horizontally instead */
+    --rot: -34deg;
+    --mirror: -1;
+  }
+
+  .social-intro-connect-arrow--below-1 {
+    --dx: clamp(-140px, -22vw, -80px);
+    --dy: clamp(76px, 14vw, 96px);
+    --rot: 22deg;
+  }
+
+  .social-intro-connect-arrow--below-2 {
+    --dx: 0px;
+    --dy: clamp(92px, 16vw, 116px);
+    --rot: -35deg;
+  }
+
+  .social-intro-connect-arrow--below-3 {
+    --dx: clamp(80px, 22vw, 150px);
+    --dy: clamp(76px, 14vw, 96px);
+    --rot: -88deg;
+  }
+
   #intro-text h1{
-    font-size: 5rem !important;
+    font-size: clamp(4.8rem, 15vw, 6rem) !important;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
   }
 
   .line
@@ -210,6 +341,14 @@
     justify-content: center;
   }
 
+  #social-intro-connect {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 61;
+  }
+
   .social-intro-links {
     display: none;
   }
@@ -217,45 +356,32 @@
 
 @media (max-width: 600px) {
   #intro-text h1{
-    font-size: 5rem !important;
+    font-size: clamp(4.4rem, 14vw, 5.4rem) !important;
+    line-height: 0.95;
   }
   #intro-text .middle
   {
-    margin-left: 0;
+    margin-left: 0px;
   }
 
   #intro-text .last
   {
-    margin-left: 0;
+    margin-left: 0px;
   }
 }
 
-/* @media (max-width: 510px) {
- #social-intro-holder {
-    transform: translateY(10px);
-  }
-}
 
-@media (max-width: 410px) {
- #social-intro-holder {
-    transform: translateY(10px);
-  }
-}
-
-@media (max-width: 480px) {
-  #social-intro-text {
-    font-size: 0.8rem;
-  }
-} */
 
 @media (max-width: 395px) {
     #intro-text h1{
-      font-size: 4rem !important;
+      font-size: clamp(4rem, 13vw, 4.8rem) !important;
+      line-height: 0.95;
     }
 }
 
 @media (max-width: 325px) {
     #intro-text h1{
-      font-size: 3.5rem !important;
+      font-size: clamp(3.6rem, 12vw, 4.3rem) !important;
+      line-height: 0.95;
     }
 }

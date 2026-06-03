@@ -1,6 +1,7 @@
 import "../styles/contact.css";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import ContactArrow from "../assets/Cool Arrows/Layer 1.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -123,6 +124,18 @@ const Contact = () => {
             >
               {isSubmitting ? "Sending..." : "Submit"}
             </button>
+            <motion.img
+              className="page-decor-arrow page-decor-arrow--contact"
+              src={ContactArrow}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.25 }}
+            />
           </motion.div>
         </motion.form>
       </motion.div>

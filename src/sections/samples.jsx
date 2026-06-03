@@ -2,8 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../styles/samples.css";
 import SectionHeader from "../components/common/SectionHeader/sectionHeader";
+import SamplesArrow from "../assets/Cool Arrows/Layer 13.png";
 
 const Samples = () => {
+  const sectionViewport = {
+    once: true,
+    amount: 0.35,
+    margin: "0px 0px -15% 0px",
+  };
+
   const sampleImages = [
     { title: "Content Strategy", imageUrl: "/images/devices/kato.png" },
     { title: "Email Marketing", imageUrl: "/images/devices/kerfuffle-2.png" },
@@ -22,6 +29,18 @@ const Samples = () => {
 
   return (
     <div id="samples">
+      <motion.img
+        className="home-decor-arrow home-decor-arrow--samples"
+        src={SamplesArrow}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        viewport={sectionViewport}
+      />
       {/* Animate main title */}
 
       <SectionHeader
@@ -39,7 +58,7 @@ const Samples = () => {
             initial="hidden"
             whileInView="visible"
             variants={fadeInUp}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={sectionViewport}
           >
             <div className="sample-text">
               <h2>{sample.title}</h2>

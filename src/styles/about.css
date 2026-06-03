@@ -5,6 +5,32 @@
     height: 100%;
     flex: 1;
     padding-bottom: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+#about-me-page > * {
+  position: relative;
+  z-index: 2;
+}
+
+.page-decor-arrow--about {
+  top: -28px;
+  right: -22px;
+  width: 220px;
+  height: auto;
+  position: absolute !important;
+  transform: rotate(8deg) !important;
+  z-index: 60;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .page-decor-arrow--about {
+    width: 160px;
+    right: -34px;
+    top: -18px;
+  }
 }
 
 #about-me-page .main-text

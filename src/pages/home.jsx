@@ -6,12 +6,18 @@ import Services from "../sections/services";
 import Results from "../sections/Results";
 import Experience from "../sections/Experience";
 import Stats from "../sections/Stats";
-
+import ConnectArrow from "../assets/Cool Arrows/Layer 4.png";
 import "../styles/homepage.css";
 import { motion } from "framer-motion";
 import SocialLinks from "../components/socialLinks";
 
 const SocialIntro = () => {
+  const sectionViewport = {
+    once: true,
+    amount: 0.4,
+    margin: "0px 0px -15% 0px",
+  };
+
   const fadeIn = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,7 +36,7 @@ const SocialIntro = () => {
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={sectionViewport}
         style={{
             willChange: "opacity, transform",
             backfaceVisibility: "hidden",
@@ -40,10 +46,102 @@ const SocialIntro = () => {
         14+ years in marketing in SaaS, HR and tech
         </motion.p>
 
+        <div className="social-intro-connect-wrap">
+          <motion.a
+            id="social-intro-connect"
+            href="https://www.linkedin.com/in/elaine-keep/"
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={sectionViewport}
+            transition={{ delay: 0.15 }}
+            style={{
+              willChange: "opacity, transform",
+              backfaceVisibility: "hidden",
+              transform: "translateZ(0)",
+            }}
+          >
+            Connect now
+          </motion.a>
+
+          <motion.img
+            className="social-intro-connect-arrow social-intro-connect-arrow--left"
+            src={ConnectArrow}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={sectionViewport}
+            transition={{ delay: 0.18 }}
+          />
+
+          <motion.img
+            className="social-intro-connect-arrow social-intro-connect-arrow--right"
+            src={ConnectArrow}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={sectionViewport}
+            transition={{ delay: 0.22 }}
+          />
+
+          <motion.img
+            className="social-intro-connect-arrow social-intro-connect-arrow--below-1"
+            src={ConnectArrow}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={sectionViewport}
+            transition={{ delay: 0.26 }}
+          />
+
+          <motion.img
+            className="social-intro-connect-arrow social-intro-connect-arrow--below-2"
+            src={ConnectArrow}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={sectionViewport}
+            transition={{ delay: 0.3 }}
+          />
+
+          <motion.img
+            className="social-intro-connect-arrow social-intro-connect-arrow--below-3"
+            src={ConnectArrow}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={sectionViewport}
+            transition={{ delay: 0.34 }}
+          />
+        </div>
+
       <motion.div
         className="line"
         initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={sectionViewport}
         transition={{
           duration: 1,
           ease: "easeOut",
@@ -52,18 +150,9 @@ const SocialIntro = () => {
         style={{ transformOrigin: "left" }}
       />
 
-      <motion.div
-        className="social-intro-links"
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.3, delay: 1.17}}
-        style={{
-          willChange: "opacity, transform",
-          transform: "translateZ(0)",
-        }}
-      >
+      <div className="social-intro-links">
         <SocialLinks />
-      </motion.div>
+      </div>
     </div>
   );
 };

@@ -8,6 +8,7 @@
     --background-colour: #ff0080;
     --dark: #333333;
     --accent: #ff4696;
+    --decor-scale: 1;
 }
 
 /* ff4696 */
@@ -23,7 +24,7 @@ html
 body
 {
     background-color: var(--accent);
-    font-family: main;
+    font-family: "main";
     margin: 0;
     overflow-x: hidden;
     color: var(--text-colour);
@@ -54,6 +55,30 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.home-decor-arrow {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 60;
+    opacity: 0.98;
+}
+
+.page-decor-arrow {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 60;
+    opacity: 0.98;
+}
+
+@media (max-width: 750px) {
+    .home-decor-arrow {
+        display: none;
+    }
 }
 
 button
@@ -97,7 +122,7 @@ button
 }
 
 @font-face {
-    font-family: main;
+    font-family: "main";
     src: url("../../public/fonts/Halyard\ Display.ttf");
 }
 
@@ -123,18 +148,19 @@ button
   }
 }
 
-@media (min-width: 1450px) {
+@media (min-width: 1280px) {
   /* Left side circles */
   #page-container::before {
     content: "";
     position: absolute; 
     top: 0;
-    left: -5vw;
-    width: 12vw;
-    background-size: 12vw;
+    left: calc(-120px * var(--decor-scale));
+    width: calc(260px * var(--decor-scale));
     height: 100%;
     background-image: url("../../public/images/lemons.png");
     background-repeat: repeat-y;
+    background-position: top center;
+    background-size: contain;
     z-index: 111;
 
     /* Animation */
@@ -146,12 +172,13 @@ button
     content: "";
     position: absolute;
     top: 0;
-    right: -5vw;
-    width: 12vw;
-    background-size: 12vw;
+        right: calc(-120px * var(--decor-scale));
+        width: calc(260px * var(--decor-scale));
     height: 100%;
     background-image: url("../../public/images/left-lemons.png");
     background-repeat: repeat-y;
+        background-position: top center;
+        background-size: contain;
     z-index: 111;
 
     /* Animation */
@@ -209,6 +236,7 @@ button
     flex: 1;
     width: 100%;
     max-width: 1200px;
+    min-height: 90vh;
 }
 
 .not-found h1
@@ -232,7 +260,35 @@ button
     width: 100%;
     text-align: start;
     margin-top: 90px;
-    margin-bottom: 0px;
+    margin-bottom: 22px;
+}
+
+@media (max-width: 768px) {
+    .not-found {
+        margin-top: 120px;
+        min-height: 90vh;
+    }
+
+    .not-found p {
+        font-size: 1.25rem;
+        top: 0;
+        margin-top: 28px;
+        line-height: 1.4;
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .not-found {
+        margin-top: 110px;
+        min-height: 90vh;
+    }
+
+    .not-found p {
+        font-size: 1.1rem;
+        margin-top: 22px;
+        margin-bottom: 16px;
+    }
 }
 
 .not-found button
@@ -245,6 +301,7 @@ button
     border-radius: 25px;
     font-weight: bolder;
     font-size: 1rem;
+    margin-top: 6px;
     cursor: pointer;
     transition: transform 0.2s;
 }

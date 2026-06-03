@@ -5,6 +5,11 @@ import SectionHeader from "../components/common/SectionHeader/sectionHeader";
 
 
 const Brands = () => {
+  const sectionViewport = {
+    once: true,
+    amount: 0.35,
+    margin: "0px 0px -15% 0px",
+  };
 
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
@@ -21,7 +26,7 @@ const Brands = () => {
       id="brands"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={sectionViewport}
       variants={fadeIn}
     >
       <SectionHeader
@@ -29,7 +34,13 @@ const Brands = () => {
         subtitle="A selection of brands I’ve supported across content, campaigns, SEO, and brand storytelling."
       />
 
-      <div className="carousel-wrapper">
+      <motion.div
+        className="carousel-wrapper"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="visible"
+        viewport={sectionViewport}
+      >
         <motion.div
           className="brand-carousel"
           animate={{ x: ["0%", "-50%"] }} // infinite scroll
@@ -50,7 +61,7 @@ const Brands = () => {
             </div>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

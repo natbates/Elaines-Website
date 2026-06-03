@@ -1,50 +1,82 @@
 import "../styles/socialLinks.css";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: -22 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 const SocialLinks = () => {
   return (
-    <div id="social-links">
+    <motion.div
+      id="social-links"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.35 }}
+    >
       {/* LinkedIn */}
-      <a
+      <motion.a
         href="https://www.linkedin.com/in/elaine-keep/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
+        variants={itemVariants}
       >
         <img
           src="images/processed/linkedin.svg"
           alt="LinkedIn"
           className="social-icon"
         />
-      </a>
+      </motion.a>
 
       {/* Authory */}
-      <a
+      <motion.a
         href="https://authory.com/ElaineKeep"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Authory"
+        variants={itemVariants}
       >
         <img
           src="images/processed/authlogo.png"
           alt="Authory"
           className="social-icon"
         />
-      </a>
+      </motion.a>
 
       {/* Canva */}
-      <a
+      <motion.a
         href="/files/Elaine Portfolio 2026.pdf"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Canva"
+        variants={itemVariants}
       >
         <img
-          src = "../../images/processed/PDF.svg"
+          src="../../images/processed/PDF.svg"
           alt="Canva"
           className="social-icon"
         />
-      </a>
-    </div>
+      </motion.a>
+    </motion.div>
   );
 };
 

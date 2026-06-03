@@ -2,11 +2,57 @@
   padding: 0vw 2vw;
   width: 100%;
   max-width: 1200px;
+  position: relative;
+}
+
+#stats > * {
+  position: relative;
+  z-index: 2;
+}
+
+#stats .home-decor-arrow--stats {
+  top: -36px;
+  right: 80px;
+  width: 120px;
+  position: absolute;
+  height: auto;
+  transform: rotate(-115deg) !important;
+  z-index: 60;
+  transition: all 0.3s ease;
+  will-change: transform opacity;
+}
+
+#stats .home-decor-arrow--stats-2
+{
+  top: -76px;
+  right: 210px;
+  width: 120px;
+  position: absolute;
+  height: auto;
+  transform: rotate(-155deg) !important;
+  z-index: 60;
+  transition: all 0.3s ease;
+  will-change: transform opacity;
+}
+
+@media (max-width: 1072px) {
+  #stats .home-decor-arrow--stats {
+    opacity: 0 !important;
+  }
+
+  #stats .home-decor-arrow--stats-2
+  {
+    opacity: 0 !important;
+  }
 }
 
 #stats .main-text {
   margin: 0 0 10px;
   text-align: start;
+  font-family: "BoldFont";
+  font-weight: lighter;
+  font-size: 4.83rem;
+  line-height: 1.02;
 }
 
 #stats .sub-text {
@@ -37,9 +83,7 @@
 
 .stat-card:hover,
 .stat-card:focus-within {
-  background: #ff2f6d;
-  color: #fff;
-  transform: translateY(-2px);
+  transform: scale(1.02) !important;
 }
 
 .stat-card__kicker {
@@ -52,25 +96,13 @@
   color: var(--accent);
 }
 
-.stat-card:hover .stat-card__kicker,
-.stat-card:focus-within .stat-card__kicker,
-.stat-card:hover .stat-card__copy,
-.stat-card:focus-within .stat-card__copy {
-  color: rgba(255, 255, 255, 0.9);
-}
-
 .stat-card__value {
   margin: 0;
   font-size: clamp(2.5rem, 4vw, 4.9rem);
   line-height: 0.95;
   font-family: Georgia, "Times New Roman", serif;
   letter-spacing: -0.05em;
-  color: #ff2f6d;
-}
-
-.stat-card:hover .stat-card__value,
-.stat-card:focus-within .stat-card__value {
-  color: #fff;
+  color: var(--accent);
 }
 
 .stat-card__copy {

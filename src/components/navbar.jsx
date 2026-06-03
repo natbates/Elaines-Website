@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const isHome = location.pathname === "/" || location.pathname === "";
 
   // Container variant: smooth stagger, no layout jump
   const containerVariants = {
@@ -29,7 +30,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar-background">
+    <div className={`navbar-background ${isHome ? "is-home" : "not-home"}`}>
       <nav className="navbar">
         {/* Left: Logo */}
         <button type="button" className="navbar-logo" onClick={() => navigate("/")} aria-label="Go to home page">
@@ -44,7 +45,7 @@ const Navbar = () => {
           animate="visible"
         >
           <motion.li className={location.pathname === '/about' ? "active" : ""} variants={linkVariants}>
-            <button type="button" onClick={() => navigate("/about")}>About Me</button>
+            <a href="/about">About Me</a>
           </motion.li>
 
           <motion.li variants={linkVariants}>
@@ -69,7 +70,7 @@ const Navbar = () => {
 
 
           <motion.li   className={location.pathname === '/contact' ? "active" : ""} variants={linkVariants}>
-            <button type="button" onClick={() => navigate("/contact")}>Contact</button>
+            <a href="/contact">Contact</a>
           </motion.li>
         </motion.ul>
 
@@ -81,7 +82,7 @@ const Navbar = () => {
           transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
         >
           <button
-              type="button"
+            type="button"
             onClick={() =>
               window.open("https://www.linkedin.com/in/elaine-keep/", "_blank")
             }

@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar";
 import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 
 import Home from "../pages/home";
 import Footer from "./footer";
@@ -60,6 +61,25 @@ const PageNotFound = () => {
 
 
 const App = () => {
+  useEffect(() => {
+    const root = document.documentElement;
+    const viewport = window.visualViewport;
+
+    const updateDecorScale = () => {
+      const zoomScale = viewport?.scale || 1;
+      root.style.setProperty("--decor-scale", String(1 / zoomScale));
+    };
+
+    updateDecorScale();
+
+    viewport?.addEventListener("resize", updateDecorScale);
+    window.addEventListener("resize", updateDecorScale);
+
+    return () => {
+      viewport?.removeEventListener("resize", updateDecorScale);
+      window.removeEventListener("resize", updateDecorScale);
+    };
+  }, []);
 
     const navigate = useNavigate();
 

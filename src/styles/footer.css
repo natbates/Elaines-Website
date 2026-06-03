@@ -11,6 +11,7 @@
     padding-top: 10px;
     width: 100%;
     overflow: hidden;
+    border-top: 8px dashed white;
 }
 
 #footer.not-home
@@ -29,6 +30,26 @@
     justify-content: space-between;
     margin-top: 30px;
     margin-bottom: 0px;
+    z-index: 2;
+}
+
+.page-decor-arrow--footer {
+    bottom: 34px;
+    right: -8px;
+    width: 240px;
+    height: auto;
+    transform: rotate(-6deg);
+    z-index: 60;
+    opacity: 0.9;
+    display: none;
+}
+
+@media (max-width: 630px) {
+    .page-decor-arrow--footer {
+        width: 170px;
+        right: -30px;
+        bottom: 42px;
+    }
 }
 
 .links-address
@@ -175,10 +196,6 @@
         flex-direction: column;
     }
 
-    .copy-right
-    {
-        text-align: end;
-    }
 
     .links-address
     {
@@ -191,5 +208,9 @@
 .links-address{
     flex-direction: column;
     gap: 30px;
+}
+
+.copy-right {
+    text-align: start;
 }
 }

@@ -6,6 +6,12 @@ const defaultVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
+const headerViewport = {
+  once: true,
+  amount: 0.4,
+  margin: "0px 0px -15% 0px",
+};
+
 const SectionHeader = ({ title, subtitle, headingClassName = "main-text", subtitleClassName = "sub-text" }) => {
   return (
     <div className="section-header">
@@ -14,7 +20,7 @@ const SectionHeader = ({ title, subtitle, headingClassName = "main-text", subtit
         variants={defaultVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={headerViewport}
       >
         {title}
       </motion.h1>
@@ -26,7 +32,7 @@ const SectionHeader = ({ title, subtitle, headingClassName = "main-text", subtit
           initial="hidden"
           whileInView="visible"
           transition={{ delay: 0.2 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={headerViewport}
         >
           {subtitle}
         </motion.p>

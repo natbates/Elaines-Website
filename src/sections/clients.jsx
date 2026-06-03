@@ -1,9 +1,9 @@
 import "../styles/clients.css";
 import React from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import SectionHeader from "../components/common/SectionHeader/sectionHeader";
 import TestimonialCard from "../components/common/TestimonialCard/testimonialCard";
+import ClientsArrow from "../assets/Cool Arrows/Layer 6.png";
 
 const Clients = () => {
   const clients = [
@@ -57,30 +57,52 @@ const Clients = () => {
     },
   ];
 
-  const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
+  const sectionViewport = {
+    once: true,
+    amount: 0.25,
+    margin: "0px 0px -15% 0px",
+  };
+
+  const gridVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.25,
+        when: "beforeChildren",
+        staggerDirection: 1,
+      },
+    },
+  };
 
   return (
-    <section id="clients" ref={ref}>
+    <section id="clients">
+      <motion.img
+        className="home-decor-arrow home-decor-arrow--clients"
+        src={ClientsArrow}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        viewport={sectionViewport}
+      />
       <SectionHeader
-        title="What they Think"
+        title={<>
+          What <span style={{ textDecoration: "underline" }}>they</span> Say
+        </>}
         subtitle="I’m pleased to have great reviews for my results, but I’m more pleased when the reviews speak highly of my character and attitude."
       />
 
       {/* Animate testimonial grid */}
       <motion.div
         className="clients-grid"
+        variants={gridVariants}
         initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        variants={{
-          visible: {
-            transition: {
-              delayChildren: 0.2, 
-              staggerChildren: 0.25, 
-              when: "beforeChildren", 
-              staggerDirection: 1,
-            },
-          },
-        }}
+        whileInView="visible"
+        viewport={sectionViewport}
       >
         {clients.map((client, index) => (
           <TestimonialCard key={index} client={client} />

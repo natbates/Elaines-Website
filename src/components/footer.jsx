@@ -1,5 +1,7 @@
 import SocialLinks from "./socialLinks";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import FooterArrow from "../assets/Cool Arrows/Layer 7.png";
 
 import "../styles/footer.css";
 
@@ -11,6 +13,18 @@ const Footer = () =>
 
     return (
         <div id = "footer" className={location.pathname !== "/" ? "not-home" : ""}>
+            <motion.img
+                className="page-decor-arrow page-decor-arrow--footer"
+                src={FooterArrow}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.75, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.2 }}
+            />
             <div className="footer-content"> 
 
                 <h1 className="footer-title">

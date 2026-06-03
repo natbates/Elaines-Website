@@ -1,5 +1,6 @@
 import "../styles/stats.css";
 import { motion } from "framer-motion";
+import StatsArrow from "../assets/Cool Arrows/Layer 1.png";
 
 const statsList = [
   {
@@ -60,13 +61,19 @@ const statsList = [
 ];
 
 const StatCard = ({ stat, index }) => {
+  const cardViewport = {
+    once: true,
+    amount: 0.35,
+    margin: "0px 0px -15% 0px",
+  };
+
   return (
     <motion.article
       className="stat-card"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.08 + index * 0.08, ease: "easeOut" }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={cardViewport}
     >
       <p className="stat-card__kicker">{stat.kicker}</p>
       <h2 className="stat-card__value">{stat.value}</h2>
@@ -76,12 +83,72 @@ const StatCard = ({ stat, index }) => {
 };
 
 const Stats = () => {
+  const sectionViewport = {
+    once: true,
+    amount: 0.35,
+    margin: "0px 0px -15% 0px",
+  };
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 22 },
+    visible: (i = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.08 + i * 0.12, duration: 0.7, ease: "easeOut" },
+    }),
+  };
+
   return (
     <section id="stats" aria-label="Marketing stats and results">
-      <h1 className="main-text">What I Can Do</h1>
-      <p className="sub-text">
+      <motion.img
+        className="home-decor-arrow home-decor-arrow--stats-2"
+        src={StatsArrow}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        custom={0}
+        delay={0.8}
+        viewport={sectionViewport}
+      />
+      <motion.img
+        className="home-decor-arrow home-decor-arrow--stats"
+        src={StatsArrow}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        custom={0}
+        delay={0.6}
+        viewport={sectionViewport}
+      />
+
+      <motion.h1
+        className="main-text"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        custom={1}
+        viewport={sectionViewport}
+      >
+        What I Can Do
+      </motion.h1>
+      <motion.p
+        className="sub-text"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        custom={2}
+        viewport={sectionViewport}
+      >
         A snapshot of the outcomes behind the campaigns, content, and strategy.
-      </p>
+      </motion.p>
       <div className="stats-grid">
         {statsList.map((stat, index) => (
           <StatCard key={`${stat.kicker}-${index}`} stat={stat} index={index} />

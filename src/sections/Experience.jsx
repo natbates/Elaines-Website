@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../styles/experience.css";
 import SectionHeader from "../components/common/SectionHeader/sectionHeader";
+import ExperienceArrow from "../assets/Cool Arrows/Layer 12.png";
 
 const experienceItems = [
   {
@@ -35,6 +36,12 @@ const experienceItems = [
 ];
 
 const Experience = () => {
+  const sectionViewport = {
+    once: true,
+    amount: 0.35,
+    margin: "0px 0px -15% 0px",
+  };
+
   const itemVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: (i) => ({
@@ -46,6 +53,18 @@ const Experience = () => {
 
   return (
     <section id="experience">
+      <motion.img
+        className="home-decor-arrow home-decor-arrow--experience"
+        src={ExperienceArrow}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        viewport={sectionViewport}
+      />
       <SectionHeader
         title="My experience"
         subtitle="14+ years building brand trust, driving measurable results, and delivering marketing that actually works."
@@ -60,15 +79,14 @@ const Experience = () => {
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={sectionViewport}
           >
-            <div className="experience-marker">
-              <div className="experience-dot" />
-            </div>
             <div className="experience-content">
-              <span className="experience-year">{item.year}</span>
-              <h3 className="experience-title">{item.title}</h3>
-              <p className="experience-description">— {item.description}</p>
+              <div className="experience-topline">
+                <span className="experience-year">{item.year}</span>
+                <h3 className="experience-title">{item.title}</h3>
+              </div>
+              <p className="experience-description">{item.description}</p>
             </div>
           </motion.div>
         ))}

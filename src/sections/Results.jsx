@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import "../styles/results.css";
 import SectionHeader from "../components/common/SectionHeader/sectionHeader";
+import ResultsArrow from "../assets/Cool Arrows/Layer 2.png";
 
 const caseStudies = [
   {
@@ -51,6 +52,12 @@ const caseStudies = [
 ];
 
 const Results = () => {
+  const sectionViewport = {
+    once: true,
+    amount: 0.35,
+    margin: "0px 0px -15% 0px",
+  };
+
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i) => ({
@@ -62,6 +69,18 @@ const Results = () => {
 
   return (
     <section id="results-gallery">
+      <motion.img
+        className="home-decor-arrow home-decor-arrow--results"
+        src={ResultsArrow}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        viewport={sectionViewport}
+      />
       <SectionHeader
         title="What I&apos;ve done"
         subtitle="Over the years I've helped brands — big and small — cut through the noise with sharper words, smarter strategy, and consistent marketing that actually gets done."
@@ -76,7 +95,7 @@ const Results = () => {
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={sectionViewport}
           >
             <div className="card-inner">
               <span className="card-kicker">{study.kicker}</span>

@@ -2,23 +2,18 @@
 
 /* Each layer has a visible image */
 .layer1 {
-  background-image: url("../../public/images/parallax/5.PNG");
   z-index: 1;
 }
 .layer2 {
-  background-image: url("../../public/images/parallax/4.PNG");
   z-index: 2;
 }
 .layer3 {
-  background-image: url("../../public/images/parallax/3.PNG");
   z-index: 3;
 }
 .layer4 {
-  background-image: url("../../public/images/parallax/2.PNG");
   z-index: 4;
 }
 .layer5 {
-  background-image: url("../../public/images/parallax/1.PNG");
   z-index: 5;
 }
 
@@ -87,6 +82,13 @@
   align-items: center;
   background-color: var(--background-colour);
   padding-bottom: 120px;
+}
+
+@media (max-width: 768px) {
+  .page-background {
+    gap: 56px;
+    padding-bottom: 64px;
+  }
 }
 
 /* Base layer setup */

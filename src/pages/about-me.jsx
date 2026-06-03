@@ -1,12 +1,14 @@
 import "../styles/about.css";
 import React from "react";
 import { motion } from "framer-motion";
+import AboutArrow from "../assets/Cool Arrows/Layer 3.png";
 
 const AboutMe = () => {
   const images = [
-    "images/elaine/about/family.jpg",
+    "/images/elaine/about/family.jpg",
     "/images/elaine/about/milo.jpg",
     "/images/elaine/about/car.png",
+    "/images/elaine/about/charity.png",
   ];
 
   // Variants for staggered animation container
@@ -33,6 +35,18 @@ const AboutMe = () => {
 
   return (
     <div id="about-me-page">
+      <motion.img
+        className="page-decor-arrow page-decor-arrow--about"
+        src={AboutArrow}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.25 }}
+      />
 
       <motion.div
         className="about-content"

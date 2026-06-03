@@ -3,6 +3,30 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0vw 2vw;
+  position: relative;
+}
+
+#clients > * {
+  position: relative;
+  z-index: 2;
+}
+
+#clients .home-decor-arrow--clients {
+  top: -50px;
+  right: 178px;
+  width: 110px;
+  height: auto;
+  position: absolute;
+  transform: rotate(56deg) !important;
+  z-index: 60;
+  transition: all 0.3s ease;
+  will-change: transform opacity;
+}
+
+@media (max-width: 1100px) {
+  #clients .home-decor-arrow--clients {
+    opacity: 0 !important;
+  }
 }
 
 #clients h1
@@ -10,6 +34,20 @@
   text-align: start;
   margin-bottom: 0px;
   font-weight: lighter;
+}
+
+#clients .main-text {
+  font-family: "BoldFont";
+  font-weight: lighter;
+  margin: 0 0 10px;
+  font-size: 4.83rem;
+  line-height: 1.02;
+}
+
+@media (max-width: 900px) {
+  #clients .main-text {
+    font-size: 3rem;
+  }
 }
 
 #clients .sub-text
@@ -48,7 +86,15 @@
 
   /* keep opacity at 0.9999 to prevent Safari from dropping the layer */
   opacity: 0.9999;
+  transition: all 0.3s ease;
 }
+
+.testimonial-card:hover
+{
+  transform: scale(1.02) !important;
+}
+
+
 @supports (-webkit-touch-callout: none) {
   .testimonial-card {
     opacity: 0.9999; /* Safari won’t drop the layer */

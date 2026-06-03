@@ -3,6 +3,31 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+}
+
+#results-gallery > * {
+  position: relative;
+  z-index: 2;
+}
+
+#results-gallery .home-decor-arrow--results {
+  position: absolute;
+  display: block;
+  top: 46px;
+  right: -98px;
+  width: 190px;
+  height: auto;
+  transform: rotate(-10deg);
+  z-index: 60;
+  transition: all 0.3s ease;
+  will-change: transform opacity;
+}
+
+@media (max-width: 1424px) {
+  #results-gallery .home-decor-arrow--results {
+    opacity: 0 !important;
+  }
 }
 
 #results-gallery .main-text {
@@ -35,6 +60,12 @@
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.case-study-card:hover
+{
+  transform: scale(1.02) !important;
 }
 
 .card-inner {
@@ -87,10 +118,11 @@
 }
 
 .metric-value {
-  font-size: 1.3rem;
+  font-size: 2.6rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-weight: bold;
+  font-weight: 800;
   color: var(--accent);
+  margin-bottom: 8px;
   line-height: 1;
 }
 
@@ -114,7 +146,7 @@
   }
 
   #results-gallery .main-text {
-    font-size: 3rem;
+    font-size: 3.6rem;
   }
 
   #results-gallery .sub-text {
@@ -127,11 +159,11 @@
   }
 
   .card-headline {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
 
   .card-description {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .card-metrics {
@@ -139,7 +171,8 @@
   }
 
   .metric-value {
-    font-size: 1.1rem;
+    font-size: 2.6rem;
+    font-weight: 800;
   }
 }
 
@@ -149,24 +182,29 @@
   }
 
   #results-gallery .main-text {
-    font-size: 2rem;
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 1.03;
+    margin-bottom: 14px;
   }
 
   #results-gallery .sub-text {
-    font-size: 1rem;
-    margin-bottom: 30px;
+    font-size: 1.3rem;
+    margin-bottom: 34px;
+    line-height: 1.36;
   }
 
   .case-study-card {
-    padding: 1rem;
+    padding: 1.25rem;
   }
 
   .card-headline {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
   }
 
   .card-description {
-    font-size: 0.85rem;
+    font-size: 1.05rem;
   }
 
   .card-metrics {
@@ -175,10 +213,11 @@
   }
 
   .metric-value {
-    font-size: 1rem;
+    font-size: 3.2rem;
+    font-weight: 900;
   }
 
   .metric-label {
-    font-size: 0.7rem;
+    font-size: 0.95rem;
   }
 }

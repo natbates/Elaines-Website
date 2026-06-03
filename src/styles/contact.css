@@ -7,6 +7,7 @@
     flex: 1;
     max-width: 1200px;
     padding-bottom: 110px;
+    position: relative;
 }
 
 #contact .main-text
@@ -35,8 +36,25 @@
 }
 
 #contact{
-    overflow: hidden;
     margin-top: 150px;
+}
+
+.page-decor-arrow--contact {
+    top: -118px;
+    right: -128px;
+    width: 100px;
+    height: auto;
+    transform: rotate(-126deg) !important;
+    z-index: 60;
+    position: absolute;
+}
+
+@media (max-width: 600px) {
+    .page-decor-arrow--contact {
+        width: 110px;
+        left: -26px;
+        top: -10px;
+    }
 }
 
 #contact-holder{
@@ -111,6 +129,7 @@ textarea:focus {
     gap: 20px;
     width: 100%;
     margin-top: 40px;
+    position: relative;
 }
 
 .button-container.right
