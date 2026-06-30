@@ -14,13 +14,6 @@ const statsList = [
     value: "£637k",
     copy:
       "In booked business from a targeted email + direct mail campaign costing just £1,250. 7 meetings booked in one month on one of the strongest clients converted.",
-    featured: true,
-  },
-  {
-    kicker: "Tuffnells — 100Yr+ Heritage Brand",
-    value: "3,000%",
-    copy:
-      "Increase in website traffic year-on-year after full rebrand, new site, and SEO overhaul. 0 keywords on pages 1-3 grew to 30+. Trustpilot from 2.0 to 8.0 for under £1k.",
   },
   {
     kicker: "Collection Pot — Fintech",
@@ -47,17 +40,18 @@ const statsList = [
       "Monthly visitors driven largely by my blog content. ‘What is collaborative teamwork?’ ranks 6th. ‘What is documentation?’ ranks 8th. Position 5 on Google for core head terms.",
   },
   {
-    kicker: "Narvar — B2B Ecommerce",
-    value: "Top 5",
+    kicker: "Moxiworks — proptech",
+    value: "Page 1",
     copy:
-      "Two of my blogs are in Narvar’s top 5 traffic sources globally. Produced a UK State of Returns report and a 200-retailer return trends analysis used by the sales team for lead generation.",
-  },
+      "Average Google rankings achieved for multiple commercial keywords, including #4.1, #5.5 and #6.0, alongside 216k+ impressions for real estate marketing content and 165k+ impressions for real estate lead generation content."
+  },  
   {
-    kicker: "Tuffnells — Email & Print",
-    value: "£68,532",
+    kicker: "Activepipe — proptech",
+    value: "15k+",
     copy:
-      "In quoted business from a single print + email campaign. A second campaign generated £33,599. First email send drove the highest site traffic in 3 years. All within a £100k+ annual budget.",
+    "Google Search impressions for social media marketing content, alongside first-page rankings for commercial real estate marketing topics including Lead Scoring for Real Estate (#7) and Facebook Marketing (#12.1). Produced SEO content supporting enterprise real estate marketing across Australia and New Zealand."
   },
+
 ];
 
 const StatCard = ({ stat, index }) => {

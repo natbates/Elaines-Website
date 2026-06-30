@@ -63,8 +63,18 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.stat-card {
+  grid-column: span 2;
+}
+
+/* If the last row has 2 cards (8 items, 5 items, etc.) */
+.stats-grid > :nth-last-child(2):nth-child(3n + 1),
+.stats-grid > :last-child:nth-child(3n + 2) {
+  grid-column: span 3;
 }
 
 .stat-card {
@@ -107,7 +117,6 @@
 
 .stat-card__copy {
   margin: 0;
-  max-width: 32ch;
   font-size: 0.9rem;
   line-height: 1.45;
   color: #66707a;
@@ -116,6 +125,10 @@
 @media (max-width: 900px) {
   .stats-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat-card {
+    grid-column: span 1;
   }
 }
 
@@ -139,6 +152,7 @@
   }
 
   .stat-card {
+    grid-column: span 1;
     min-height: auto;
   }
 }
